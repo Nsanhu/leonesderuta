@@ -1,0 +1,36 @@
+{
+  "NAV": {
+    "HOME": "Inicio",
+    "CONTACT": "Contacto",
+    "ABOUT": "Nosotros",
+    "TOURS": "Excursiones",
+    "LANGUAGE": "Idioma"
+  },
+  "HOME": {
+    "SLOGAN": "No seguimos el mapa, creamos nuevas rutas contigo.",
+    "CONTACT_US": "Contáctanos",
+    "HIGHLIGHTED_ROUTES": "Rutas Destacadas",
+    "ABOUT_US": "Sobre Nosotros",
+    "ABOUT_US_DESC": "En Leones de Ruta nos dedicamos a ofrecer tours personalizados por todo Chile. Con foco en pequeños grupos, brindamos experiencias auténticas, seguras y llenas de aventura.",
+    "READ_MORE": "Lee más",
+    "QUICK_CONTACT": "¿Tienes dudas?",
+    "QUICK_CONTACT_DESC": "Contáctanos y te responderemos en menos de 24 horas."
+  },
+  "CONTACT": {
+    "TITLE": "Contáctanos",
+    "FORM": {
+      "NAME": "Nombre",
+      "EMAIL": "Correo Electrónico",
+      "MESSAGE": "Mensaje",
+      "SUBMIT": "Enviar"
+    },
+    "SUCCESS_MESSAGE": "¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto."
+  },
+  "FOOTER": {
+    "DESCRIPTION": "Experiencias únicas por todo Chile. Explora, relájate y descubre nuevas rutas con nosotros.",
+    "QUICK_LINKS": "Enlaces rápidos",
+    "CONTACT": "Contáctanos",
+    "FOLLOW_US": "Síguenos",
+    "RIGHTS": "Todos los derechos reservados."
+  }
+}

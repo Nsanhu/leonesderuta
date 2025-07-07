@@ -1,0 +1,36 @@
+{
+  "NAV": {
+    "HOME": "Home",
+    "CONTACT": "Contact",
+    "ABOUT": "About",
+    "TOURS": "Tours",
+    "LANGUAGE": "Language"
+  },
+  "HOME": {
+    "SLOGAN": "We don't follow the map, we create new routes with you.",
+    "CONTACT_US": "Contact Us",
+    "HIGHLIGHTED_ROUTES": "Highlighted Routes",
+    "ABOUT_US": "About Us",
+    "ABOUT_US_DESC": "At Leones de Ruta, we specialize in personalized tours across Chile. With a focus on small groups, we provide authentic, safe, and adventure-filled experiences.",
+    "READ_MORE": "Read More",
+    "QUICK_CONTACT": "Have questions?",
+    "QUICK_CONTACT_DESC": "Contact us and we will respond within 24 hours."
+  },
+  "CONTACT": {
+    "TITLE": "Contact Us",
+    "FORM": {
+      "NAME": "Name",
+      "EMAIL": "Email",
+      "MESSAGE": "Message",
+      "SUBMIT": "Submit"
+    },
+    "SUCCESS_MESSAGE": "Thank you for your message! We will get back to you soon."
+  },
+  "FOOTER": {
+    "DESCRIPTION": "Unique experiences across Chile. Explore, relax, and discover new routes with us.",
+    "QUICK_LINKS": "Quick Links",
+    "CONTACT": "Contact Us",
+    "FOLLOW_US": "Follow Us",
+    "RIGHTS": "All rights reserved."
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "NAV": {
+    "HOME": "Início",
+    "CONTACT": "Contato",
+    "ABOUT": "Sobre nós",
+    "TOURS": "Passeios",
+    "LANGUAGE": "Idioma"
+  },
+  "HOME": {
+    "SLOGAN": "Nós não seguimos o mapa, criamos novas rotas com você.",
+    "CONTACT_US": "Contate-nos",
+    "HIGHLIGHTED_ROUTES": "Rotas Destacadas",
+    "ABOUT_US": "Sobre Nós",
+    "ABOUT_US_DESC": "Em Leones de Ruta, nos dedicamos a oferecer passeios personalizados por todo o Chile. Com foco em pequenos grupos, proporcionamos experiências autênticas, seguras e cheias de aventura.",
+    "READ_MORE": "Leia mais",
+    "QUICK_CONTACT": "Tem dúvidas?",
+    "QUICK_CONTACT_DESC": "Entre em contato conosco e responderemos em menos de 24 horas."
+  },
+  "CONTACT": {
+    "TITLE": "Contate-nos",
+    "FORM": {
+      "NAME": "Nome",
+      "EMAIL": "Email",
+      "MESSAGE": "Mensagem",
+      "SUBMIT": "Enviar"
+    },
+    "SUCCESS_MESSAGE": "Obrigado pela sua mensagem! Entraremos em contato em breve."
+  },
+  "FOOTER": {
+    "DESCRIPTION": "Experiências únicas por todo o Chile. Explore, relaxe e descubra novas rotas conosco.",
+    "QUICK_LINKS": "Links rápidos",
+    "CONTACT": "Contate-nos",
+    "FOLLOW_US": "Siga-nos",
+    "RIGHTS": "Todos os direitos reservados."
+  }
+}
