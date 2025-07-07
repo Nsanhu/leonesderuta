@@ -1,0 +1,51 @@
+<main>
+  <!-- Hero -->
+  <section class="relative flex h-screen items-center justify-center bg-cover bg-center" style="background-image: url(&quot;/assets/img/bg_home.jpeg&quot;)">
+    <div class="rounded bg-black bg-opacity-50 p-32 text-center">
+      <h1 class="text-4xl font-bold text-white md:text-6xl">Leones de Ruta</h1>
+      <p class="mt-4 text-lg text-white md:text-2xl">
+        {{ "HOME.SLOGAN" | translate }}
+      </p>
+      <button routerLink="/contact" class="mt-6 rounded bg-blue-500 px-6 py-3 font-semibold text-white hover:bg-blue-600">{{ "HOME.CONTACT_US" | translate }}</button>
+    </div>
+  </section>
+
+  <!-- Rutas destacadas -->
+  <section class="bg-gray-100 py-12">
+    <div class="container mx-auto px-4">
+      <h2 class="mb-8 text-center text-3xl font-bold">{{ "HOME.HIGHLIGHTED_ROUTES" | translate }}</h2>
+      <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div *ngFor="let tour of tours" class="overflow-hidden rounded bg-white shadow transition hover:shadow-lg">
+          <img [src]="tour.img" alt="{{ tour.title }}" class="h-48 w-full object-cover" />
+          <div class="p-4">
+            <h3 class="text-xl font-semibold">{{ tour.title }}</h3>
+            <p class="mt-2 text-gray-600">{{ tour.desc }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre Nosotros -->
+  <section class="py-12">
+    <div class="container mx-auto px-4 lg:flex lg:items-center lg:gap-12">
+      <div class="lg:w-1/2">
+        <img src="assets/team-photo.jpg" alt="Nuestro Equipo" class="rounded shadow-md" />
+      </div>
+      <div class="mt-8 lg:mt-0 lg:w-1/2">
+        <h2 class="mb-4 text-3xl font-bold">{{ "HOME.ABOUT_US" | translate }}</h2>
+        <p class="mb-4 text-gray-700">{{ "HOME.ABOUT_US_DESC" | translate }}</p>
+        <button routerLink="/about" class="rounded bg-blue-500 px-5 py-3 font-semibold text-white hover:bg-blue-600">{{ "HOME.READ_MORE" | translate }}</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto rápido -->
+  <section class="bg-blue-600 py-12 text-center text-white">
+    <div class="container mx-auto px-4">
+      <h2 class="mb-4 text-3xl font-bold">{{ "HOME.QUICK_CONTACT" | translate }}</h2>
+      <p class="mb-6">{{ "HOME.QUICK_CONTACT_DESC" | translate }}</p>
+      <button routerLink="/contact" class="rounded bg-white px-6 py-3 font-semibold text-blue-600 hover:bg-gray-100">{{ "HOME.CONTACT_US" | translate }}</button>
+    </div>
+  </section>
+</main>

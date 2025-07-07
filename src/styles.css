@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Transiciones globales */
+html {
+  transition:
+    background-color 0.5s,
+    color 0.5s;
+}
+
+/* Fondo y texto principal de secciones */
+.theme-surface {
+  @apply bg-white text-gray-800 transition-colors duration-300 dark:bg-gray-900 dark:text-gray-200;
+}
+
+/* Botón primario */
+.theme-primary-button {
+  @apply rounded bg-blue-600 px-4 py-2 font-semibold text-white shadow transition hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600;
+}
+
+/* Botón secundario o logout, por ejemplo */
+.theme-danger-button {
+  @apply rounded bg-red-600 px-4 py-2 font-semibold text-white shadow transition hover:bg-red-700 dark:bg-red-500 dark:hover:bg-red-600;
+}
