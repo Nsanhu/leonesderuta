@@ -3,18 +3,46 @@
     "HOME": "Inicio",
     "CONTACT": "Contacto",
     "ABOUT": "Nosotros",
-    "TOURS": "Excursiones",
+    "TOURS": {
+      "TITLE": "Nuestros Tours",
+      "TOUR1": "Invierno - Nieve",
+      "TOUR2": "Findes Tour",
+      "TOUR3": "Privados",
+      "TOUR4": "Púcon"
+    },
     "LANGUAGE": "Idioma"
   },
   "HOME": {
     "SLOGAN": "No seguimos el mapa, creamos nuevas rutas contigo.",
     "CONTACT_US": "Contáctanos",
-    "HIGHLIGHTED_ROUTES": "Rutas Destacadas",
-    "ABOUT_US": "Sobre Nosotros",
-    "ABOUT_US_DESC": "En Leones de Ruta nos dedicamos a ofrecer tours personalizados por todo Chile. Con foco en pequeños grupos, brindamos experiencias auténticas, seguras y llenas de aventura.",
-    "READ_MORE": "Lee más",
-    "QUICK_CONTACT": "¿Tienes dudas?",
-    "QUICK_CONTACT_DESC": "Contáctanos y te responderemos en menos de 24 horas."
+    "ABOUT": {
+      "TITLE": "Sobre Nosotros",
+      "DESC": "Leones de Ruta es una agencia de turismo con sede en Santiago, Chile, especializada en ofrecer experiencias únicas y personalizadas para explorar los destinos más emblemáticos del país. Nos enfocamos en brindar aventuras inolvidables que conectan a nuestros clientes con la riqueza natural y cultural de Chile.Nació con la visión de transformar la manera en que las personas exploran Chile. Fundada con el propósito de destacar la autenticidad y belleza de cada rincón del país, la agencia se ha convertido en un referente para aquellos que buscan algo más que un simple viaje: una experiencia que los conecte con la esencia misma de la naturaleza y la cultura chilena."
+    },
+    "READ_MORE": "Leer más",
+    "CONTACT": {
+      "DESC": "¿Tienes preguntas o necesitas más información? Estamos aquí para ayudarte. Completa el formulario y nos pondremos en contacto contigo lo antes posible."
+    },
+    "SERVICES": {
+      "TITLE": "Nuestros Servicios incluyen",
+      "DESCRIPTION": "Ofrecemos una variedad de tours y experiencias únicas en Chile, adaptadas a tus intereses y necesidades.",
+      "TOURS": {
+        "TITLE": "Tours Personalizados",
+        "DESC": "Desde recorridos privados hasta actividades específicas, creamos itinerarios hechos a tu medida para que vivas una experiencia inolvidable."
+      },
+      "LOCAL": {
+        "TITLE": "Excursiones locales",
+        "DESC": "Descubre los mejores rincones de Chile con nuestras excursiones guiadas, ideales para conectarte con la naturaleza y la cultura local."
+      },
+      "CULTURE": {
+        "TITLE": "Experiencias culturales",
+        "DESC": "Sumérgete en la riqueza cultural de Chile con recorridos que destacan su historia, tradiciones y patrimonio único."
+      }
+    },
+    "GALERY": {
+      "TITLE": "Galería de Imágenes",
+      "DESC": "Explora nuestra galería de imágenes para ver los momentos más destacados de nuestros tours y las maravillas que Chile tiene para ofrecer."
+    }
   },
   "CONTACT": {
     "TITLE": "Contáctanos",
@@ -31,6 +59,7 @@
     "QUICK_LINKS": "Enlaces rápidos",
     "CONTACT": "Contáctanos",
     "FOLLOW_US": "Síguenos",
-    "RIGHTS": "Todos los derechos reservados."
+    "RIGHTS": "Todos los derechos reservados.",
+    "CREATED": "Creado por Nicolás Sanhueza - nsanhuezalara@gmail.com"
   }
 }

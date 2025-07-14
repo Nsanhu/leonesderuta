@@ -1,65 +1,56 @@
 <nav class="fixed left-0 top-0 z-50 w-full bg-black text-white shadow-md">
   <div class="mx-auto max-w-7xl px-4">
-    <div class="flex h-16 items-center justify-between">
-      <!-- Logo + Navegación -->
+    <div class="flex h-20 items-center justify-between text-lg">
+      <!-- Zona izquierda: Logo -->
       <div class="flex items-center space-x-4">
         <a routerLink="/" class="text-2xl font-bold">
-          <img src="assets/img/logo.png" alt="Logo" class="h-10" />
+          <img src="assets/img/logo.png" alt="Logo" class="h-16" />
         </a>
-
-        <!-- Navegación Desktop -->
-        <div class="hidden space-x-6 md:flex">
-          <a routerLink="/home" class="hover:text-blue-400">
-            {{ "NAV.HOME" | translate }}
-          </a>
-
-          <!-- Submenú -->
-          <div class="group relative">
-            <button class="hover:text-blue-400">{{ "NAV.TOURS" | translate }} ▼</button>
-            <div class="absolute left-0 mt-2 w-40 rounded bg-white text-black opacity-0 shadow-lg transition-opacity duration-300 group-hover:opacity-100">
-              <a href="#" class="block px-4 py-2 hover:bg-gray-100">
-                {{ "NAV.TOUR_A" | translate }}
-              </a>
-              <a href="#" class="block px-4 py-2 hover:bg-gray-100">
-                {{ "NAV.TOUR_B" | translate }}
-              </a>
-            </div>
-          </div>
-
-          <a routerLink="/contact" class="hover:text-blue-400">
-            {{ "NAV.CONTACT" | translate }}
-          </a>
-          <a routerLink="/about" class="hover:text-blue-400">
-            {{ "NAV.ABOUT" | translate }}
-          </a>
-        </div>
       </div>
 
-      <!-- Selector de idioma -->
-      <select (change)="changeLang($event)" class="hidden rounded border border-gray-500 bg-black text-white md:block">
-        <option value="es">ES</option>
-        <option value="pt">PT</option>
-        <option value="en">EN</option>
-      </select>
+      <!-- Zona central: Navegación -->
+      <div class="hidden space-x-6 md:flex">
+        <a routerLink="/home" class="hover:text-blue-400">{{ "NAV.HOME" | translate }}</a>
+        <div class="group relative">
+          <button class="hover:text-blue-400">{{ "NAV.TOURS.TITLE" | translate }} ▼</button>
+          <div class="absolute left-0 mt-2 w-40 rounded bg-white text-black opacity-0 shadow-lg transition-opacity duration-300 group-hover:opacity-100">
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">{{ "NAV.TOURS.TOUR1" | translate }}</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">{{ "NAV.TOURS.TOUR2" | translate }}</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">{{ "NAV.TOURS.TOUR3" | translate }}</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">{{ "NAV.TOURS.TOUR4" | translate }}</a>
+          </div>
+        </div>
+        <a routerLink="/contact" class="hover:text-blue-400">{{ "NAV.CONTACT" | translate }}</a>
+        <a routerLink="/about" class="hover:text-blue-400">{{ "NAV.ABOUT" | translate }}</a>
+      </div>
 
-      <!-- Botón móvil -->
-      <div class="md:hidden">
-        <button (click)="toggleMenu()">
-          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
+      <!-- Zona derecha: selector de idioma + botón móvil -->
+      <div class="flex items-center space-x-4">
+        <select (change)="changeLang($event)" class="hidden rounded border border-gray-500 bg-black text-white md:block">
+          <option value="es">ES</option>
+          <option value="pt">PT</option>
+          <option value="en">EN</option>
+        </select>
+        <div class="md:hidden">
+          <button (click)="toggleMenu()">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
 
     <!-- Menú móvil -->
-    <div *ngIf="isMenuOpen" class="mt-4 flex flex-col space-y-2 rounded bg-black p-4 text-sm md:hidden">
+    <div *ngIf="isMenuOpen" class="mt-4 flex flex-col space-y-2 rounded bg-black p-4 text-lg md:hidden">
       <a routerLink="/home" class="hover:text-blue-400">{{ "NAV.HOME" | translate }}</a>
       <div class="relative">
-        <button class="hover:text-blue-400">{{ "NAV.TOURS" | translate }} ▼</button>
+        <button class="hover:text-blue-400">{{ "NAV.TOURS.TITLE" | translate }} ▼</button>
         <div class="mt-2 space-y-1 pl-4">
-          <a href="#" class="block hover:text-blue-300">{{ "NAV.TOUR_A" | translate }}</a>
-          <a href="#" class="block hover:text-blue-300">{{ "NAV.TOUR_B" | translate }}</a>
+          <a href="#" class="block hover:bg-gray-100">{{ "NAV.TOURS.TOUR1" | translate }}</a>
+          <a href="#" class="block hover:bg-gray-100">{{ "NAV.TOURS.TOUR2" | translate }}</a>
+          <a href="#" class="block hover:bg-gray-100">{{ "NAV.TOURS.TOUR3" | translate }}</a>
+          <a href="#" class="block hover:bg-gray-100">{{ "NAV.TOURS.TOUR4" | translate }}</a>
         </div>
       </div>
       <a routerLink="/contact" class="hover:text-blue-400">{{ "NAV.CONTACT" | translate }}</a>

@@ -3,18 +3,46 @@
     "HOME": "Home",
     "CONTACT": "Contact",
     "ABOUT": "About",
-    "TOURS": "Tours",
+    "TOURS": {
+      "TITLE": "Our Tours",
+      "TOUR1": "Winter - Snow",
+      "TOUR2": "Weekend Tour",
+      "TOUR3": "Private Tours",
+      "TOUR4": "Púcon"
+    },
     "LANGUAGE": "Language"
   },
   "HOME": {
     "SLOGAN": "We don't follow the map, we create new routes with you.",
     "CONTACT_US": "Contact Us",
-    "HIGHLIGHTED_ROUTES": "Highlighted Routes",
-    "ABOUT_US": "About Us",
-    "ABOUT_US_DESC": "At Leones de Ruta, we specialize in personalized tours across Chile. With a focus on small groups, we provide authentic, safe, and adventure-filled experiences.",
+    "ABOUT": {
+      "TITLE": "About Us",
+      "DESC": "Leones de Ruta is a tourism agency based in Santiago, Chile, specializing in offering unique and personalized experiences to explore the country's most iconic destinations. We focus on providing unforgettable adventures that connect our clients with the natural and cultural richness of Chile. We were born with the vision of transforming the way people explore Chile. Founded with the purpose of highlighting the authenticity and beauty of every corner of the country, the agency has become a reference for those seeking more than just a simple trip: an experience that connects them with the essence of Chilean nature and culture."
+    },
     "READ_MORE": "Read More",
-    "QUICK_CONTACT": "Have questions?",
-    "QUICK_CONTACT_DESC": "Contact us and we will respond within 24 hours."
+    "CONTACT": {
+      "DESC": "Have questions or need more information? We're here to help. Fill out the form and we'll get back to you as soon as possible."
+    },
+    "SERVICES": {
+      "TITLE": "Our Services Include",
+      "DESCRIPTION": "We offer a variety of unique tours and experiences in Chile, tailored to your interests and needs.",
+      "TOURS": {
+        "TITLE": "Customized Tours",
+        "DESC": "From private tours to specific activities, we create tailor-made itineraries for you to have an unforgettable experience."
+      },
+      "LOCAL": {
+        "TITLE": "Local Excursions",
+        "DESC": "Discover the best corners of Chile with our guided excursions, ideal for connecting with nature and local culture."
+      },
+      "CULTURE": {
+        "TITLE": "Cultural Experiences",
+        "DESC": "Immerse yourself in the cultural richness of Chile with tours that highlight its history, traditions, and unique heritage."
+      }
+    },
+    "GALERY": {
+      "TITLE": "Image Gallery",
+      "DESC": "Explore our image gallery to see the highlights of our tours and the wonders that Chile has to offer."
+    }
   },
   "CONTACT": {
     "TITLE": "Contact Us",
@@ -31,6 +59,7 @@
     "QUICK_LINKS": "Quick Links",
     "CONTACT": "Contact Us",
     "FOLLOW_US": "Follow Us",
-    "RIGHTS": "All rights reserved."
+    "RIGHTS": "All rights reserved.",
+    "CREATED": "Created by Nicolás Sanhueza - nsanhuezalara@gmail.com"
   }
 }

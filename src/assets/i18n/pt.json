@@ -3,18 +3,46 @@
     "HOME": "Início",
     "CONTACT": "Contato",
     "ABOUT": "Sobre nós",
-    "TOURS": "Passeios",
+    "TOURS": {
+      "TITLE": "Nossos Passeios",
+      "TOUR1": "Inverno - Neve",
+      "TOUR2": "Findes Tour",
+      "TOUR3": "Privados",
+      "TOUR4": "Púcon"
+    },
     "LANGUAGE": "Idioma"
   },
   "HOME": {
     "SLOGAN": "Nós não seguimos o mapa, criamos novas rotas com você.",
     "CONTACT_US": "Contate-nos",
-    "HIGHLIGHTED_ROUTES": "Rotas Destacadas",
-    "ABOUT_US": "Sobre Nós",
-    "ABOUT_US_DESC": "Em Leones de Ruta, nos dedicamos a oferecer passeios personalizados por todo o Chile. Com foco em pequenos grupos, proporcionamos experiências autênticas, seguras e cheias de aventura.",
+    "ABOUT": {
+      "TITLE": "Sobre Nós",
+      "DESC": "Leones de Ruta é uma agência de turismo com sede em Santiago, Chile, especializada em oferecer experiências únicas e personalizadas para explorar os destinos mais emblemáticos do país. Nos focamos em proporcionar aventuras inesquecíveis que conectam nossos clientes com a riqueza natural e cultural do Chile. Nascemos com a visão de transformar a maneira como as pessoas exploram o Chile. Fundada com o propósito de destacar a autenticidade e beleza de cada canto do país, a agência se tornou um referencial para aqueles que buscam algo mais do que uma simples viagem: uma experiência que os conecte com a essência da natureza e cultura chilena."
+    },
     "READ_MORE": "Leia mais",
-    "QUICK_CONTACT": "Tem dúvidas?",
-    "QUICK_CONTACT_DESC": "Entre em contato conosco e responderemos em menos de 24 horas."
+    "CONTACT": {
+      "DESC": "Tem perguntas ou precisa de mais informações? Estamos aqui para ajudar. Preencha o formulário e entraremos em contato o mais rápido possível."
+    },
+    "SERVICES": {
+      "TITLE": "Nossos Serviços incluem",
+      "DESCRIPTION": "Oferecemos uma variedade de passeios e experiências únicas no Chile, adaptadas aos seus interesses e necessidades.",
+      "TOURS": {
+        "TITLE": "Passeios Personalizados",
+        "DESC": "Desde passeios privados até atividades específicas, criamos itinerários sob medida para que você viva uma experiência inesquecível."
+      },
+      "LOCAL": {
+        "TITLE": "Excursões locais",
+        "DESC": "Descubra os melhores cantos do Chile com nossas excursões guiadas, ideais para se conectar com a natureza e a cultura local."
+      },
+      "CULTURE": {
+        "TITLE": "Experiências culturais",
+        "DESC": "Mergulhe na riqueza cultural do Chile com passeios que destacam sua história, tradições e patrimônio único."
+      }
+    },
+    "GALERY": {
+      "TITLE": "Galeria de Imagens",
+      "DESC": "Explore nossa galeria de imagens para ver os destaques dos nossos passeios e as maravilhas que o Chile tem a oferecer."
+    }
   },
   "CONTACT": {
     "TITLE": "Contate-nos",
@@ -31,6 +59,7 @@
     "QUICK_LINKS": "Links rápidos",
     "CONTACT": "Contate-nos",
     "FOLLOW_US": "Siga-nos",
-    "RIGHTS": "Todos os direitos reservados."
+    "RIGHTS": "Todos os direitos reservados.",
+    "CREATED": "Criado por Nicolás Sanhueza - nsanhuezalara@gmail.com"
   }
 }

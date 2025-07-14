@@ -1,51 +1,153 @@
-<main>
-  <!-- Hero -->
-  <section class="relative flex h-screen items-center justify-center bg-cover bg-center" style="background-image: url(&quot;/assets/img/bg_home.jpeg&quot;)">
-    <div class="rounded bg-black bg-opacity-50 p-32 text-center">
-      <h1 class="text-4xl font-bold text-white md:text-6xl">Leones de Ruta</h1>
-      <p class="mt-4 text-lg text-white md:text-2xl">
-        {{ "HOME.SLOGAN" | translate }}
-      </p>
-      <button routerLink="/contact" class="mt-6 rounded bg-blue-500 px-6 py-3 font-semibold text-white hover:bg-blue-600">{{ "HOME.CONTACT_US" | translate }}</button>
-    </div>
-  </section>
+<section class="relative flex h-screen items-center justify-center overflow-hidden">
+  <!-- Imagen de fondo -->
+  <div class="absolute inset-0 bg-cover" style="background-image: url(&quot;./assets/img/bg_home.jpeg&quot;); background-position: center 64%"></div>
+  <div class="absolute inset-0 bg-black/40"></div>
 
-  <!-- Rutas destacadas -->
-  <section class="bg-gray-100 py-12">
-    <div class="container mx-auto px-4">
-      <h2 class="mb-8 text-center text-3xl font-bold">{{ "HOME.HIGHLIGHTED_ROUTES" | translate }}</h2>
-      <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        <div *ngFor="let tour of tours" class="overflow-hidden rounded bg-white shadow transition hover:shadow-lg">
-          <img [src]="tour.img" alt="{{ tour.title }}" class="h-48 w-full object-cover" />
-          <div class="p-4">
-            <h3 class="text-xl font-semibold">{{ tour.title }}</h3>
-            <p class="mt-2 text-gray-600">{{ tour.desc }}</p>
+  <!-- Contenido -->
+  <div class="relative z-10 px-4 text-center text-white">
+    <h1 class="md:text-6 xl text-4xl font-bold">{{ "HOME.SLOGAN" | translate }}</h1>
+    <div class="mt-8">
+      <button routerLink="/tours" class="rounded bg-blue-600 px-6 py-3 font-semibold text-white hover:bg-blue-800">{{ "HOME.CONTACT_US" | translate }}</button>
+    </div>
+  </div>
+</section>
+
+<!-- Nuestros servicios incluyen   -->
+<section class="bg-black py-4">
+  <div class="container mx-auto">
+    <h2 class="mb-32 mt-20 text-center text-6xl font-bold text-white">{{ "HOME.SERVICES.TITLE" | translate }}</h2>
+    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- Tarjeta 1 -->
+      <div class="group relative h-80 overflow-hidden rounded shadow">
+        <img src="./assets/img/bg_about.jpeg" alt="Fondo" class="absolute inset-0 h-full w-full transform object-cover transition duration-500 group-hover:scale-105" />
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="relative z-10 flex h-full flex-col justify-center p-6 text-white">
+          <h3 class="text-xl font-semibold">{{ "HOME.SERVICES.TOURS.TITLE" | translate }}</h3>
+          <p class="mt-2">{{ "HOME.SERVICES.TOURS.DESC" | translate }}</p>
+        </div>
+      </div>
+
+      <!-- Tarjeta 2 -->
+      <div class="group relative h-80 overflow-hidden rounded shadow">
+        <img src="./assets/img/bg_contact.jpeg" alt="Fondo" class="absolute inset-0 h-full w-full transform object-cover transition duration-500 group-hover:scale-105" />
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="relative z-10 flex h-full flex-col justify-center p-6 text-white">
+          <h3 class="text-xl font-semibold">{{ "HOME.SERVICES.LOCAL.TITLE" | translate }}</h3>
+          <p class="mt-2">{{ "HOME.SERVICES.LOCAL.DESC" | translate }}</p>
+        </div>
+      </div>
+
+      <!-- Tarjeta 3 -->
+      <div class="group relative h-80 overflow-hidden rounded shadow">
+        <img src="./assets/img/bg_home.jpeg" alt="Fondo" class="absolute inset-0 h-full w-full transform object-cover transition duration-500 group-hover:scale-105" />
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="relative z-10 flex h-full flex-col justify-center p-6 text-white">
+          <h3 class="text-xl font-semibold">{{ "HOME.SERVICES.CULTURE.TITLE" | translate }}</h3>
+          <p class="mt-2">{{ "HOME.SERVICES.CULTURE.DESC" | translate }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sobre Nosotros -->
+<section class="bg-black py-2 text-white">
+  <h2 class="mb-16 mt-10 text-center text-4xl font-bold md:text-6xl">{{ "HOME.ABOUT.TITLE" | translate }}</h2>
+  <div class="container mx-auto px-4 lg:flex lg:items-center lg:gap-12">
+    <!-- Imagen -->
+    <div class="lg:w-1/3">
+      <img src="assets/img/about.jpeg" alt="Nuestro Equipo" class="mx-auto w-2/3 rounded shadow-md" />
+    </div>
+
+    <!-- Texto -->
+    <div class="mt-8 lg:mt-0 lg:w-1/2">
+      <p class="mb-4 text-justify text-2xl text-white">{{ "HOME.ABOUT.DESC" | translate }}</p>
+      <button routerLink="/about" class="rounded bg-blue-500 px-5 py-3 font-semibold text-white hover:bg-blue-600">
+        {{ "HOME.READ_MORE" | translate }}
+      </button>
+    </div>
+  </div>
+</section>
+<!-- TESTIMONIALS -->
+<section class="bg-black py-16">
+  <div class="mx-auto max-w-6xl px-4">
+    <h2 class="mb-16 text-center text-4xl font-bold text-white md:text-6xl">Lo que dicen nuestros viajeros</h2>
+
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- Testimonio 1 -->
+      <div class="rounded-lg border border-gray-700 bg-gray-900 p-6 shadow-lg">
+        <p class="mb-4 italic text-gray-300">“Una experiencia increíble, los paisajes fueron inolvidables y el equipo súper profesional.”</p>
+        <div class="flex items-center space-x-4">
+          <img src="assets/galery/img_galery_3.jpeg" alt="Camila R." class="h-32 w-32 rounded-full border-2 border-white object-cover" />
+          <div>
+            <h4 class="font-semibold text-white">Camila R.</h4>
+            <div class="text-yellow-400">★★★★★</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonio 2 -->
+      <div class="rounded-lg border border-gray-700 bg-gray-900 p-6 shadow-lg">
+        <p class="mb-4 italic text-gray-300">“Recomendado al 100%. Cumplieron con todo lo prometido. ¡Felicitaciones!”</p>
+        <div class="flex items-center space-x-4">
+          <img src="assets/galery/img_galery_5.jpeg" alt="Matías L." class="h-32 w-32 rounded-full border-2 border-white object-cover" />
+          <div>
+            <h4 class="font-semibold text-white">Matías L.</h4>
+            <div class="text-yellow-400">★★★★★</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonio 3 -->
+      <div class="rounded-lg border border-gray-700 bg-gray-900 p-6 shadow-lg">
+        <p class="mb-4 italic text-gray-300">“Muy buena atención, amables, puntuales y con conocimiento de los lugares.”</p>
+        <div class="flex items-center space-x-4">
+          <img src="assets/galery/img_galery_11.jpeg" alt="Nicole S." class="h-32 w-32 rounded-full border-2 border-white object-cover" />
+          <div>
+            <h4 class="font-semibold text-white">Nicole S.</h4>
+            <div class="text-yellow-400">★★★★☆</div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Sobre Nosotros -->
-  <section class="py-12">
-    <div class="container mx-auto px-4 lg:flex lg:items-center lg:gap-12">
-      <div class="lg:w-1/2">
-        <img src="assets/team-photo.jpg" alt="Nuestro Equipo" class="rounded shadow-md" />
-      </div>
-      <div class="mt-8 lg:mt-0 lg:w-1/2">
-        <h2 class="mb-4 text-3xl font-bold">{{ "HOME.ABOUT_US" | translate }}</h2>
-        <p class="mb-4 text-gray-700">{{ "HOME.ABOUT_US_DESC" | translate }}</p>
-        <button routerLink="/about" class="rounded bg-blue-500 px-5 py-3 font-semibold text-white hover:bg-blue-600">{{ "HOME.READ_MORE" | translate }}</button>
+<!-- GALERY -->
+<section class="bg-black py-10">
+  <h2 class="mb-16 text-center text-4xl font-bold text-white md:text-6xl">
+    {{ "HOME.GALERY.TITLE" | translate }}
+  </h2>
+  <div class="px-2 sm:px-4">
+    <div class="grid grid-cols-4 gap-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-6">
+      <div *ngFor="let image of galleryImages; let i = index" class="overflow-hidden rounded-lg shadow transition-shadow duration-300 hover:shadow-lg">
+        <img [src]="image" (click)="openLightbox(i)" alt="Foto {{ i + 1 }}" class="h-32 w-full cursor-pointer object-cover sm:h-40 md:h-48" />
       </div>
     </div>
-  </section>
-
-  <!-- Contacto rápido -->
-  <section class="bg-blue-600 py-12 text-center text-white">
-    <div class="container mx-auto px-4">
-      <h2 class="mb-4 text-3xl font-bold">{{ "HOME.QUICK_CONTACT" | translate }}</h2>
-      <p class="mb-6">{{ "HOME.QUICK_CONTACT_DESC" | translate }}</p>
-      <button routerLink="/contact" class="rounded bg-white px-6 py-3 font-semibold text-blue-600 hover:bg-gray-100">{{ "HOME.CONTACT_US" | translate }}</button>
+  </div>
+</section>
+<!-- Lightbox  -->
+<div *ngIf="selectedImageIndex !== null" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90">
+  <div class="relative w-full max-w-4xl px-4">
+    <button class="absolute right-4 top-4 text-3xl text-white" (click)="closeLightbox()">×</button>
+    <img [src]="galleryImages[selectedImageIndex]" alt="Imagen seleccionada" class="mx-auto max-h-[80vh] w-auto rounded" />
+    <div class="mt-4 flex justify-between text-2xl text-white">
+      <button (click)="showPrev()">← Anterior</button>
+      <button (click)="showNext()">Siguiente →</button>
     </div>
-  </section>
-</main>
+  </div>
+</div>
+
+<!-- Contacto rápido con imagen y parallax -->
+<section class="relative flex h-[24rem] items-center justify-center overflow-hidden text-center text-white md:h-[32rem]">
+  <!-- Imagen de fondo con parallax solo en pantallas grandes -->
+  <div class="absolute inset-0 bg-cover bg-scroll bg-center md:bg-fixed" style="background-image: url(&quot;./assets/img/bg_home.jpeg&quot;); filter: brightness(0.4)"></div>
+
+  <!-- Contenido -->
+  <div class="relative z-10 px-4">
+    <p class="mb-6 text-2xl">{{ "HOME.CONTACT.DESC" | translate }}</p>
+    <button routerLink="/contact" class="rounded bg-white px-6 py-3 font-semibold text-blue-600 hover:bg-gray-100">
+      {{ "HOME.CONTACT_US" | translate }}
+    </button>
+  </div>
+</section>
