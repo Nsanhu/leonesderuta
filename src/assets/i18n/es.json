@@ -54,6 +54,22 @@
     },
     "SUCCESS_MESSAGE": "¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto."
   },
+  "SUB-PAGE-1": {
+    "TITLE": "Invierno - Nieve",
+    "SUBTITLE": "Experiencias inolvidables en la nieve chilena",
+    "DESC": "Disfruta de la magia del invierno en Chile con nuestros tours especializados en nieve. Desde esquí y snowboard hasta excursiones por paisajes nevados, ofrecemos experiencias inolvidables para todos los amantes de la nieve. Nuestros guías expertos te llevarán a los mejores destinos invernales, asegurando que vivas momentos llenos de aventura y diversión en un entorno seguro y acogedor.",
+    "PARAGRAPH1" : "Explora las majestuosas montañas cubiertas de nieve, disfruta de actividades emocionantes y relájate en acogedores refugios después de un día lleno de aventuras. Ya sea que busques adrenalina en las pistas de esquí o tranquilidad en un paisaje invernal, nuestros tours de invierno en Chile tienen algo para todos.",
+    "PARAGRAPH2" : "Únete a nosotros para una experiencia invernal única en Chile, donde la belleza natural y la emoción se combinan para crear recuerdos que durarán toda la vida. ¡Prepárate para descubrir la magia del invierno con Leones de Ruta!",
+    "FEATURES": {
+      "TITLE": "Características del Tour de Invierno - Nieve",
+      "ITEM1": "Guías expertos en actividades de nieve",
+      "ITEM1DESC": "Nuestros guías están altamente capacitados y tienen amplia experiencia en actividades de nieve, asegurando tu seguridad y diversión durante todo el tour.",
+      "ITEM2": "Equipamiento de alta calidad incluido",
+      "ITEM2DESC": "Proveemos todo el equipamiento necesario para las actividades de nieve, desde esquís y tablas de snowboard hasta ropa adecuada para el clima frío.",
+      "ITEM3": "Itinerarios personalizados según tus intereses",
+      "ITEM3DESC": "Adaptamos cada tour a tus preferencias, ya sea que busques aventura extrema o una experiencia más relajada en la nieve." 
+    }
+  },
   "FOOTER": {
     "DESCRIPTION": "Experiencias únicas por todo Chile. Explora, relájate y descubre nuevas rutas con nosotros.",
     "QUICK_LINKS": "Enlaces rápidos",

@@ -1,17 +1,16 @@
 import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { ThemeToggleComponent } from '../../shared/theme-toggle/theme-toggle.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-home',
+  selector: 'sub-page-1',
   standalone: true,
-  imports: [CommonModule, RouterModule, TranslateModule, ThemeToggleComponent],
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
+  imports: [CommonModule, RouterModule, TranslateModule],
+  templateUrl: './sub-page-1.component.html',
+  styleUrls: ['./sub-page-1.component.css'],
 })
-export class HomeComponent {
+export class SubPage1Component {
   parallaxOffset = 0;
 
   @HostListener('window:scroll', [])
