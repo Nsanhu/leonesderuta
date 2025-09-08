@@ -1,3 +1,6 @@
 main {
   margin-top: 4rem;
 }
+.section-spacing {
+  @apply pb-24;
+}

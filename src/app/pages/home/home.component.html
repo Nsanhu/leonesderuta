@@ -1,3 +1,4 @@
+<!-- TITLE -->
 <section class="relative flex h-screen items-center justify-center overflow-hidden">
   <!-- Imagen de fondo -->
   <div class="absolute inset-0 bg-cover" style="background-image: url(&quot;./assets/img/bg_home.jpeg&quot;); background-position: center 64%"></div>
@@ -15,9 +16,9 @@
 <!-- SERVICES   -->
 <section class="dark:bg-black">
   <div class="container mx-auto p-2">
-    <div class="h-24"></div>
+    <div class="h-16"></div>
     <h2 class="text-center text-6xl font-bold dark:text-white">{{ "HOME.SERVICES.TITLE" | translate }}</h2>
-    <div class="h-24"></div>
+    <div class="h-16"></div>
     <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
       <!-- Tarjeta 1 -->
       <div class="group relative h-80 overflow-hidden rounded shadow">
@@ -52,43 +53,67 @@
   </div>
 </section>
 
-<!-- <div class="my-24 w-full border-t-2 border-gray-300 dark:border-gray-600"></div> -->
-
 <!-- ABOUT US -->
+<div class="h-16"></div>
 <section class="dark:bg-black">
-  <div class="h-24"></div>
-  <h2 class="text-center text-4xl font-bold dark:text-white md:text-6xl">{{ "HOME.ABOUT.TITLE" | translate }}</h2>
-  <div class="h-24"></div>
-  <div class="container mx-auto px-4 lg:flex lg:items-center lg:gap-12">
-    <!-- Imagen -->
-    <div class="lg:w-1/3">
-      <img src="assets/img/about.jpeg" alt="Nuestro Equipo" class="mx-auto w-2/3 rounded shadow-md" />
+  <div class="container mx-auto px-4 py-16">
+    <!-- Título -->
+    <div class="mb-12 text-center">
+      <h2 class="text-3xl font-bold text-gray-800 dark:text-white sm:text-4xl md:text-5xl">
+        {{ "HOME.ABOUT.TITLE" | translate }}
+      </h2>
     </div>
 
-    <!-- Texto -->
-    <div class="lg:mt-0 lg:w-1/2">
-      <p class="text-justify text-2xl dark:text-white">{{ "HOME.ABOUT.DESC" | translate }}</p>
-      <button routerLink="/about" class="rounded bg-blue-500 px-5 py-3 font-semibold text-white hover:bg-blue-600">
+    <!-- Contenido principal: Imagen + Texto -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <!-- Imagen (6 columnas en desktop) -->
+      <div class="lg:col-span-6 px-2">
+        <img
+          src="assets/galery/img_galery_17.jpeg"
+          alt="Nuestro Equipo"
+          class="w-full rounded-lg shadow-lg object-cover h-auto max-h-[450px]"
+        />
+      </div>
+
+      <!-- Texto (6 columnas en desktop) -->
+      <div class="lg:col-span-6 px-2">
+        <p class="text-xl md:text-2xl text-justify leading-relaxed text-gray-700 dark:text-white">
+          {{ "HOME.ABOUT.DESC" | translate }}
+        </p>
+      </div>
+    </div>
+
+    <!-- Botón -->
+    <div class="mt-12 flex justify-center">
+      <button
+        routerLink="/about"
+        class="rounded-lg bg-blue-600 px-8 py-4 text-lg font-semibold text-white shadow-md hover:bg-blue-700 transition duration-300"
+      >
         {{ "HOME.READ_MORE" | translate }}
       </button>
     </div>
   </div>
 </section>
 
-<!-- <div class="my-24 w-full border-t-2 border-gray-300 dark:border-gray-600"></div> -->
-
 <!-- TESTIMONIALS -->
 <section class="dark:bg-black">
-  <div class="mx-auto max-w-6xl px-4">
-    <div class="h-24"></div>
-    <h2 class="text-center text-4xl font-bold dark:text-white md:text-6xl">Lo que dicen nuestros viajeros</h2>
-    <div class="h-24"></div>
+  <div class="container mx-auto px-4 py-16">
+    <!-- Título -->
+    <div class="mb-12 text-center">
+      <h2 class="text-4xl font-bold dark:text-white md:text-6xl">
+        Lo que dicen nuestros viajeros
+      </h2>
+    </div>
+
+    <!-- Testimonios -->
     <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
       <!-- Testimonio 1 -->
       <div class="rounded-lg border border-gray-700 bg-gray-900 p-6 shadow-lg">
-        <p class="mb-4 italic text-gray-300">“Una experiencia increíble, los paisajes fueron inolvidables y el equipo súper profesional.”</p>
+        <p class="mb-4 italic text-gray-300">
+          “Una experiencia increíble, los paisajes fueron inolvidables y el equipo súper profesional.”
+        </p>
         <div class="flex items-center space-x-4">
-          <img src="assets/galery/img_galery_3.jpeg" alt="Camila R." class="h-32 w-32 rounded-full border-2 border-white object-cover" />
+          <img src="assets/galery/img_galery_3.jpeg" alt="Camila R." class="h-24 w-24 rounded-full border-2 border-white object-cover" />
           <div>
             <h4 class="font-semibold text-white">Camila R.</h4>
             <div class="text-yellow-400">★★★★★</div>
@@ -98,9 +123,11 @@
 
       <!-- Testimonio 2 -->
       <div class="rounded-lg border border-gray-700 bg-gray-900 p-6 shadow-lg">
-        <p class="mb-4 italic text-gray-300">“Recomendado al 100%. Cumplieron con todo lo prometido. ¡Felicitaciones!”</p>
+        <p class="mb-4 italic text-gray-300">
+          “Recomendado al 100%. Cumplieron con todo lo prometido. ¡Felicitaciones!”
+        </p>
         <div class="flex items-center space-x-4">
-          <img src="assets/galery/img_galery_5.jpeg" alt="Matías L." class="h-32 w-32 rounded-full border-2 border-white object-cover" />
+          <img src="assets/galery/img_galery_5.jpeg" alt="Matías L." class="h-24 w-24 rounded-full border-2 border-white object-cover" />
           <div>
             <h4 class="font-semibold text-white">Matías L.</h4>
             <div class="text-yellow-400">★★★★★</div>
@@ -110,9 +137,11 @@
 
       <!-- Testimonio 3 -->
       <div class="rounded-lg border border-gray-700 bg-gray-900 p-6 shadow-lg">
-        <p class="mb-4 italic text-gray-300">“Muy buena atención, amables, puntuales y con conocimiento de los lugares.”</p>
+        <p class="mb-4 italic text-gray-300">
+          “Muy buena atención, amables, puntuales y con conocimiento de los lugares.”
+        </p>
         <div class="flex items-center space-x-4">
-          <img src="assets/galery/img_galery_11.jpeg" alt="Nicole S." class="h-32 w-32 rounded-full border-2 border-white object-cover" />
+          <img src="assets/galery/img_galery_11.jpeg" alt="Nicole S." class="h-24 w-24 rounded-full border-2 border-white object-cover" />
           <div>
             <h4 class="font-semibold text-white">Nicole S.</h4>
             <div class="text-yellow-400">★★★★☆</div>
@@ -122,22 +151,41 @@
     </div>
   </div>
 </section>
+<!-- GALERÍA -->
+<section class="dark:bg-black">
+  <div class="container mx-auto px-2 py-16">
+    <!-- Título -->
+    <div class="mb-12 text-center">
+      <h2 class="text-4xl font-bold dark:text-white md:text-6xl">
+        {{ "HOME.GALERY.TITLE" | translate }}
+      </h2>
+    </div>
 
-<!-- <div class="my-24 w-full border-t-2 border-gray-300 dark:border-gray-600"></div> -->
+    <!-- Galería de Imágenes -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+      <div
+        *ngFor="let image of galleryImages | slice:0:getGalleryLimit(); let i = index"
+        class="overflow-hidden rounded-lg shadow transition-shadow duration-300 hover:shadow-lg"
+      >
+        <img
+          [src]="image"
+          (click)="openLightbox(i)"
+          alt="Foto {{ i + 1 }}"
+          class="h-32 w-full cursor-pointer object-cover sm:h-40 md:h-48"
+        />
+      </div>
+    </div>
 
-<!-- GALERY -->
-<section class="p-2 dark:bg-black">
-  <div class="h-24"></div>
-  <h2 class="text-center text-4xl font-bold dark:text-white md:text-6xl">
-    {{ "HOME.GALERY.TITLE" | translate }}
-  </h2>
-  <div class="h-24"></div>
-  <div class="grid grid-cols-4 gap-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-6">
-    <div *ngFor="let image of galleryImages; let i = index" class="overflow-hidden rounded-lg shadow transition-shadow duration-300 hover:shadow-lg">
-      <img [src]="image" (click)="openLightbox(i)" alt="Foto {{ i + 1 }}" class="h-32 w-full cursor-pointer object-cover sm:h-40 md:h-48" />
+    <!-- Botón Ver Más -->
+    <div class="mt-12 flex justify-center">
+      <button
+        routerLink="/about"
+        class="rounded-lg bg-blue-600 px-8 py-4 text-lg font-semibold text-white shadow-md hover:bg-blue-700 transition duration-300"
+      >
+        {{ "HOME.VIEW_MORE" | translate }}
+      </button>
     </div>
   </div>
-  <div class="h-24"></div>
 </section>
 
 <!-- Lightbox  -->
