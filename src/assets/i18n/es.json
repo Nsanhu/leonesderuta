@@ -3,6 +3,7 @@
     "HOME": "Inicio",
     "CONTACT": "Contacto",
     "ABOUT": "Nosotros",
+    "GALERY": "Galería",
     "TOURS": {
       "TITLE": "Nuestros Tours",
       "TOUR1": "Invierno - Nieve",
@@ -20,6 +21,7 @@
       "DESC": "Leones de Ruta es una agencia de turismo con sede en Santiago, Chile, especializada en ofrecer experiencias únicas y personalizadas para explorar los destinos más emblemáticos del país. Nos enfocamos en brindar aventuras inolvidables que conectan a nuestros clientes con la riqueza natural y cultural de Chile.Nació con la visión de transformar la manera en que las personas exploran Chile. Fundada con el propósito de destacar la autenticidad y belleza de cada rincón del país, la agencia se ha convertido en un referente para aquellos que buscan algo más que un simple viaje: una experiencia que los conecte con la esencia misma de la naturaleza y la cultura chilena."
     },
     "READ_MORE": "Leer más",
+    "VIEW_MORE": "Ver más",
     "CONTACT": {
       "DESC": "¿Tienes preguntas o necesitas más información? Estamos aquí para ayudarte. Completa el formulario y nos pondremos en contacto contigo lo antes posible."
     },
@@ -69,6 +71,13 @@
       "ITEM3": "Itinerarios personalizados según tus intereses",
       "ITEM3DESC": "Adaptamos cada tour a tus preferencias, ya sea que busques aventura extrema o una experiencia más relajada en la nieve." 
     }
+  },
+  "GALLERY": {
+    "TITLE": "Galería de Aventuras",
+    "SUBTITLE": "Momentos inolvidables con Leones de Ruta",
+    "SEE_COLLECTION": "Descubre nuestros viajes",
+    "DESCRIPTION": "Una selección de imágenes de nuestros tours y aventuras por Chile. Cada fotografía cuenta una historia única.",
+    "CONTACT_US": "Contáctanos"
   },
   "FOOTER": {
     "DESCRIPTION": "Experiencias únicas por todo Chile. Explora, relájate y descubre nuevas rutas con nosotros.",

@@ -3,6 +3,7 @@
     "HOME": "Home",
     "CONTACT": "Contact",
     "ABOUT": "About",
+    "GALERY": "Galery",
     "TOURS": {
       "TITLE": "Our Tours",
       "TOUR1": "Winter - Snow",
@@ -20,6 +21,7 @@
       "DESC": "Leones de Ruta is a tourism agency based in Santiago, Chile, specializing in offering unique and personalized experiences to explore the country's most iconic destinations. We focus on providing unforgettable adventures that connect our clients with the natural and cultural richness of Chile. We were born with the vision of transforming the way people explore Chile. Founded with the purpose of highlighting the authenticity and beauty of every corner of the country, the agency has become a reference for those seeking more than just a simple trip: an experience that connects them with the essence of Chilean nature and culture."
     },
     "READ_MORE": "Read More",
+    "VIEW_MORE": "View More",
     "CONTACT": {
       "DESC": "Have questions or need more information? We're here to help. Fill out the form and we'll get back to you as soon as possible."
     },

@@ -16,12 +16,13 @@
           <div class="absolute left-0 mt-2 w-40 rounded bg-white text-black opacity-0 shadow-lg transition-opacity duration-300 group-hover:opacity-100">
             <a href="/sub-page-1" class="block px-4 py-2 hover:bg-gray-100">{{ "NAV.TOURS.TOUR1" | translate }}</a>
             <a href="/sub-page-2" class="block px-4 py-2 hover:bg-gray-100">{{ "NAV.TOURS.TOUR2" | translate }}</a>
-            <a href="#" class="block px-4 py-2 hover:bg-gray-100">{{ "NAV.TOURS.TOUR3" | translate }}</a>
-            <a href="#" class="block px-4 py-2 hover:bg-gray-100">{{ "NAV.TOURS.TOUR4" | translate }}</a>
+            <a href="/sub-page-3" class="block px-4 py-2 hover:bg-gray-100">{{ "NAV.TOURS.TOUR3" | translate }}</a>
+            <a href="/sub-page-4" class="block px-4 py-2 hover:bg-gray-100">{{ "NAV.TOURS.TOUR4" | translate }}</a>
           </div>
         </div>
         <a routerLink="/contact" class="hover:text-blue-400">{{ "NAV.CONTACT" | translate }}</a>
         <a routerLink="/about" class="hover:text-blue-400">{{ "NAV.ABOUT" | translate }}</a>
+        <a routerLink="/galery" class="hover:text-blue-400">{{ "NAV.GALERY" | translate }}</a>
       </div>
 
       <!-- Zona derecha: selector de idioma + botón móvil -->
@@ -43,18 +44,19 @@
 
     <!-- Menú móvil -->
     <div *ngIf="isMenuOpen" class="mt-4 flex flex-col space-y-2 rounded bg-black p-4 text-lg md:hidden">
-      <a routerLink="/home" class="hover:text-blue-400">{{ "NAV.HOME" | translate }}</a>
+      <a routerLink="/home" class="hover:text-blue-400"(click)="closeMenu()">{{ "NAV.HOME" | translate }}</a>
       <div class="relative">
         <button class="hover:text-blue-400">{{ "NAV.TOURS.TITLE" | translate }} ▼</button>
         <div class="mt-2 space-y-1 pl-4">
-          <a href="#" class="block hover:bg-gray-100">{{ "NAV.TOURS.TOUR1" | translate }}</a>
-          <a href="#" class="block hover:bg-gray-100">{{ "NAV.TOURS.TOUR2" | translate }}</a>
-          <a href="#" class="block hover:bg-gray-100">{{ "NAV.TOURS.TOUR3" | translate }}</a>
-          <a href="#" class="block hover:bg-gray-100">{{ "NAV.TOURS.TOUR4" | translate }}</a>
+          <a href="/sub-page-1" class="block hover:bg-gray-100" (click)="closeMenu()">{{ "NAV.TOURS.TOUR1" | translate }}</a>
+          <a href="/sub-page-2" class="block hover:bg-gray-100" (click)="closeMenu()">{{ "NAV.TOURS.TOUR2" | translate }}</a>
+          <a href="/sub-page-3" class="block hover:bg-gray-100" (click)="closeMenu()">{{ "NAV.TOURS.TOUR3" | translate }}</a>
+          <a href="/sub-page-4" class="block hover:bg-gray-100" (click)="closeMenu()">{{ "NAV.TOURS.TOUR4" | translate }}</a>
         </div>
       </div>
-      <a routerLink="/contact" class="hover:text-blue-400">{{ "NAV.CONTACT" | translate }}</a>
-      <a routerLink="/about" class="hover:text-blue-400">{{ "NAV.ABOUT" | translate }}</a>
+      <a routerLink="/contact" class="hover:text-blue-400"(click)="closeMenu()">{{ "NAV.CONTACT" | translate }}</a>
+      <a routerLink="/about" class="hover:text-blue-400"(click)="closeMenu()">{{ "NAV.ABOUT" | translate }}</a>
+      <a routerLink="/galery" class="hover:text-blue-400"(click)="closeMenu()">{{ "NAV.GALERY" | translate }}</a>
 
       <!-- Selector idioma móvil -->
       <select (change)="changeLang($event)" class="mt-2 w-24 rounded border border-gray-500 bg-black text-white">

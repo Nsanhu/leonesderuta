@@ -50,6 +50,17 @@ export class HomeComponent {
     'assets/galery/img_galery_5.jpeg',
     'assets/galery/img_galery_6.jpeg',
   ];
+  
+  getGalleryLimit(): number {
+  const width = window.innerWidth;
+  if (width < 640) {
+    // Móvil: 4x4
+    return 16;
+  } else {
+    // Escritorio y tablet: 6x5
+    return 24;
+  }
+}
 
   selectedImageIndex: number | null = null;
 
