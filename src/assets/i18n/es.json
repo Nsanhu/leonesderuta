@@ -72,6 +72,54 @@
       "ITEM3DESC": "Adaptamos cada tour a tus preferencias, ya sea que busques aventura extrema o una experiencia más relajada en la nieve." 
     }
   },
+  "SUB-PAGE-2": {
+    "TITLE": "Findes Tour",
+    "SUBTITLE": "Escapadas de fin de semana inolvidables en Chile",
+    "DESC": "Descubre la belleza de Chile en nuestras escapadas de fin de semana diseñadas para ofrecerte experiencias únicas y memorables. Ya sea que busques aventura, relajación o una combinación de ambas, nuestros Findes Tours están pensados para maximizar tu tiempo y disfrutar al máximo de los destinos más emblemáticos del país.",
+    "PARAGRAPH1" : "Desde excursiones a parques nacionales hasta visitas culturales y gastronómicas, cada tour está cuidadosamente planificado para brindarte una experiencia enriquecedora en solo unos días. Nuestros guías expertos te acompañarán en cada paso del camino, asegurando que aproveches al máximo tu escapada.",
+    "PARAGRAPH2" : "Únete a nosotros en un Findes Tour y vive la magia de Chile en un formato compacto pero lleno de aventuras. ¡Prepárate para crear recuerdos inolvidables en solo un fin de semana con Leones de Ruta!",
+    "FEATURES": {
+      "TITLE": "Características del Findes Tour",
+      "ITEM1": "Itinerarios optimizados para fines de semana",
+      "ITEM1DESC": "Nuestros tours están diseñados para aprovechar al máximo tu tiempo, permitiéndote explorar y disfrutar sin sentirte apresurado.",
+      "ITEM2": "Variedad de destinos y actividades",
+      "ITEM2DESC": "Ofrecemos una amplia gama de opciones, desde aventuras al aire libre hasta experiencias culturales y gastronómicas.",
+      "ITEM3": "Alojamiento cómodo y transporte incluido",
+      "ITEM3DESC": "Nos encargamos de todos los detalles logísticos, incluyendo alojamiento y transporte, para que puedas relajarte y disfrutar del viaje." 
+    }
+  },
+  "SUB-PAGE-3": {
+    "TITLE": "Tours Privados",
+    "SUBTITLE": "Experiencias exclusivas y personalizadas en Chile",
+    "DESC": "Vive Chile a tu manera con nuestros tours privados, diseñados para ofrecerte una experiencia exclusiva y personalizada. Ya sea que viajes solo, en pareja o con un grupo pequeño, nuestros tours privados te permiten explorar los destinos más emblemáticos del país con total comodidad y flexibilidad.",
+    "PARAGRAPH1" : "Nuestros guías expertos trabajarán contigo para crear un itinerario que se adapte a tus intereses y necesidades, asegurando que cada momento de tu viaje sea memorable. Desde aventuras al aire libre hasta experiencias culturales y gastronómicas, nuestros tours privados están diseñados para ofrecerte lo mejor de Chile en un formato íntimo y exclusivo.",
+    "PARAGRAPH2" : "Únete a nosotros para una experiencia de viaje única y personalizada en Chile. ¡Descubre el país a tu ritmo con Leones de Ruta!",
+    "FEATURES": {
+      "TITLE": "Características de los Tours Privados",
+      "ITEM1": "Itinerarios personalizados según tus intereses",
+      "ITEM1DESC": "Trabajamos contigo para diseñar un itinerario que refleje tus preferencias y deseos, asegurando una experiencia única.",
+      "ITEM2": "Guías expertos y atención personalizada",
+      "ITEM2DESC": "Nuestros guías dedicados te brindarán atención personalizada y compartirán su conocimiento para enriquecer tu experiencia.",
+      "ITEM3": "Flexibilidad en horarios y actividades",
+      "ITEM3DESC": "Disfruta de la libertad de ajustar horarios y actividades según tus necesidades y deseos." 
+    }
+  },
+  "SUB-PAGE-4": {
+    "TITLE": "Tour a Púcon",
+    "SUBTITLE": "Aventura y naturaleza en el corazón de Chile",
+    "DESC": "Descubre la magia de Púcon, uno de los destinos más emblemáticos de Chile, con nuestro tour especializado. Rodeado de lagos cristalinos, volcanes imponentes y una exuberante naturaleza, Púcon ofrece una combinación perfecta de aventura y relajación para todos los tipos de viajeros.",
+    "PARAGRAPH1" : "Nuestro tour a Púcon te llevará a explorar sus principales atractivos, desde emocionantes actividades al aire libre como senderismo, rafting y termas, hasta la oportunidad de sumergirte en la cultura local y disfrutar de su deliciosa gastronomía. Con la guía de expertos locales, vivirás una experiencia auténtica y enriquecedora en este paraíso natural.",
+    "PARAGRAPH2" : "Únete a nosotros para una aventura inolvidable en Púcon. ¡Prepárate para descubrir la belleza y emoción que este destino tiene para ofrecer con Leones de Ruta!",
+    "FEATURES": {
+      "TITLE": "Características del Tour a Púcon",
+      "ITEM1": "Actividades al aire libre para todos los niveles",
+      "ITEM1DESC": "Ofrecemos una variedad de actividades, desde emocionantes aventuras hasta opciones más relajadas, para que todos puedan disfrutar.",
+      "ITEM2": "Guías locales con conocimiento profundo",
+      "ITEM2DESC": "Nuestros guías son expertos en la región y compartirán su conocimiento para enriquecer tu experiencia.",
+      "ITEM3": "Alojamiento cómodo y transporte incluido",
+      "ITEM3DESC": "Nos encargamos de todos los detalles logísticos, incluyendo alojamiento y transporte, para que puedas relajarte y disfrutar del viaje." 
+    }
+  },
   "GALLERY": {
     "TITLE": "Galería de Aventuras",
     "SUBTITLE": "Momentos inolvidables con Leones de Ruta",
