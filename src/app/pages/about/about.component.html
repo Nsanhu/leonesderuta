@@ -1,21 +1,57 @@
-<!-- Hero -->
-<section class="relative flex items-center justify-center bg-cover bg-center" style="background-image: url(&quot;./assets/img/bg_contact.jpeg&quot;)">
-  <div class="w-full rounded bg-black bg-opacity-50 p-52 text-center">
-    <h1 class="text-4xl font-bold text-white md:text-6xl">{{ "CONTACT.TITLE" | translate }}</h1>
+<section class="pt-20 relative bg-cover bg-center h-[50vh]" style="background-image: url('./assets/img/bg_about.jpeg')">
+  <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+  <div class="relative flex items-center justify-center h-full px-4 text-center">
+    <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold text-white z-10">
+     {{ "ABOUT.TITLE" | translate }}
+    </h1>
   </div>
 </section>
 <!-- contact -->
-<section class="m-10 mx-auto max-w-md rounded bg-white p-16 shadow md:pt-20">
-  <form>
-    <label class="mb-2 block">{{ "CONTACT.FORM.NAME" | translate }}</label>
-    <input type="text" class="mb-4 w-full rounded border px-3 py-2" />
+<section class="max-w-7xl mx-auto px-4 py-20 space-y-28">
+  <!-- Misión -->
+  <div class="text-center">
+    <h2 class="text-4xl font-bold text-blue-900 mb-6">{{ "ABOUT.MISSION.TITLE" | translate }}</h2>
+    <p class="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">{{ "ABOUT.MISSION.DESC" | translate }}</p>
+  </div>
 
-    <label class="mb-2 block">{{ "CONTACT.FORM.EMAIL" | translate }}</label>
-    <input type="email" class="mb-4 w-full rounded border px-3 py-2" />
+  <!-- Visión -->
+  <div class="text-center">
+    <h2 class="text-4xl font-bold text-blue-900 mb-6">{{ "ABOUT.VISION.TITLE" | translate }}</h2>
+    <p class="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">{{ "ABOUT.VISION.DESC" | translate }}</p>
+  </div>
 
-    <label class="mb-2 block">{{ "CONTACT.FORM.MESSAGE" | translate }}</label>
-    <textarea class="mb-4 w-full rounded border px-3 py-2"></textarea>
+  <!-- Valores con íconos -->
+  <div class="text-center">
+    <h2 class="text-4xl font-bold text-blue-900 mb-12">{{ "ABOUT.VALUES.TITLE" | translate }}</h2>
 
-    <button class="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600">{{ "CONTACT.FORM.SUBMIT" | translate }}</button>
-  </form>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <!-- Valor 1 -->
+      <div class="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center text-center hover:scale-105 transition-transform">
+        <img src="assets/icons/adventure.png" alt="Aventura" class="h-16 mb-4" />
+        <h3 class="text-xl font-semibold text-blue-800 mb-2">{{ "ABOUT.VALUES.VALUE1.TITLE" | translate }}</h3>
+        <p class="text-gray-600 text-sm">{{ "ABOUT.VALUES.VALUE1.DESC" | translate }}</p>
+      </div>
+
+      <!-- Valor 2 -->
+      <div class="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center text-center hover:scale-105 transition-transform">
+        <img src="assets/icons/sustainability.png" alt="Sostenibilidad" class="h-16 mb-4" />
+        <h3 class="text-xl font-semibold text-blue-800 mb-2">{{ "ABOUT.VALUES.VALUE2.TITLE" | translate }}</h3>
+        <p class="text-gray-600 text-sm">{{ "ABOUT.VALUES.VALUE2.DESC" | translate }}</p>
+      </div>
+
+      <!-- Valor 3 -->
+      <div class="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center text-center hover:scale-105 transition-transform">
+        <img src="assets/icons/service.png" alt="Servicio" class="h-16 mb-4" />
+        <h3 class="text-xl font-semibold text-blue-800 mb-2">{{ "ABOUT.VALUES.VALUE3.TITLE" | translate }}</h3>
+        <p class="text-gray-600 text-sm">{{ "ABOUT.VALUES.VALUE3.DESC" | translate }}</p>
+      </div>
+
+      <!-- Valor 4 -->
+      <div class="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center text-center hover:scale-105 transition-transform">
+        <img src="assets/icons/culture.png" alt="Cultura" class="h-16 mb-4" />
+        <h3 class="text-xl font-semibold text-blue-800 mb-2">{{ "ABOUT.VALUES.VALUE4.TITLE" | translate }}</h3>
+        <p class="text-gray-600 text-sm">{{ "ABOUT.VALUES.VALUE4.DESC" | translate }}</p>
+      </div>
+    </div>
+  </div>
 </section>

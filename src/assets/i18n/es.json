@@ -56,6 +56,36 @@
     },
     "SUCCESS_MESSAGE": "¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto."
   },
+  "ABOUT": {
+    "TITLE": "Sobre Nosotros",
+    "MISSION": {
+      "TITLE": "Nuestra Misión",
+      "DESC": "En Leones de Ruta, nuestra misión es ofrecer experiencias turísticas únicas y personalizadas que conecten a nuestros clientes con la riqueza natural y cultural de Chile. Nos esforzamos por brindar un servicio excepcional, promoviendo el turismo sostenible y responsable, y creando recuerdos inolvidables para cada viajero que confía en nosotros."
+    },
+    "VISION": {
+      "TITLE": "Nuestra Visión",
+      "DESC": "Ser reconocidos como la agencia de turismo líder en Chile, destacándonos por nuestra innovación, calidad de servicio y compromiso con la sostenibilidad. Aspiramos a expandir nuestras ofertas y llegar a un público global, siempre manteniendo nuestra esencia de autenticidad y conexión con la cultura y naturaleza chilena."
+    },
+    "VALUES": {
+      "TITLE": "Nuestros Valores",
+      "VALUE1": {
+        "TITLE": "Pasión por la aventura",
+        "DESC": "Nos apasiona explorar y compartir las maravillas de Chile con nuestros clientes, creando experiencias llenas de emoción y descubrimiento."
+      },
+      "VALUE2": {
+        "TITLE": "Compromiso con la sostenibilidad",
+        "DESC": "Promovemos prácticas turísticas responsables que respetan el medio ambiente y las comunidades locales, asegurando que nuestras actividades tengan un impacto positivo."
+      },
+      "VALUE3": {
+        "TITLE": "Excelencia en el servicio",
+        "DESC": "Nos dedicamos a ofrecer un servicio excepcional, cuidando cada detalle para garantizar la satisfacción y comodidad de nuestros clientes."
+      },
+      "VALUE4": {
+        "TITLE": "Autenticidad cultural",
+        "DESC": "Valoramos y celebramos la riqueza cultural de Chile, integrando experiencias auténticas que permiten a nuestros clientes conectarse profundamente con las tradiciones y patrimonio del país."
+      }
+    }
+  },
   "SUB-PAGE-1": {
     "TITLE": "Invierno - Nieve",
     "SUBTITLE": "Experiencias inolvidables en la nieve chilena",
