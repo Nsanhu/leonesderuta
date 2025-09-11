@@ -1,6 +1,30 @@
 main {
   margin-top: 4rem;
 }
+.perspective {
+  perspective: 1000px;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.is-flipped .rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
 .section-spacing {
   @apply pb-24;
+}
+/* styles.css o tailwind.css global */
+::-webkit-scrollbar {
+  display: none;
 }

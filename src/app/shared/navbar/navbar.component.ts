@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-
 @Component({
   selector: 'app-navbar',
   standalone: true,
@@ -11,7 +10,8 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
-  isMenuOpen = false;
+  isMenuOpen = false;           // Menú hamburguesa principal
+  isTourMenuOpen = false;       // Submenú Tours desplegable
 
   constructor(private translate: TranslateService) {
     const savedLang = localStorage.getItem('lang') || 'es';
@@ -21,10 +21,20 @@ export class NavbarComponent {
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
+
+    // Al cerrar menú, también cerramos el submenú
+    if (!this.isMenuOpen) {
+      this.isTourMenuOpen = false;
+    }
+  }
+
+  toggleTourMenu() {
+    this.isTourMenuOpen = !this.isTourMenuOpen;
   }
 
   closeMenu() {
     this.isMenuOpen = false;
+    this.isTourMenuOpen = false;
   }
 
   changeLang(event: Event) {

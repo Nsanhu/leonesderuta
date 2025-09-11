@@ -1,24 +1,56 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener,ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ThemeToggleComponent } from '../../shared/theme-toggle/theme-toggle.component';
+import { WhatsappComponent } from "../../shared/whatsapp/whatsapp.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterModule, TranslateModule, ThemeToggleComponent],
+  imports: [CommonModule, RouterModule, TranslateModule, ThemeToggleComponent, WhatsappComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
   parallaxOffset = 0;
+  showFloatingButtons = true;
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
     const scrolled = window.scrollY || document.documentElement.scrollTop || 0;
     this.parallaxOffset = scrolled * 0.3;
   }
+
+testimonials = [
+  {
+    name: 'Camila R.',
+    comment: 'Una experiencia increíble, los paisajes fueron inolvidables y el equipo súper profesional.',
+    stars: '★★★★★',
+    img: 'assets/galery/img_galery_3.jpeg',
+    quote: 'Este viaje me cambió la vida.',
+    place: 'Valle del Elqui',
+    date: 'Julio 2024'
+  },
+  {
+    name: 'Matías L.',
+    comment: 'Recomendado al 100%. Cumplieron con todo lo prometido. ¡Felicitaciones!',
+    stars: '★★★★★',
+    img: 'assets/galery/img_galery_5.jpeg',
+    quote: 'Nada se compara a ver el amanecer en la cordillera.',
+    place: 'Cajón del Maipo',
+    date: 'Mayo 2024'
+  },
+  {
+    name: 'Nicole S.',
+    comment: 'Muy buena atención, amables, puntuales y con conocimiento de los lugares.',
+    stars: '★★★★☆',
+    img: 'assets/galery/img_galery_11.jpeg',
+    quote: 'Sentí una conexión real con la naturaleza.',
+    place: 'Parque Nacional Torres del Paine',
+    date: 'Enero 2024'
+  }
+];
 
   galleryImages: string[] = [
     'assets/galery/img_galery_1.jpeg',
@@ -66,10 +98,12 @@ export class HomeComponent {
 
   openLightbox(index: number) {
     this.selectedImageIndex = index;
+    this.showFloatingButtons = false;
   }
 
   closeLightbox() {
     this.selectedImageIndex = null;
+    this.showFloatingButtons = true;
   }
 
   showNext() {
@@ -83,4 +117,27 @@ export class HomeComponent {
       this.selectedImageIndex = (this.selectedImageIndex - 1 + this.galleryImages.length) % this.galleryImages.length;
     }
   }
+  //  @ViewChild('carousel', { static: false }) carousel!: ElementRef;
+
+ 
+
+  isMobile = window.innerWidth < 768;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.isMobile = event.target.innerWidth < 768;
+  }
+
+flippedIndex: number | null = null;
+
+ngOnInit(): void {
+  this.isMobile = window.innerWidth < 768;
+  window.addEventListener('resize', () => {
+    this.isMobile = window.innerWidth < 768;
+  });
+}
+
+toggleFlip(index: number): void {
+  this.flippedIndex = this.flippedIndex === index ? null : index;
+}
 }

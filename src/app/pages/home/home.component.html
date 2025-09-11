@@ -6,47 +6,73 @@
 
   <!-- Contenido -->
   <div class="relative z-10 px-4 text-center text-white">
-    <h1 class="md:text-6 xl text-4xl font-bold">{{ "HOME.SLOGAN" | translate }}</h1>
+    <h1 class="md:text-6xl xl text-4xl font-bold">{{ "HOME.SLOGAN" | translate }}</h1>
     <div class="mt-8">
-      <button routerLink="/contact" class="rounded bg-blue-600 px-6 py-3 font-semibold text-white hover:bg-blue-800">{{ "HOME.CONTACT_US" | translate }}</button>
+      <button routerLink="/contact" class="animate-bounce rounded bg-blue-600 px-6 py-3 font-semibold text-white hover:bg-blue-800">{{ "HOME.CONTACT_US" | translate }}</button>
     </div>
   </div>
 </section>
 
-<!-- SERVICES   -->
-<section class="dark:bg-black">
-  <div class="container mx-auto p-2">
-    <div class="h-16"></div>
-    <h2 class="text-center text-6xl font-bold dark:text-white">{{ "HOME.SERVICES.TITLE" | translate }}</h2>
-    <div class="h-16"></div>
-    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      <!-- Tarjeta 1 -->
-      <div class="group relative h-80 overflow-hidden rounded shadow">
-        <img src="./assets/img/bg_about.jpeg" alt="Fondo" class="absolute inset-0 h-full w-full transform object-cover transition duration-500 group-hover:scale-105" />
-        <div class="absolute inset-0 bg-black/50"></div>
-        <div class="relative z-10 flex h-full flex-col justify-center p-6 text-white">
-          <h3 class="text-xl font-semibold">{{ "HOME.SERVICES.TOURS.TITLE" | translate }}</h3>
-          <p class="mt-2">{{ "HOME.SERVICES.TOURS.DESC" | translate }}</p>
+<!-- COMPONENTE HTML: Sección de Servicios con carrusel en móvil y grilla en desktop -->
+<section class="dark:bg-gray-900 bg-gray-200 py-20 transition-colors duration-1000">
+  <div class="container mx-auto px-4">
+    <!-- Título -->
+    <h2 class="text-center text-4xl sm:text-5xl font-bold text-blue-900 dark:text-white mb-16">
+      {{ "HOME.SERVICES.TITLE" | translate }}
+    </h2>
+
+    <!-- MÓVIL: Carrusel horizontal -->
+    <div *ngIf="isMobile" class="flex overflow-x-auto space-x-4 snap-x snap-mandatory">
+      <div class="snap-start shrink-0 w-72 relative h-96 overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition duration-500">
+        <img [src]="'HOME.SERVICES.TOURS.IMAGE' | translate" alt="Imagen Tours" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm"></div>
+        <div class="relative z-10 flex flex-col justify-center items-center h-full text-center px-6 text-white">
+          <h3 class="text-xl font-semibold mb-3">{{ "HOME.SERVICES.TOURS.TITLE" | translate }}</h3>
+          <p class="text-sm">{{ "HOME.SERVICES.TOURS.DESC" | translate }}</p>
         </div>
       </div>
-
-      <!-- Tarjeta 2 -->
-      <div class="group relative h-80 overflow-hidden rounded shadow">
-        <img src="./assets/img/bg_contact.jpeg" alt="Fondo" class="absolute inset-0 h-full w-full transform object-cover transition duration-500 group-hover:scale-105" />
-        <div class="absolute inset-0 bg-black/50"></div>
-        <div class="relative z-10 flex h-full flex-col justify-center p-6 text-white">
-          <h3 class="text-xl font-semibold">{{ "HOME.SERVICES.LOCAL.TITLE" | translate }}</h3>
-          <p class="mt-2">{{ "HOME.SERVICES.LOCAL.DESC" | translate }}</p>
+      <div class="snap-start shrink-0 w-72 relative h-96 overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition duration-500">
+        <img [src]="'HOME.SERVICES.LOCAL.IMAGE' | translate" alt="Imagen Local" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm"></div>
+        <div class="relative z-10 flex flex-col justify-center items-center h-full text-center px-6 text-white">
+          <h3 class="text-xl font-semibold mb-3">{{ "HOME.SERVICES.LOCAL.TITLE" | translate }}</h3>
+          <p class="text-sm">{{ "HOME.SERVICES.LOCAL.DESC" | translate }}</p>
         </div>
       </div>
+      <div class="snap-start shrink-0 w-72 relative h-96 overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition duration-500">
+        <img [src]="'HOME.SERVICES.CULTURE.IMAGE' | translate" alt="Imagen Cultura" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm"></div>
+        <div class="relative z-10 flex flex-col justify-center items-center h-full text-center px-6 text-white">
+          <h3 class="text-xl font-semibold mb-3">{{ "HOME.SERVICES.CULTURE.TITLE" | translate }}</h3>
+          <p class="text-sm">{{ "HOME.SERVICES.CULTURE.DESC" | translate }}</p>
+        </div>
+      </div>
+    </div>
 
-      <!-- Tarjeta 3 -->
-      <div class="group relative h-80 overflow-hidden rounded shadow">
-        <img src="./assets/img/bg_home.jpeg" alt="Fondo" class="absolute inset-0 h-full w-full transform object-cover transition duration-500 group-hover:scale-105" />
-        <div class="absolute inset-0 bg-black/50"></div>
-        <div class="relative z-10 flex h-full flex-col justify-center p-6 text-white">
-          <h3 class="text-xl font-semibold">{{ "HOME.SERVICES.CULTURE.TITLE" | translate }}</h3>
-          <p class="mt-2">{{ "HOME.SERVICES.CULTURE.DESC" | translate }}</p>
+    <!-- DESKTOP: Grilla -->
+    <div *ngIf="!isMobile" class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="relative h-96 overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition duration-500">
+        <img [src]="'HOME.SERVICES.TOURS.IMAGE' | translate" alt="Imagen Tours" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm"></div>
+        <div class="relative z-10 flex flex-col justify-center items-center h-full text-center px-6 text-white">
+          <h3 class="text-2xl font-semibold mb-3">{{ "HOME.SERVICES.TOURS.TITLE" | translate }}</h3>
+          <p class="text-sm sm:text-base">{{ "HOME.SERVICES.TOURS.DESC" | translate }}</p>
+        </div>
+      </div>
+      <div class="relative h-96 overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition duration-500">
+        <img [src]="'HOME.SERVICES.LOCAL.IMAGE' | translate" alt="Imagen Local" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm"></div>
+        <div class="relative z-10 flex flex-col justify-center items-center h-full text-center px-6 text-white">
+          <h3 class="text-2xl font-semibold mb-3">{{ "HOME.SERVICES.LOCAL.TITLE" | translate }}</h3>
+          <p class="text-sm sm:text-base">{{ "HOME.SERVICES.LOCAL.DESC" | translate }}</p>
+        </div>
+      </div>
+      <div class="relative h-96 overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition duration-500">
+        <img [src]="'HOME.SERVICES.CULTURE.IMAGE' | translate" alt="Imagen Cultura" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm"></div>
+        <div class="relative z-10 flex flex-col justify-center items-center h-full text-center px-6 text-white">
+          <h3 class="text-2xl font-semibold mb-3">{{ "HOME.SERVICES.CULTURE.TITLE" | translate }}</h3>
+          <p class="text-sm sm:text-base">{{ "HOME.SERVICES.CULTURE.DESC" | translate }}</p>
         </div>
       </div>
     </div>
@@ -54,163 +80,198 @@
 </section>
 
 <!-- ABOUT US -->
-<div class="h-16"></div>
-<section class="dark:bg-black">
-  <div class="container mx-auto px-4 py-16">
-    <!-- Título -->
-    <div class="mb-12 text-center">
-      <h2 class="text-3xl font-bold text-gray-800 dark:text-white sm:text-4xl md:text-5xl">
-        {{ "HOME.ABOUT.TITLE" | translate }}
-      </h2>
-    </div>
+<section class="bg-white dark:bg-black py-20 transition-colors duration-1000">
+  <div class="container mx-auto px-4">
+    <h2 class="text-center text-4xl sm:text-5xl font-bold text-blue-900 dark:text-white mb-16">
+      {{ "HOME.ABOUT.TITLE" | translate }}
+    </h2>
 
-    <!-- Contenido principal: Imagen + Texto -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-      <!-- Imagen (6 columnas en desktop) -->
-      <div class="lg:col-span-6 px-2">
+    <div class="grid gap-12 lg:grid-cols-2 items-center">
+      <!-- Imagen -->
+      <div class="rounded-xl overflow-hidden shadow-lg">
         <img
           src="assets/galery/img_galery_17.jpeg"
-          alt="Nuestro Equipo"
-          class="w-full rounded-lg shadow-lg object-cover h-auto max-h-[450px]"
+          alt="Sobre nosotros"
+          class="w-full h-auto max-h-[500px] object-cover"
         />
       </div>
 
-      <!-- Texto (6 columnas en desktop) -->
-      <div class="lg:col-span-6 px-2">
-        <p class="text-xl md:text-2xl text-justify leading-relaxed text-gray-700 dark:text-white">
+      <!-- Texto -->
+      <div>
+        <p class="text-xl sm:text-2xl text-gray-700 dark:text-gray-300 text-justify leading-relaxed">
           {{ "HOME.ABOUT.DESC" | translate }}
         </p>
-      </div>
-    </div>
 
-    <!-- Botón -->
-    <div class="mt-12 flex justify-center">
-      <button
-        routerLink="/about"
-        class="rounded-lg bg-blue-600 px-8 py-4 text-lg font-semibold text-white shadow-md hover:bg-blue-700 transition duration-300"
-      >
-        {{ "HOME.READ_MORE" | translate }}
-      </button>
+        <!-- Botón -->
+        <div class="mt-8">
+          <button
+            routerLink="/about"
+            class="bg-blue-600 hover:bg-blue-700 transition text-white font-medium py-3 px-6 rounded-lg shadow"
+          >
+            {{ "HOME.READ_MORE" | translate }}
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- TESTIMONIALS -->
-<section class="dark:bg-black">
-  <div class="container mx-auto px-4 py-16">
+<section class="dark:bg-gray-900 bg-gray-200 py-20 transition-colors duration-1000">
+  <div class="container mx-auto px-4">
     <!-- Título -->
-    <div class="mb-12 text-center">
-      <h2 class="text-4xl font-bold dark:text-white md:text-6xl">
+    <div class="mb-16 text-center">
+      <h2 class="text-4xl md:text-5xl font-bold text-blue-900 dark:text-white">
         Lo que dicen nuestros viajeros
       </h2>
     </div>
 
-    <!-- Testimonios -->
-    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      <!-- Testimonio 1 -->
-      <div class="rounded-lg border border-gray-700 bg-gray-900 p-6 shadow-lg">
-        <p class="mb-4 italic text-gray-300">
-          “Una experiencia increíble, los paisajes fueron inolvidables y el equipo súper profesional.”
-        </p>
-        <div class="flex items-center space-x-4">
-          <img src="assets/galery/img_galery_3.jpeg" alt="Camila R." class="h-24 w-24 rounded-full border-2 border-white object-cover" />
-          <div>
-            <h4 class="font-semibold text-white">Camila R.</h4>
-            <div class="text-yellow-400">★★★★★</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Testimonio 2 -->
-      <div class="rounded-lg border border-gray-700 bg-gray-900 p-6 shadow-lg">
-        <p class="mb-4 italic text-gray-300">
-          “Recomendado al 100%. Cumplieron con todo lo prometido. ¡Felicitaciones!”
-        </p>
-        <div class="flex items-center space-x-4">
-          <img src="assets/galery/img_galery_5.jpeg" alt="Matías L." class="h-24 w-24 rounded-full border-2 border-white object-cover" />
-          <div>
-            <h4 class="font-semibold text-white">Matías L.</h4>
-            <div class="text-yellow-400">★★★★★</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Testimonio 3 -->
-      <div class="rounded-lg border border-gray-700 bg-gray-900 p-6 shadow-lg">
-        <p class="mb-4 italic text-gray-300">
-          “Muy buena atención, amables, puntuales y con conocimiento de los lugares.”
-        </p>
-        <div class="flex items-center space-x-4">
-          <img src="assets/galery/img_galery_11.jpeg" alt="Nicole S." class="h-24 w-24 rounded-full border-2 border-white object-cover" />
-          <div>
-            <h4 class="font-semibold text-white">Nicole S.</h4>
-            <div class="text-yellow-400">★★★★☆</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- GALERÍA -->
-<section class="dark:bg-black">
-  <div class="container mx-auto px-2 py-16">
-    <!-- Título -->
-    <div class="mb-12 text-center">
-      <h2 class="text-4xl font-bold dark:text-white md:text-6xl">
-        {{ "HOME.GALERY.TITLE" | translate }}
-      </h2>
-    </div>
-
-    <!-- Galería de Imágenes -->
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+    <!-- Testimonios Grid -->
+    <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
       <div
-        *ngFor="let image of galleryImages | slice:0:getGalleryLimit(); let i = index"
-        class="overflow-hidden rounded-lg shadow transition-shadow duration-300 hover:shadow-lg"
+        *ngFor="let testimonial of testimonials; let i = index"
+        class="perspective w-full h-80"
+        [class.is-flipped]="isMobile && flippedIndex === i"
       >
-        <img
-          [src]="image"
-          (click)="openLightbox(i)"
-          alt="Foto {{ i + 1 }}"
-          class="h-32 w-full cursor-pointer object-cover sm:h-40 md:h-48"
-        />
-      </div>
-    </div>
+        <div
+          class="relative w-full h-full transition-transform duration-700 transform-style-preserve-3d hover:rotate-y-180 md:hover:rotate-y-180"
+          [ngClass]="{ 'rotate-y-180': isMobile && flippedIndex === i }"
+        >
+          <!-- Cara frontal -->
+          <div
+            class="absolute inset-0 backface-hidden bg-white dark:bg-black rounded-3xl p-8 text-center shadow-lg flex flex-col items-center justify-center"
+          >
+            <img
+              [src]="testimonial.img"
+              [alt]="testimonial.name"
+              class="mb-4 h-20 w-20 rounded-full border-4 border-blue-600 object-cover shadow-md"
+            />
+            <p class="italic text-gray-700 dark:text-gray-300 mb-4">
+              “{{ testimonial.comment }}”
+            </p>
+            <h4 class="font-bold text-blue-900 dark:text-white">
+              {{ testimonial.name }}
+            </h4>
+            <div class="text-yellow-400 text-xl mt-1">
+              {{ testimonial.stars }}
+            </div>
 
-    <!-- Botón Ver Más -->
-    <div class="mt-12 flex justify-center">
-      <button
-        routerLink="/about"
-        class="rounded-lg bg-blue-600 px-8 py-4 text-lg font-semibold text-white shadow-md hover:bg-blue-700 transition duration-300"
-      >
-        {{ "HOME.VIEW_MORE" | translate }}
-      </button>
+            <!-- Botón para móvil -->
+            <button
+              *ngIf="isMobile"
+              (click)="toggleFlip(i)"
+              class="mt-4 px-4 py-1 text-sm bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700"
+            >
+              Ver más
+            </button>
+          </div>
+
+          <!-- Cara trasera -->
+          <div
+            class="absolute inset-0 backface-hidden rotate-y-180 bg-blue-700 text-white rounded-3xl flex items-center justify-center p-6"
+          >
+            <p class="text-lg font-semibold text-center">
+              ¡Gracias por viajar con nosotros!
+              <br />
+              Nada se compara a ver el amanecer en la cordillera
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Lightbox  -->
-<div *ngIf="selectedImageIndex !== null" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90">
-  <div class="relative w-full max-w-4xl px-4">
-    <button class="absolute right-4 top-4 text-3xl text-white" (click)="closeLightbox()">×</button>
-    <img [src]="galleryImages[selectedImageIndex]" alt="Imagen seleccionada" class="mx-auto max-h-[80vh] w-auto rounded" />
-    <div class="mt-4 flex justify-between text-2xl text-white">
-      <button (click)="showPrev()">← Anterior</button>
-      <button (click)="showNext()">Siguiente →</button>
+<!-- GALERÍA -->
+<div class="grid p-1 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-1 dark:bg-black bg-white py-8 transition-colors duration-1000">
+  <div
+    *ngFor="let image of galleryImages | slice:0:getGalleryLimit(); let i = index"
+    class="relative group overflow-hidden rounded-lg shadow-md cursor-pointer"
+    (click)="openLightbox(i)"
+  >
+    <!-- Imagen con transición -->
+    <img
+      [src]="image"
+      alt="Foto {{ i + 1 }}"
+      class="w-full h-36 sm:h-44 md:h-52 object-cover transform transition-transform duration-500 group-hover:scale-110 group-hover:brightness-75"
+    />
+
+    <!-- Overlay con ícono o texto -->
+    <div
+      class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-1000 bg-black bg-opacity-30"
+    >
+      <svg
+        class="w-8 h-8 text-white"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553 4.553a1 1 0 01-1.414 1.414L13 11.414m0 0l-4.553 4.553a1 1 0 01-1.414-1.414L11 10m0 0l-4.553-4.553a1 1 0 011.414-1.414L13 8.586m0 0l4.553-4.553a1 1 0 011.414 1.414L15 10z" />
+      </svg>
     </div>
   </div>
 </div>
 
-<!-- Contacto rápido con imagen y parallax -->
-<section class="relative flex h-[24rem] items-center justify-center overflow-hidden text-center text-white md:h-[32rem]">
-  <!-- Imagen de fondo con parallax solo en pantallas grandes -->
-  <div class="absolute inset-0 bg-cover bg-scroll bg-center md:bg-fixed" style="background-image: url(&quot;./assets/img/bg_home.jpeg&quot;); filter: brightness(0.4)"></div>
+<!-- LIGHTBOX -->
+<div
+  *ngIf="selectedImageIndex !== null"
+  class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 backdrop-blur-sm"
+>
+  <div class="relative w-full max-w-4xl px-4">
+    <!-- Botón cerrar -->
+    <button
+      class="absolute right-4 top-4 text-white text-4xl hover:text-red-500 transition"
+      (click)="closeLightbox()"
+    >
+      &times;
+    </button>
+
+    <!-- Imagen -->
+    <img
+      [src]="galleryImages[selectedImageIndex]"
+      alt="Imagen seleccionada"
+      class="mx-auto max-h-[80vh] w-auto rounded-xl shadow-xl border border-white/20"
+    />
+
+    <!-- Navegación -->
+    <div class="mt-6 flex justify-between text-white text-lg md:text-2xl font-semibold">
+      <button
+        (click)="showPrev()"
+        class="bg-white/10 hover:bg-white/20 px-4 py-2 rounded transition"
+      >
+        ← Anterior
+      </button>
+      <button
+        (click)="showNext()"
+        class="bg-white/10 hover:bg-white/20 px-4 py-2 rounded transition"
+      >
+        Siguiente →
+      </button>
+    </div>
+  </div>
+</div>
+
+<!--CONTACT US -->
+<section class="relative flex h-[24rem] md:h-[32rem] items-center justify-center overflow-hidden text-center">
+  <!-- Imagen de fondo -->
+  <div
+    class="absolute inset-0 bg-cover bg-center md:bg-fixed"
+    style="background-image: url('./assets/img/bg_home.jpeg'); filter: brightness(0.6);"
+  ></div>
 
   <!-- Contenido -->
   <div class="relative z-10 px-4">
-    <p class="mb-6 text-2xl">{{ "HOME.CONTACT.DESC" | translate }}</p>
-    <button routerLink="/contact" class="rounded bg-white px-6 py-3 font-semibold text-blue-600 hover:bg-gray-100">
+    <p class="mb-6 text-2xl md:text-3xl text-white drop-shadow-md">
+      {{ "HOME.CONTACT.DESC" | translate }}
+    </p>
+    <button
+      routerLink="/contact"
+      class="animate-bounce rounded-lg bg-white text-blue-600 font-semibold px-6 py-3 shadow hover:bg-gray-100 transition dark:bg-blue-600 dark:text-white dark:hover:bg-blue-700"
+    >
       {{ "HOME.CONTACT_US" | translate }}
     </button>
   </div>
 </section>
-<app-theme-toggle></app-theme-toggle>
+<app-theme-toggle *ngIf="showFloatingButtons"></app-theme-toggle>
+<app-whatsapp *ngIf="showFloatingButtons"></app-whatsapp>

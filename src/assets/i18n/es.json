@@ -30,15 +30,19 @@
       "DESCRIPTION": "Ofrecemos una variedad de tours y experiencias únicas en Chile, adaptadas a tus intereses y necesidades.",
       "TOURS": {
         "TITLE": "Tours Personalizados",
-        "DESC": "Desde recorridos privados hasta actividades específicas, creamos itinerarios hechos a tu medida para que vivas una experiencia inolvidable."
+        "DESC": "Desde recorridos privados hasta actividades específicas, creamos itinerarios hechos a tu medida para que vivas una experiencia inolvidable.",
+        "IMAGE": "assets/img/bg_about.jpeg"
+
       },
       "LOCAL": {
         "TITLE": "Excursiones locales",
-        "DESC": "Descubre los mejores rincones de Chile con nuestras excursiones guiadas, ideales para conectarte con la naturaleza y la cultura local."
+        "DESC": "Descubre los mejores rincones de Chile con nuestras excursiones guiadas, ideales para conectarte con la naturaleza y la cultura local.",
+        "IMAGE": "assets/img/bg_contact.jpeg"
       },
       "CULTURE": {
         "TITLE": "Experiencias culturales",
-        "DESC": "Sumérgete en la riqueza cultural de Chile con recorridos que destacan su historia, tradiciones y patrimonio único."
+        "DESC": "Sumérgete en la riqueza cultural de Chile con recorridos que destacan su historia, tradiciones y patrimonio único.",
+        "IMAGE": "assets/img/bg_home.jpeg"
       }
     },
     "GALERY": {
@@ -161,6 +165,7 @@
     "DESCRIPTION": "Experiencias únicas por todo Chile. Explora, relájate y descubre nuevas rutas con nosotros.",
     "QUICK_LINKS": "Enlaces rápidos",
     "CONTACT": "Contáctanos",
+    "TITLE" :"¡No te pierdas nuestras últimas aventuras!",
     "FOLLOW_US": "Síguenos",
     "RIGHTS": "Todos los derechos reservados.",
     "CREATED": "Creado por Nicolás Sanhueza - nsanhuezalara@gmail.com"

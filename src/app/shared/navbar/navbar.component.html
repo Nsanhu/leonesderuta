@@ -1,71 +1,104 @@
-<nav class="fixed left-0 top-0 z-50 w-full bg-black text-white shadow-md">
+<nav class="fixed left-0 top-0 z-50 w-full bg-white text-black shadow-md dark:bg-black dark:text-white transition-colors duration-1000">
   <div class="mx-auto max-w-7xl px-4">
     <div class="flex h-20 items-center justify-between text-lg">
-      <!-- Zona izquierda: Logo -->
+      
+      <!-- Logo -->
       <div class="flex items-center space-x-4">
         <a routerLink="/" class="text-2xl font-bold">
           <img src="assets/img/logo.png" alt="Logo" class="h-16" />
         </a>
       </div>
 
-      <!-- Zona central: Navegación -->
+      <!-- Menú Desktop -->
       <div class="hidden space-x-6 md:flex">
-        <a routerLink="/home" class="hover:text-blue-400">{{ "NAV.HOME" | translate }}</a>
+        <a routerLink="/home" class="hover:text-blue-500 transition">{{ "NAV.HOME" | translate }}</a>
+
+        <!-- Dropdown -->
         <div class="group relative">
-          <button class="hover:text-blue-400">{{ "NAV.TOURS.TITLE" | translate }} ▼</button>
-          <div class="absolute left-0 mt-2 w-40 rounded bg-white text-black opacity-0 shadow-lg transition-opacity duration-300 group-hover:opacity-100">
-            <a href="/sub-page-1" class="block px-4 py-2 hover:bg-gray-100">{{ "NAV.TOURS.TOUR1" | translate }}</a>
-            <a href="/sub-page-2" class="block px-4 py-2 hover:bg-gray-100">{{ "NAV.TOURS.TOUR2" | translate }}</a>
-            <a href="/sub-page-3" class="block px-4 py-2 hover:bg-gray-100">{{ "NAV.TOURS.TOUR3" | translate }}</a>
-            <a href="/sub-page-4" class="block px-4 py-2 hover:bg-gray-100">{{ "NAV.TOURS.TOUR4" | translate }}</a>
+          <button class="flex items-center gap-1 hover:text-blue-500 transition">
+            {{ "NAV.TOURS.TITLE" | translate }}
+            <svg
+              class="h-4 w-4 transform transition-transform duration-1000 group-hover:rotate-180"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.25 8.29a.75.75 0 01-.02-1.08z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button>
+          <div
+            class="absolute left-0 mt-2 w-48 rounded-lg bg-white text-black dark:bg-gray-800 dark:text-white opacity-0 shadow-xl transition-opacity duration-1000 group-hover:opacity-100 z-50"
+          >
+            <a href="/sub-page-1" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">{{ "NAV.TOURS.TOUR1" | translate }}</a>
+            <a href="/sub-page-2" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">{{ "NAV.TOURS.TOUR2" | translate }}</a>
+            <a href="/sub-page-3" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">{{ "NAV.TOURS.TOUR3" | translate }}</a>
+            <a href="/sub-page-4" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">{{ "NAV.TOURS.TOUR4" | translate }}</a>
           </div>
         </div>
-        <a routerLink="/contact" class="hover:text-blue-400">{{ "NAV.CONTACT" | translate }}</a>
-        <a routerLink="/about" class="hover:text-blue-400">{{ "NAV.ABOUT" | translate }}</a>
-        <a routerLink="/galery" class="hover:text-blue-400">{{ "NAV.GALERY" | translate }}</a>
+
+        <a routerLink="/contact" class="hover:text-blue-500 transition">{{ "NAV.CONTACT" | translate }}</a>
+        <a routerLink="/about" class="hover:text-blue-500 transition">{{ "NAV.ABOUT" | translate }}</a>
+        <a routerLink="/galery" class="hover:text-blue-500 transition">{{ "NAV.GALERY" | translate }}</a>
       </div>
 
-      <!-- Zona derecha: selector de idioma + botón móvil -->
+      <!-- Selector Idioma y menú móvil -->
       <div class="flex items-center space-x-4">
-        <select (change)="changeLang($event)" class="hidden rounded border border-gray-500 bg-black text-white md:block">
+        <select (change)="changeLang($event)" class="hidden md:block rounded border border-gray-300 bg-white text-black dark:bg-gray-800 dark:text-white">
           <option value="es">ES</option>
           <option value="pt">PT</option>
           <option value="en">EN</option>
         </select>
+        <!-- Icono menú móvil -->
         <div class="md:hidden">
-          <button (click)="toggleMenu()">
-            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
+          <button class="group relative z-50 flex h-12 w-12 items-center justify-center rounded-md bg-gray-200 dark:bg-gray-900 md:hidden" (click)="toggleMenu()">
+            <span class="sr-only">Toggle menu</span>
+            <div class="space-y-1.5">
+              <span class="block h-0.5 w-6 bg-black dark:bg-white transition-all duration-1000"
+                    [ngClass]="{'rotate-45 translate-y-1.5': isMenuOpen}"></span>
+              <span class="block h-0.5 w-6 bg-black dark:bg-white transition-all duration-1000"
+                    [ngClass]="{'opacity-0': isMenuOpen}"></span>
+              <span class="block h-0.5 w-6 bg-black dark:bg-white transition-all duration-1000"
+                    [ngClass]="{'-rotate-45 -translate-y-1.5': isMenuOpen}"></span>
+            </div>
           </button>
         </div>
       </div>
     </div>
 
     <!-- Menú móvil -->
-    <div *ngIf="isMenuOpen" class="mt-4 flex flex-col space-y-2 rounded bg-black p-4 text-lg md:hidden">
-      <a routerLink="/home" class="hover:text-blue-400"(click)="closeMenu()">{{ "NAV.HOME" | translate }}</a>
-      <div class="relative">
-        <button class="hover:text-blue-400">{{ "NAV.TOURS.TITLE" | translate }} ▼</button>
-        <div class="mt-2 space-y-1 pl-4">
-          <a href="/sub-page-1" class="block hover:bg-gray-100" (click)="closeMenu()">{{ "NAV.TOURS.TOUR1" | translate }}</a>
-          <a href="/sub-page-2" class="block hover:bg-gray-100" (click)="closeMenu()">{{ "NAV.TOURS.TOUR2" | translate }}</a>
-          <a href="/sub-page-3" class="block hover:bg-gray-100" (click)="closeMenu()">{{ "NAV.TOURS.TOUR3" | translate }}</a>
-          <a href="/sub-page-4" class="block hover:bg-gray-100" (click)="closeMenu()">{{ "NAV.TOURS.TOUR4" | translate }}</a>
-        </div>
-      </div>
-      <a routerLink="/contact" class="hover:text-blue-400"(click)="closeMenu()">{{ "NAV.CONTACT" | translate }}</a>
-      <a routerLink="/about" class="hover:text-blue-400"(click)="closeMenu()">{{ "NAV.ABOUT" | translate }}</a>
-      <a routerLink="/galery" class="hover:text-blue-400"(click)="closeMenu()">{{ "NAV.GALERY" | translate }}</a>
+    <!-- Menú móvil animado -->
+<div
+  *ngIf="isMenuOpen"
+  class="absolute top-20 left-0 z-40 w-full origin-top transform rounded-b-lg bg-white p-6 text-lg text-black shadow-xl transition-all duration-1000 dark:bg-gray-900 dark:text-white md:hidden"
+>
+  <a routerLink="/home" class="block py-2 hover:text-blue-500" (click)="closeMenu()">{{ "NAV.HOME" | translate }}</a>
 
-      <!-- Selector idioma móvil -->
-      <select (change)="changeLang($event)" class="mt-2 w-24 rounded border border-gray-500 bg-black text-white">
-        <option value="es">ES</option>
-        <option value="pt">PT</option>
-        <option value="en">EN</option>
-      </select>
+  <div class="relative">
+    <button class="block w-full text-left py-2 hover:text-blue-500" (click)="toggleTourMenu()">
+      {{ "NAV.TOURS.TITLE" | translate }}
+      <span [ngClass]="{ 'rotate-180': isTourMenuOpen }" class="inline-block transition-transform duration-1000">▼</span>
+    </button>
+    <div *ngIf="isTourMenuOpen" class="pl-4">
+      <a href="/sub-page-1" class="block py-1 hover:text-blue-400" (click)="closeMenu()">{{ "NAV.TOURS.TOUR1" | translate }}</a>
+      <a href="/sub-page-2" class="block py-1 hover:text-blue-400" (click)="closeMenu()">{{ "NAV.TOURS.TOUR2" | translate }}</a>
+      <a href="/sub-page-3" class="block py-1 hover:text-blue-400" (click)="closeMenu()">{{ "NAV.TOURS.TOUR3" | translate }}</a>
+      <a href="/sub-page-4" class="block py-1 hover:text-blue-400" (click)="closeMenu()">{{ "NAV.TOURS.TOUR4" | translate }}</a>
     </div>
   </div>
+
+  <a routerLink="/contact" class="block py-2 hover:text-blue-500" (click)="closeMenu()">{{ "NAV.CONTACT" | translate }}</a>
+  <a routerLink="/about" class="block py-2 hover:text-blue-500" (click)="closeMenu()">{{ "NAV.ABOUT" | translate }}</a>
+  <a routerLink="/galery" class="block py-2 hover:text-blue-500" (click)="closeMenu()">{{ "NAV.GALERY" | translate }}</a>
+
+  <!-- Selector idioma -->
+  <select (change)="changeLang($event)" class="mt-4 w-full rounded border border-gray-300 bg-white p-2 text-black dark:bg-gray-800 dark:text-white">
+    <option value="es">ES</option>
+    <option value="pt">PT</option>
+    <option value="en">EN</option>
+  </select>
+</div>
+  </div>
 </nav>
-<!-- este es un comentario de prueba -->
-<!-- este es un comentario de prueba para hacer push directo -->
