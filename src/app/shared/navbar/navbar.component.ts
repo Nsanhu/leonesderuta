@@ -10,8 +10,8 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
-  isMenuOpen = false;           // Menú hamburguesa principal
-  isTourMenuOpen = false;       // Submenú Tours desplegable
+  isMenuOpen = false; // Menú hamburguesa principal
+  isTourMenuOpen = false; // Submenú Tours desplegable
 
   constructor(private translate: TranslateService) {
     const savedLang = localStorage.getItem('lang') || 'es';

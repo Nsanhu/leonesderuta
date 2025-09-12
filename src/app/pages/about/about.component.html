@@ -1,57 +1,89 @@
-<section class="pt-20 relative bg-cover bg-center h-[50vh]" style="background-image: url('./assets/img/bg_about.jpeg')">
+<section class="relative h-[50vh] bg-cover bg-center pt-20" style="background-image: url('./assets/img/bg_about.jpeg')">
   <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-  <div class="relative flex items-center justify-center h-full px-4 text-center">
-    <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold text-white z-10">
-     {{ "ABOUT.TITLE" | translate }}
+  <div class="relative flex h-full items-center justify-center px-4 text-center">
+    <h1 class="z-10 text-3xl font-bold text-white sm:text-4xl md:text-6xl">
+      {{ 'ABOUT.TITLE' | translate }}
     </h1>
   </div>
 </section>
 <!-- contact -->
-<section class="max-w-7xl mx-auto px-4 py-20 space-y-28">
-  <!-- Misión -->
-  <div class="text-center">
-    <h2 class="text-4xl font-bold text-blue-900 mb-6">{{ "ABOUT.MISSION.TITLE" | translate }}</h2>
-    <p class="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">{{ "ABOUT.MISSION.DESC" | translate }}</p>
-  </div>
-
-  <!-- Visión -->
-  <div class="text-center">
-    <h2 class="text-4xl font-bold text-blue-900 mb-6">{{ "ABOUT.VISION.TITLE" | translate }}</h2>
-    <p class="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">{{ "ABOUT.VISION.DESC" | translate }}</p>
-  </div>
-
-  <!-- Valores con íconos -->
-  <div class="text-center">
-    <h2 class="text-4xl font-bold text-blue-900 mb-12">{{ "ABOUT.VALUES.TITLE" | translate }}</h2>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-      <!-- Valor 1 -->
-      <div class="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center text-center hover:scale-105 transition-transform">
-        <img src="assets/icons/adventure.png" alt="Aventura" class="h-16 mb-4" />
-        <h3 class="text-xl font-semibold text-blue-800 mb-2">{{ "ABOUT.VALUES.VALUE1.TITLE" | translate }}</h3>
-        <p class="text-gray-600 text-sm">{{ "ABOUT.VALUES.VALUE1.DESC" | translate }}</p>
+<section class="w-full bg-white px-4 py-20 transition-colors duration-1000 dark:bg-gray-900">
+  <div class="mx-auto max-w-7xl space-y-12">
+    <div class="grid items-stretch gap-8 md:grid-cols-2">
+      <!-- MISIÓN -->
+      <div
+        class="rounded-xl border border-gray-200 bg-gray-100 p-6 text-center shadow dark:border-gray-700 dark:bg-gray-800">
+        <div class="mb-4 flex justify-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-12 w-12 text-green-600 dark:text-green-400"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="1.5">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 21c4.418 0 8-3.582 8-8S12 3 12 3s-8 3.582-8 8 3.582 8 8 8z" />
+          </svg>
+        </div>
+        <h2 class="mb-4 text-4xl font-bold text-blue-900 dark:text-white">
+          {{ 'ABOUT.MISSION.TITLE' | translate }}
+        </h2>
+        <p class="mx-auto max-w-3xl text-xl leading-relaxed text-gray-700 dark:text-gray-300">
+          {{ 'ABOUT.MISSION.DESC' | translate }}
+        </p>
       </div>
-
-      <!-- Valor 2 -->
-      <div class="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center text-center hover:scale-105 transition-transform">
-        <img src="assets/icons/sustainability.png" alt="Sostenibilidad" class="h-16 mb-4" />
-        <h3 class="text-xl font-semibold text-blue-800 mb-2">{{ "ABOUT.VALUES.VALUE2.TITLE" | translate }}</h3>
-        <p class="text-gray-600 text-sm">{{ "ABOUT.VALUES.VALUE2.DESC" | translate }}</p>
+      <!-- VISIÓN -->
+      <div
+        class="rounded-xl border border-gray-200 bg-gray-100 p-6 text-center shadow dark:border-gray-700 dark:bg-gray-800">
+        <div class="mb-4 flex justify-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-12 w-12 text-indigo-500 dark:text-indigo-400"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="1.5">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 4.5c4.97 0 9 3.5 9 7.5s-4.03 7.5-9 7.5S3 16.5 3 12s4.03-7.5 9-7.5zm0 2.25a2.25 2.25 0 110 4.5 2.25 2.25 0 010-4.5z" />
+          </svg>
+        </div>
+        <h2 class="mb-4 text-4xl font-bold text-blue-900 dark:text-white">
+          {{ 'ABOUT.VISION.TITLE' | translate }}
+        </h2>
+        <p class="mx-auto max-w-3xl text-xl leading-relaxed text-gray-700 dark:text-gray-300">
+          {{ 'ABOUT.VISION.DESC' | translate }}
+        </p>
       </div>
+    </div>
 
-      <!-- Valor 3 -->
-      <div class="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center text-center hover:scale-105 transition-transform">
-        <img src="assets/icons/service.png" alt="Servicio" class="h-16 mb-4" />
-        <h3 class="text-xl font-semibold text-blue-800 mb-2">{{ "ABOUT.VALUES.VALUE3.TITLE" | translate }}</h3>
-        <p class="text-gray-600 text-sm">{{ "ABOUT.VALUES.VALUE3.DESC" | translate }}</p>
-      </div>
+    <!-- VALORES -->
+    <div class="text-center">
+      <h2 class="mb-6 text-4xl font-bold text-blue-900 dark:text-white">
+        {{ 'ABOUT.VALUES.TITLE' | translate }}
+      </h2>
 
-      <!-- Valor 4 -->
-      <div class="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center text-center hover:scale-105 transition-transform">
-        <img src="assets/icons/culture.png" alt="Cultura" class="h-16 mb-4" />
-        <h3 class="text-xl font-semibold text-blue-800 mb-2">{{ "ABOUT.VALUES.VALUE4.TITLE" | translate }}</h3>
-        <p class="text-gray-600 text-sm">{{ "ABOUT.VALUES.VALUE4.DESC" | translate }}</p>
+      <div class="grid grid-cols-2 gap-3 md:grid-cols-2 lg:grid-cols-4">
+        <div
+          *ngFor="let val of [1, 2, 3, 4]; let i = index"
+          class="flex flex-col items-center rounded-xl border border-gray-200 bg-gray-100 p-3 text-center transition-transform duration-500 hover:scale-105 dark:border-gray-700 dark:bg-gray-800">
+          <img
+            [src]="'assets/icons/' + getIcon(i)"
+            [alt]="'ABOUT.VALUES.VALUE' + (i + 1) + '.TITLE' | translate"
+            class="mb-4 h-16 w-16 object-contain" />
+          <h3 class="mb-2 text-xl font-semibold text-blue-800 dark:text-blue-400">
+            {{ 'ABOUT.VALUES.VALUE' + (i + 1) + '.TITLE' | translate }}
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400">
+            {{ 'ABOUT.VALUES.VALUE' + (i + 1) + '.DESC' | translate }}
+          </p>
+        </div>
       </div>
     </div>
   </div>
 </section>
+<app-theme-toggle></app-theme-toggle>
+<app-whatsapp></app-whatsapp>

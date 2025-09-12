@@ -1,9 +1,9 @@
-import { Component, HostListener,ViewChild, ElementRef } from '@angular/core';
+import { Component, HostListener, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { ThemeToggleComponent } from '../../shared/theme-toggle/theme-toggle.component';
-import { WhatsappComponent } from "../../shared/whatsapp/whatsapp.component";
+import { WhatsappComponent } from '../../shared/whatsapp/whatsapp.component';
 
 @Component({
   selector: 'app-home',
@@ -12,132 +12,179 @@ import { WhatsappComponent } from "../../shared/whatsapp/whatsapp.component";
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
-export class HomeComponent {
+export class HomeComponent implements AfterViewInit {
   parallaxOffset = 0;
   showFloatingButtons = true;
+  isMobile = window.innerWidth < 768;
 
+  // ----- GALERÍA -----
+  galleryImages: string[] = [
+    'assets/galery/winter/img_1.jpeg',
+    'assets/galery/winter/img_2.jpeg',
+    'assets/galery/winter/img_3.jpeg',
+    'assets/galery/winter/img_4.jpeg',
+    'assets/galery/winter/img_5.jpeg',
+    'assets/galery/winter/img_6.jpeg',
+    'assets/galery/winter/img_7.jpeg',
+    'assets/galery/winter/img_8.jpeg',
+    'assets/galery/winter/img_9.jpeg',
+    'assets/galery/winter/img_10.jpeg',
+    'assets/galery/winter/img_11.jpeg',
+    'assets/galery/winter/img_12.jpeg',
+    'assets/galery/winter/img_13.jpeg',
+    'assets/galery/winter/img_14.jpeg',
+    'assets/galery/winter/img_15.jpeg',
+    'assets/galery/winter/img_16.jpeg',
+    'assets/galery/winter/img_17.jpeg',
+    'assets/galery/winter/img_18.jpeg',
+    'assets/galery/winter/img_19.jpeg',
+    'assets/galery/winter/img_20.jpeg',
+    'assets/galery/winter/img_21.jpeg',
+    'assets/galery/winter/img_22.jpeg',
+    'assets/galery/winter/img_23.jpeg',
+    'assets/galery/winter/img_24.jpeg',
+  ];
+
+  getGalleryLimit(): number {
+    return window.innerWidth < 640 ? 16 : 24;
+  }
+
+  selectedImageIndex: number | null = null;
+
+  openLightbox(index: number): void {
+    this.selectedImageIndex = index;
+    this.showFloatingButtons = false;
+  }
+
+  closeLightbox(): void {
+    this.selectedImageIndex = null;
+    this.showFloatingButtons = true;
+  }
+
+  showNext(): void {
+    if (this.selectedImageIndex !== null) {
+      this.selectedImageIndex = (this.selectedImageIndex + 1) % this.galleryImages.length;
+    }
+  }
+
+  showPrev(): void {
+    if (this.selectedImageIndex !== null) {
+      this.selectedImageIndex = (this.selectedImageIndex - 1 + this.galleryImages.length) % this.galleryImages.length;
+    }
+  }
+
+  // ----- EFECTO PARALLAX -----
   @HostListener('window:scroll', [])
   onWindowScroll() {
     const scrolled = window.scrollY || document.documentElement.scrollTop || 0;
     this.parallaxOffset = scrolled * 0.3;
   }
 
-testimonials = [
-  {
-    name: 'Camila R.',
-    comment: 'Una experiencia increíble, los paisajes fueron inolvidables y el equipo súper profesional.',
-    stars: '★★★★★',
-    img: 'assets/galery/img_galery_3.jpeg',
-    quote: 'Este viaje me cambió la vida.',
-    place: 'Valle del Elqui',
-    date: 'Julio 2024'
-  },
-  {
-    name: 'Matías L.',
-    comment: 'Recomendado al 100%. Cumplieron con todo lo prometido. ¡Felicitaciones!',
-    stars: '★★★★★',
-    img: 'assets/galery/img_galery_5.jpeg',
-    quote: 'Nada se compara a ver el amanecer en la cordillera.',
-    place: 'Cajón del Maipo',
-    date: 'Mayo 2024'
-  },
-  {
-    name: 'Nicole S.',
-    comment: 'Muy buena atención, amables, puntuales y con conocimiento de los lugares.',
-    stars: '★★★★☆',
-    img: 'assets/galery/img_galery_11.jpeg',
-    quote: 'Sentí una conexión real con la naturaleza.',
-    place: 'Parque Nacional Torres del Paine',
-    date: 'Enero 2024'
-  }
-];
-
-  galleryImages: string[] = [
-    'assets/galery/img_galery_1.jpeg',
-    'assets/galery/img_galery_2.jpeg',
-    'assets/galery/img_galery_3.jpeg',
-    'assets/galery/img_galery_4.jpeg',
-    'assets/galery/img_galery_5.jpeg',
-    'assets/galery/img_galery_6.jpeg',
-    'assets/galery/img_galery_7.jpeg',
-    'assets/galery/img_galery_8.jpeg',
-    'assets/galery/img_galery_9.jpeg',
-    'assets/galery/img_galery_10.jpeg',
-    'assets/galery/img_galery_11.jpeg',
-    'assets/galery/img_galery_12.jpeg',
-    'assets/galery/img_galery_13.jpeg',
-    'assets/galery/img_galery_14.jpeg',
-    'assets/galery/img_galery_15.jpeg',
-    'assets/galery/img_galery_16.jpeg',
-    'assets/galery/img_galery_17.jpeg',
-    'assets/galery/img_galery_18.jpeg',
-    'assets/galery/img_galery_19.jpeg',
-    'assets/galery/img_galery_20.jpeg',
-    'assets/galery/img_galery_21.jpeg',
-    'assets/galery/img_galery_22.jpeg',
-    'assets/galery/img_galery_1.jpeg',
-    'assets/galery/img_galery_2.jpeg',
-    'assets/galery/img_galery_3.jpeg',
-    'assets/galery/img_galery_4.jpeg',
-    'assets/galery/img_galery_5.jpeg',
-    'assets/galery/img_galery_6.jpeg',
-  ];
-  
-  getGalleryLimit(): number {
-  const width = window.innerWidth;
-  if (width < 640) {
-    // Móvil: 4x4
-    return 16;
-  } else {
-    // Escritorio y tablet: 6x5
-    return 24;
-  }
-}
-
-  selectedImageIndex: number | null = null;
-
-  openLightbox(index: number) {
-    this.selectedImageIndex = index;
-    this.showFloatingButtons = false;
-  }
-
-  closeLightbox() {
-    this.selectedImageIndex = null;
-    this.showFloatingButtons = true;
-  }
-
-  showNext() {
-    if (this.selectedImageIndex !== null) {
-      this.selectedImageIndex = (this.selectedImageIndex + 1) % this.galleryImages.length;
-    }
-  }
-
-  showPrev() {
-    if (this.selectedImageIndex !== null) {
-      this.selectedImageIndex = (this.selectedImageIndex - 1 + this.galleryImages.length) % this.galleryImages.length;
-    }
-  }
-  //  @ViewChild('carousel', { static: false }) carousel!: ElementRef;
-
- 
-
-  isMobile = window.innerWidth < 768;
-
+  // ----- CAMBIO DE TAMAÑO -----
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     this.isMobile = event.target.innerWidth < 768;
   }
 
-flippedIndex: number | null = null;
-
-ngOnInit(): void {
-  this.isMobile = window.innerWidth < 768;
-  window.addEventListener('resize', () => {
+  ngOnInit(): void {
     this.isMobile = window.innerWidth < 768;
-  });
-}
+  }
 
-toggleFlip(index: number): void {
-  this.flippedIndex = this.flippedIndex === index ? null : index;
-}
+  // ----- FLIP CARD -----
+  flippedIndex: number | null = null;
+
+  toggleFlip(index: number | null): void {
+    this.flippedIndex = index;
+  }
+
+  // ----- CARRUSEL -----
+  @ViewChild('carousel') carousel!: ElementRef;
+  currentIndex: number = 0;
+  totalCards: number = 3;
+
+  ngAfterViewInit(): void {
+    const el = this.carousel.nativeElement as HTMLElement;
+
+    el.addEventListener('scroll', () => {
+      const scrollLeft = el.scrollLeft;
+      const cardWidth = el.querySelector('div')?.clientWidth || 1;
+      const index = Math.round(scrollLeft / (cardWidth + 16)); // 16 es el gap horizontal (space-x-4)
+      this.currentIndex = Math.min(Math.max(index, 0), this.totalCards - 1);
+    });
+  }
+
+  scrollCarousel(direction: 'left' | 'right') {
+    const el = this.carousel.nativeElement as HTMLElement;
+    const scrollAmount = el.offsetWidth;
+
+    if (direction === 'left' && this.currentIndex > 0) {
+      this.currentIndex--;
+    } else if (direction === 'right' && this.currentIndex < this.totalCards - 1) {
+      this.currentIndex++;
+    }
+
+    el.scrollTo({
+      left: this.currentIndex * scrollAmount,
+      behavior: 'smooth',
+    });
+  }
+
+  // updateCurrentIndexFromScroll() {
+  //   const el = this.carousel.nativeElement as HTMLElement;
+  //   this.currentIndex = Math.round(el.scrollLeft / el.offsetWidth);
+  // }
+  goToCard(index: number) {
+    const el = this.carousel.nativeElement as HTMLElement;
+    const cardWidth = el.querySelector('div')?.clientWidth || 1;
+    el.scrollTo({ left: index * (cardWidth + 16), behavior: 'smooth' });
+    this.currentIndex = index;
+  }
+  totalCardsArray = Array.from({ length: this.totalCards });
+
+  // SWIPE
+  touchStartX: number = 0;
+  touchEndX: number = 0;
+  onTouchStart(event: TouchEvent) {
+    this.touchStartX = event.touches[0].clientX;
+  }
+  onTouchEnd(event: TouchEvent) {
+    this.touchEndX = event.changedTouches[0].clientX;
+    this.handleSwipe();
+  }
+  handleSwipe() {
+    const minSwipeDistance = 40; // puedes ajustar este valor
+
+    const swipeDistance = this.touchEndX - this.touchStartX;
+
+    if (swipeDistance > minSwipeDistance) {
+      // Swipe hacia la derecha
+      this.goToPreviousCard();
+    } else if (swipeDistance < -minSwipeDistance) {
+      // Swipe hacia la izquierda
+      this.goToNextCard();
+    }
+  }
+
+  goToNextCard() {
+    if (this.currentIndex < this.totalCards - 1) {
+      this.currentIndex++;
+      this.goToCard(this.currentIndex);
+    }
+  }
+
+  goToPreviousCard() {
+    if (this.currentIndex > 0) {
+      this.currentIndex--;
+      this.goToCard(this.currentIndex);
+    }
+  }
+
+  // ABOUT US
+  aboutInView = false;
+  @ViewChild('aboutSection') aboutSection!: ElementRef;
+  @HostListener('window:scroll', [])
+  onScroll() {
+    const rect = this.aboutSection.nativeElement.getBoundingClientRect();
+    this.aboutInView = rect.top < window.innerHeight * 0.8;
+  }
 }

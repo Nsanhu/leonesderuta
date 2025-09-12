@@ -13,7 +13,10 @@ import { filter } from 'rxjs/operators';
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  constructor(private translate: TranslateService, private router: Router) {
+  constructor(
+    private translate: TranslateService,
+    private router: Router,
+  ) {
     // Idiomas soportados
     translate.addLangs(['es', 'pt', 'en']);
     translate.setDefaultLang('es');
@@ -22,9 +25,7 @@ export class AppComponent {
     translate.use(browserLang?.match(/es|pt|en/) ? browserLang : 'es');
 
     // Scroll al top en cada cambio de ruta
-    this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
-    ).subscribe(() => {
+    this.router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe(() => {
       window.scrollTo({ top: 0, behavior: 'smooth' }); // o 'auto' si no quieres animación
     });
   }

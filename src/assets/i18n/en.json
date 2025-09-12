@@ -16,30 +16,70 @@
   "HOME": {
     "SLOGAN": "We don't follow the map, we create new routes with you.",
     "CONTACT_US": "Contact Us",
-    "ABOUT": {
-      "TITLE": "About Us",
-      "DESC": "Leones de Ruta is a tourism agency based in Santiago, Chile, specializing in offering unique and personalized experiences to explore the country's most iconic destinations. We focus on providing unforgettable adventures that connect our clients with the natural and cultural richness of Chile. We were born with the vision of transforming the way people explore Chile. Founded with the purpose of highlighting the authenticity and beauty of every corner of the country, the agency has become a reference for those seeking more than just a simple trip: an experience that connects them with the essence of Chilean nature and culture."
-    },
-    "READ_MORE": "Read More",
-    "VIEW_MORE": "View More",
-    "CONTACT": {
-      "DESC": "Have questions or need more information? We're here to help. Fill out the form and we'll get back to you as soon as possible."
-    },
     "SERVICES": {
       "TITLE": "Our Services Include",
       "DESCRIPTION": "We offer a variety of unique tours and experiences in Chile, tailored to your interests and needs.",
       "TOURS": {
         "TITLE": "Customized Tours",
-        "DESC": "From private tours to specific activities, we create tailor-made itineraries for you to have an unforgettable experience."
+        "DESC": "From private tours to specific activities, we create tailor-made itineraries for you to have an unforgettable experience.",
+        "IMAGE": "assets/img/bg_about.jpeg"
       },
       "LOCAL": {
         "TITLE": "Local Excursions",
-        "DESC": "Discover the best corners of Chile with our guided excursions, ideal for connecting with nature and local culture."
+        "DESC": "Discover the best corners of Chile with our guided excursions, ideal for connecting with nature and local culture.",
+        "IMAGE": "assets/img/bg_contact.jpeg"
       },
       "CULTURE": {
         "TITLE": "Cultural Experiences",
-        "DESC": "Immerse yourself in the cultural richness of Chile with tours that highlight its history, traditions, and unique heritage."
+        "DESC": "Immerse yourself in the cultural richness of Chile with tours that highlight its history, traditions, and unique heritage.",
+        "IMAGE": "assets/img/bg_home.jpeg"
       }
+    },
+    "TESTIMONIALS": {
+      "TITLE": "What our travelers say",
+      "DESC": "Unforgettable experiences and testimonials from those who have traveled with us.",
+      "TESTIMONIALS1": {
+        "NAME": "Camilo R.",
+        "COMMENT": "An incredible experience, the landscapes were unforgettable and the team was super professional.",
+        "STARS": "★★★★★",
+        "IMG": "assets/galery/winter/img_3.jpeg",
+        "QUOTE": "This trip changed my life.",
+        "PLACE": "Cajón del Maipo, Chile",
+        "DATE": "July 2024"
+      },
+      "TESTIMONIALS2": {
+        "NAME": "Matías L.",
+        "COMMENT": "100% recommended. They delivered everything they promised. Congratulations!",
+        "STARS": "★★★★★",
+        "IMG": "assets/galery/winter/img_5.jpeg",
+        "QUOTE": "Nothing compares to seeing the sunrise in the mountains.",
+        "PLACE": "Cajón del Maipo, Chile",
+        "DATE": "May 2024"
+      },
+      "TESTIMONIALS3": {
+        "NAME": "Nicole S.",
+        "COMMENT": "Very good service, friendly, punctual, and knowledgeable about the places.",
+        "STARS": "★★★★★",
+        "IMG": "assets/galery/winter/img_11.jpeg",
+        "QUOTE": "I felt a real connection with nature.",
+        "PLACE": "Torres del Paine National Park",
+        "DATE": "January 2024"
+      }
+    },
+    "ABOUT": {
+      "TITLE": "About Us",
+      "IMG": "assets/img/bg_home_about.jpeg",
+      "TITLEDESC": "Leones de Ruta - Tourism Agency in Chile",
+      "DESC": "Leones de Ruta is a tourism agency based in Santiago, Chile, specializing in offering unique and personalized experiences to explore the country's most iconic destinations. We focus on providing unforgettable adventures that connect our clients with the natural and cultural richness of Chile. We were born with the vision of transforming the way people explore Chile. Founded with the purpose of highlighting the authenticity and beauty of every corner of the country, the agency has become a reference for those seeking more than just a simple trip: an experience that connects them with the essence of Chilean nature and culture.",
+      "PHRASE": "We don’t travel to run away from life, but to ensure life doesn’t run away from us."
+    },
+    "READ_MORE": "Read More",
+    "VIEW_MORE": "View More",
+    "BACK": "Back",
+    "PREV": "Prev",
+    "NEXT": "Next",
+    "CONTACT": {
+      "DESC": "Have questions or need more information? We're here to help. Fill out the form and we'll get back to you as soon as possible."
     },
     "GALERY": {
       "TITLE": "Image Gallery",
@@ -50,16 +90,121 @@
     "TITLE": "Contact Us",
     "FORM": {
       "NAME": "Name",
+      "PLACEHOLDER_NAME": "Your name",
       "EMAIL": "Email",
+      "PLACEHOLDER_EMAIL": "example@email.com",
       "MESSAGE": "Message",
-      "SUBMIT": "Submit"
+      "PLACEHOLDER_MESSAGE": "Write your message here...",
+      "SUBMIT": "Send"
     },
-    "SUCCESS_MESSAGE": "Thank you for your message! We will get back to you soon."
+    "SUCCESS_MESSAGE": "Thank you for your message! We will get in touch with you soon."
+  },
+  "ABOUT": {
+    "TITLE": "About Us",
+    "MISSION": {
+      "TITLE": "Our Mission",
+      "DESC": "At Leones de Ruta, our mission is to offer unique and personalized travel experiences that connect our clients with the natural and cultural richness of Chile. We strive to provide exceptional service, promote sustainable and responsible tourism, and create unforgettable memories for every traveler who trusts us."
+    },
+    "VISION": {
+      "TITLE": "Our Vision",
+      "DESC": "To be recognized as the leading tourism agency in Chile, standing out for our innovation, service quality, and commitment to sustainability. We aspire to expand our offerings and reach a global audience, always maintaining our essence of authenticity and connection with Chilean culture and nature."
+    },
+    "VALUES": {
+      "TITLE": "Our Values",
+      "VALUE1": {
+        "TITLE": "Passion for adventure",
+        "DESC": "We are passionate about exploring and sharing the wonders of Chile with our clients, creating experiences full of excitement and discovery."
+      },
+      "VALUE2": {
+        "TITLE": "Commitment to sustainability",
+        "DESC": "We promote responsible tourism practices that respect the environment and local communities, ensuring our activities have a positive impact."
+      },
+      "VALUE3": {
+        "TITLE": "Service excellence",
+        "DESC": "We are dedicated to providing exceptional service, taking care of every detail to ensure our clients' satisfaction and comfort."
+      },
+      "VALUE4": {
+        "TITLE": "Cultural authenticity",
+        "DESC": "We value and celebrate Chile’s cultural richness, integrating authentic experiences that allow our clients to deeply connect with the country’s traditions and heritage."
+      }
+    }
+  },
+  "SUB-PAGE-1": {
+    "TITLE": "Invierno - Nieve",
+    "SUBTITLE": "Experiencias inolvidables en la nieve chilena",
+    "DESC": "Disfruta de la magia del invierno en Chile con nuestros tours especializados en nieve. Desde esquí y snowboard hasta excursiones por paisajes nevados, ofrecemos experiencias inolvidables para todos los amantes de la nieve. Nuestros guías expertos te llevarán a los mejores destinos invernales, asegurando que vivas momentos llenos de aventura y diversión en un entorno seguro y acogedor.",
+    "PARAGRAPH1": "Explora las majestuosas montañas cubiertas de nieve, disfruta de actividades emocionantes y relájate en acogedores refugios después de un día lleno de aventuras. Ya sea que busques adrenalina en las pistas de esquí o tranquilidad en un paisaje invernal, nuestros tours de invierno en Chile tienen algo para todos.",
+    "PARAGRAPH2": "Únete a nosotros para una experiencia invernal única en Chile, donde la belleza natural y la emoción se combinan para crear recuerdos que durarán toda la vida. ¡Prepárate para descubrir la magia del invierno con Leones de Ruta!",
+    "FEATURES": {
+      "TITLE": "Características del Tour de Invierno - Nieve",
+      "ITEM1": "Guías expertos en actividades de nieve",
+      "ITEM1DESC": "Nuestros guías están altamente capacitados y tienen amplia experiencia en actividades de nieve, asegurando tu seguridad y diversión durante todo el tour.",
+      "ITEM2": "Equipamiento de alta calidad incluido",
+      "ITEM2DESC": "Proveemos todo el equipamiento necesario para las actividades de nieve, desde esquís y tablas de snowboard hasta ropa adecuada para el clima frío.",
+      "ITEM3": "Itinerarios personalizados según tus intereses",
+      "ITEM3DESC": "Adaptamos cada tour a tus preferencias, ya sea que busques aventura extrema o una experiencia más relajada en la nieve."
+    }
+  },
+  "SUB-PAGE-2": {
+    "TITLE": "Findes Tour",
+    "SUBTITLE": "Escapadas de fin de semana inolvidables en Chile",
+    "DESC": "Descubre la belleza de Chile en nuestras escapadas de fin de semana diseñadas para ofrecerte experiencias únicas y memorables. Ya sea que busques aventura, relajación o una combinación de ambas, nuestros Findes Tours están pensados para maximizar tu tiempo y disfrutar al máximo de los destinos más emblemáticos del país.",
+    "PARAGRAPH1": "Desde excursiones a parques nacionales hasta visitas culturales y gastronómicas, cada tour está cuidadosamente planificado para brindarte una experiencia enriquecedora en solo unos días. Nuestros guías expertos te acompañarán en cada paso del camino, asegurando que aproveches al máximo tu escapada.",
+    "PARAGRAPH2": "Únete a nosotros en un Findes Tour y vive la magia de Chile en un formato compacto pero lleno de aventuras. ¡Prepárate para crear recuerdos inolvidables en solo un fin de semana con Leones de Ruta!",
+    "FEATURES": {
+      "TITLE": "Características del Findes Tour",
+      "ITEM1": "Itinerarios optimizados para fines de semana",
+      "ITEM1DESC": "Nuestros tours están diseñados para aprovechar al máximo tu tiempo, permitiéndote explorar y disfrutar sin sentirte apresurado.",
+      "ITEM2": "Variedad de destinos y actividades",
+      "ITEM2DESC": "Ofrecemos una amplia gama de opciones, desde aventuras al aire libre hasta experiencias culturales y gastronómicas.",
+      "ITEM3": "Alojamiento cómodo y transporte incluido",
+      "ITEM3DESC": "Nos encargamos de todos los detalles logísticos, incluyendo alojamiento y transporte, para que puedas relajarte y disfrutar del viaje."
+    }
+  },
+  "SUB-PAGE-3": {
+    "TITLE": "Tours Privados",
+    "SUBTITLE": "Experiencias exclusivas y personalizadas en Chile",
+    "DESC": "Vive Chile a tu manera con nuestros tours privados, diseñados para ofrecerte una experiencia exclusiva y personalizada. Ya sea que viajes solo, en pareja o con un grupo pequeño, nuestros tours privados te permiten explorar los destinos más emblemáticos del país con total comodidad y flexibilidad.",
+    "PARAGRAPH1": "Nuestros guías expertos trabajarán contigo para crear un itinerario que se adapte a tus intereses y necesidades, asegurando que cada momento de tu viaje sea memorable. Desde aventuras al aire libre hasta experiencias culturales y gastronómicas, nuestros tours privados están diseñados para ofrecerte lo mejor de Chile en un formato íntimo y exclusivo.",
+    "PARAGRAPH2": "Únete a nosotros para una experiencia de viaje única y personalizada en Chile. ¡Descubre el país a tu ritmo con Leones de Ruta!",
+    "FEATURES": {
+      "TITLE": "Características de los Tours Privados",
+      "ITEM1": "Itinerarios personalizados según tus intereses",
+      "ITEM1DESC": "Trabajamos contigo para diseñar un itinerario que refleje tus preferencias y deseos, asegurando una experiencia única.",
+      "ITEM2": "Guías expertos y atención personalizada",
+      "ITEM2DESC": "Nuestros guías dedicados te brindarán atención personalizada y compartirán su conocimiento para enriquecer tu experiencia.",
+      "ITEM3": "Flexibilidad en horarios y actividades",
+      "ITEM3DESC": "Disfruta de la libertad de ajustar horarios y actividades según tus necesidades y deseos."
+    }
+  },
+  "SUB-PAGE-4": {
+    "TITLE": "Tour a Púcon",
+    "SUBTITLE": "Aventura y naturaleza en el corazón de Chile",
+    "DESC": "Descubre la magia de Púcon, uno de los destinos más emblemáticos de Chile, con nuestro tour especializado. Rodeado de lagos cristalinos, volcanes imponentes y una exuberante naturaleza, Púcon ofrece una combinación perfecta de aventura y relajación para todos los tipos de viajeros.",
+    "PARAGRAPH1": "Nuestro tour a Púcon te llevará a explorar sus principales atractivos, desde emocionantes actividades al aire libre como senderismo, rafting y termas, hasta la oportunidad de sumergirte en la cultura local y disfrutar de su deliciosa gastronomía. Con la guía de expertos locales, vivirás una experiencia auténtica y enriquecedora en este paraíso natural.",
+    "PARAGRAPH2": "Únete a nosotros para una aventura inolvidable en Púcon. ¡Prepárate para descubrir la belleza y emoción que este destino tiene para ofrecer con Leones de Ruta!",
+    "FEATURES": {
+      "TITLE": "Características del Tour a Púcon",
+      "ITEM1": "Actividades al aire libre para todos los niveles",
+      "ITEM1DESC": "Ofrecemos una variedad de actividades, desde emocionantes aventuras hasta opciones más relajadas, para que todos puedan disfrutar.",
+      "ITEM2": "Guías locales con conocimiento profundo",
+      "ITEM2DESC": "Nuestros guías son expertos en la región y compartirán su conocimiento para enriquecer tu experiencia.",
+      "ITEM3": "Alojamiento cómodo y transporte incluido",
+      "ITEM3DESC": "Nos encargamos de todos los detalles logísticos, incluyendo alojamiento y transporte, para que puedas relajarte y disfrutar del viaje."
+    }
+  },
+  "GALLERY": {
+    "TITLE": "Galería de Aventuras",
+    "SUBTITLE": "Momentos inolvidables con Leones de Ruta",
+    "SEE_COLLECTION": "Descubre nuestros viajes",
+    "DESCRIPTION": "Una selección de imágenes de nuestros tours y aventuras por Chile. Cada fotografía cuenta una historia única.",
+    "CONTACT_US": "Contáctanos"
   },
   "FOOTER": {
     "DESCRIPTION": "Unique experiences across Chile. Explore, relax, and discover new routes with us.",
     "QUICK_LINKS": "Quick Links",
     "CONTACT": "Contact Us",
+    "TITLE": "Don't miss our latest adventures!",
     "FOLLOW_US": "Follow Us",
     "RIGHTS": "All rights reserved.",
     "CREATED": "Created by Nicolás Sanhueza - nsanhuezalara@gmail.com"

@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-modal-warning',
   imports: [],
   templateUrl: './modal-warning.component.html',
-  styleUrl: './modal-warning.component.css'
+  styleUrl: './modal-warning.component.css',
 })
-export class ModalWarningComponent {
-
-}
+export class ModalWarningComponent {}

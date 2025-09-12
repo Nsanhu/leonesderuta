@@ -1,8 +1,19 @@
-<div *ngIf="visible" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm">
+<div
+  *ngIf="visible"
+  class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm">
   <div class="w-full max-w-md rounded-lg bg-white p-6 text-center shadow-lg dark:bg-gray-800">
     <div class="mb-4 flex justify-center">
-      <svg class="h-12 w-12 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01M12 3C7.03 3 3 7.03 3 12s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9z" />
+      <svg
+        class="h-12 w-12 text-red-600"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M12 9v2m0 4h.01M12 3C7.03 3 3 7.03 3 12s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9z" />
       </svg>
     </div>
     <h2 class="mb-2 text-xl font-semibold text-red-600 dark:text-red-400">
@@ -21,6 +32,8 @@
       </li>
     </ul>
 
-    <button class="rounded bg-red-600 px-4 py-2 text-white transition hover:bg-red-700" (click)="close()">Cerrar</button>
+    <button class="rounded bg-red-600 px-4 py-2 text-white transition hover:bg-red-700" (click)="close()">
+      Cerrar
+    </button>
   </div>
 </div>
