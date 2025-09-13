@@ -17,6 +17,10 @@ export class HomeComponent implements AfterViewInit {
   showFloatingButtons = true;
   isMobile = window.innerWidth < 768;
 
+  ngOnInit(): void {
+    this.isMobile = window.innerWidth < 768;
+  }
+
   // ----- GALERÍA -----
   galleryImages: string[] = [
     'galery/winter/img_1.jpeg',
@@ -46,7 +50,7 @@ export class HomeComponent implements AfterViewInit {
   ];
 
   getGalleryLimit(): number {
-    return window.innerWidth < 640 ? 16 : 24;
+    return window.innerWidth < 640 ? 9 : 15;
   }
 
   selectedImageIndex: number | null = null;
@@ -86,10 +90,6 @@ export class HomeComponent implements AfterViewInit {
     this.isMobile = event.target.innerWidth < 768;
   }
 
-  ngOnInit(): void {
-    this.isMobile = window.innerWidth < 768;
-  }
-
   // ----- FLIP CARD -----
   flippedIndex: number | null = null;
 
@@ -102,21 +102,21 @@ export class HomeComponent implements AfterViewInit {
   currentIndex: number = 0;
   totalCards: number = 3;
 
-ngAfterViewInit(): void {
-  if (!this.carousel) {
-    console.warn('🚨 Carousel no inicializado (puede estar dentro de un *ngIf o invisible)');
-    return;
+  ngAfterViewInit(): void {
+    if (!this.carousel) {
+      console.warn('🚨 Carousel no inicializado (puede estar dentro de un *ngIf o invisible)');
+      return;
+    }
+
+    const el = this.carousel.nativeElement as HTMLElement;
+
+    el.addEventListener('scroll', () => {
+      const scrollLeft = el.scrollLeft;
+      const cardWidth = el.querySelector('div')?.clientWidth || 1;
+      const index = Math.round(scrollLeft / (cardWidth + 16));
+      this.currentIndex = Math.min(Math.max(index, 0), this.totalCards - 1);
+    });
   }
-
-  const el = this.carousel.nativeElement as HTMLElement;
-
-  el.addEventListener('scroll', () => {
-    const scrollLeft = el.scrollLeft;
-    const cardWidth = el.querySelector('div')?.clientWidth || 1;
-    const index = Math.round(scrollLeft / (cardWidth + 16));
-    this.currentIndex = Math.min(Math.max(index, 0), this.totalCards - 1);
-  });
-}
 
   scrollCarousel(direction: 'left' | 'right') {
     const el = this.carousel.nativeElement as HTMLElement;
@@ -134,10 +134,6 @@ ngAfterViewInit(): void {
     });
   }
 
-  // updateCurrentIndexFromScroll() {
-  //   const el = this.carousel.nativeElement as HTMLElement;
-  //   this.currentIndex = Math.round(el.scrollLeft / el.offsetWidth);
-  // }
   goToCard(index: number) {
     const el = this.carousel.nativeElement as HTMLElement;
     const cardWidth = el.querySelector('div')?.clientWidth || 1;
