@@ -22,17 +22,17 @@
       "TOURS": {
         "TITLE": "Tours Personalizados",
         "DESC": "Desde recorridos privados hasta actividades específicas, creamos itinerarios hechos a tu medida para que vivas una experiencia inolvidable.",
-        "IMAGE": "assets/img/bg_about.jpeg"
+        "IMAGE": "/img/bg_about.jpeg"
       },
       "LOCAL": {
         "TITLE": "Excursiones locales",
         "DESC": "Descubre los mejores rincones de Chile con nuestras excursiones guiadas, ideales para conectarte con la naturaleza y la cultura local.",
-        "IMAGE": "assets/img/bg_contact.jpeg"
+        "IMAGE": "/img/bg_contact.jpeg"
       },
       "CULTURE": {
         "TITLE": "Experiencias culturales",
         "DESC": "Sumérgete en la riqueza cultural de Chile con recorridos que destacan su historia, tradiciones y patrimonio único.",
-        "IMAGE": "assets/img/bg_home.jpeg"
+        "IMAGE": "/img/bg_home.jpeg"
       }
     },
     "TESTIMONIALS": {
@@ -42,7 +42,7 @@
         "NAME": "Camilo R.",
         "COMMENT": "Una experiencia increíble, los paisajes fueron inolvidables y el equipo súper profesional.",
         "STARS": "★★★★★",
-        "IMG": "assets/galery/winter/img_3.jpeg",
+        "IMG": "galery/winter/img_3.jpeg",
         "QUOTE": "Este viaje me cambió la vida.",
         "PLACE": "Cajon del Maipo, Chile",
         "DATE": "Julio 2024"
@@ -51,7 +51,7 @@
         "NAME": "Matías L.",
         "COMMENT": "Recomendado al 100%. Cumplieron con todo lo prometido. ¡Felicitaciones!",
         "STARS": "★★★★★",
-        "IMG": "assets/galery/winter/img_5.jpeg",
+        "IMG": "galery/winter/img_5.jpeg",
         "QUOTE": "Nada se compara a ver el amanecer en la cordillera.",
         "PLACE": "Cajón del Maipo, Chile",
         "DATE": "Mayo 2024"
@@ -60,7 +60,7 @@
         "NAME": "Nicole S.",
         "COMMENT": "Muy buena atención, amables, puntuales y con conocimiento de los lugares.",
         "STARS": "★★★★★",
-        "IMG": "assets/galery/winter/img_11.jpeg",
+        "IMG": "galery/winter/img_11.jpeg",
         "QUOTE": "Sentí una conexión real con la naturaleza.",
         "PLACE": "Parque Nacional Torres del Paine",
         "DATE": "Enero 2024"
@@ -68,7 +68,7 @@
     },
     "ABOUT": {
       "TITLE": "Sobre Nosotros",
-      "IMG": "assets/img/bg_home_about.jpeg",
+      "IMG": "/img/bg_home_about.jpeg",
       "TITLEDESC": "Leones de Ruta - Agencia de Turismo en Chile",
       "DESC": "Leones de Ruta es una agencia de turismo con sede en Santiago, Chile, especializada en ofrecer experiencias únicas y personalizadas para explorar los destinos más emblemáticos del país. Nos enfocamos en brindar aventuras inolvidables que conectan a nuestros clientes con la riqueza natural y cultural de Chile.Nació con la visión de transformar la manera en que las personas exploran Chile. Fundada con el propósito de destacar la autenticidad y belleza de cada rincón del país, la agencia se ha convertido en un referente para aquellos que buscan algo más que un simple viaje: una experiencia que los conecte con la esencia misma de la naturaleza y la cultura chilena.",
       "PHRASE": "Viajamos no para escapar de la vida, sino para que la vida no se nos escape."

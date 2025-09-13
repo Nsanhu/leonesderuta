@@ -22,17 +22,17 @@
       "TOURS": {
         "TITLE": "Customized Tours",
         "DESC": "From private tours to specific activities, we create tailor-made itineraries for you to have an unforgettable experience.",
-        "IMAGE": "assets/img/bg_about.jpeg"
+        "IMAGE": "/img/bg_about.jpeg"
       },
       "LOCAL": {
         "TITLE": "Local Excursions",
         "DESC": "Discover the best corners of Chile with our guided excursions, ideal for connecting with nature and local culture.",
-        "IMAGE": "assets/img/bg_contact.jpeg"
+        "IMAGE": "/img/bg_contact.jpeg"
       },
       "CULTURE": {
         "TITLE": "Cultural Experiences",
         "DESC": "Immerse yourself in the cultural richness of Chile with tours that highlight its history, traditions, and unique heritage.",
-        "IMAGE": "assets/img/bg_home.jpeg"
+        "IMAGE": "/img/bg_home.jpeg"
       }
     },
     "TESTIMONIALS": {
@@ -42,7 +42,7 @@
         "NAME": "Camilo R.",
         "COMMENT": "An incredible experience, the landscapes were unforgettable and the team was super professional.",
         "STARS": "★★★★★",
-        "IMG": "assets/galery/winter/img_3.jpeg",
+        "IMG": "galery/winter/img_3.jpeg",
         "QUOTE": "This trip changed my life.",
         "PLACE": "Cajón del Maipo, Chile",
         "DATE": "July 2024"
@@ -51,7 +51,7 @@
         "NAME": "Matías L.",
         "COMMENT": "100% recommended. They delivered everything they promised. Congratulations!",
         "STARS": "★★★★★",
-        "IMG": "assets/galery/winter/img_5.jpeg",
+        "IMG": "galery/winter/img_5.jpeg",
         "QUOTE": "Nothing compares to seeing the sunrise in the mountains.",
         "PLACE": "Cajón del Maipo, Chile",
         "DATE": "May 2024"
@@ -60,7 +60,7 @@
         "NAME": "Nicole S.",
         "COMMENT": "Very good service, friendly, punctual, and knowledgeable about the places.",
         "STARS": "★★★★★",
-        "IMG": "assets/galery/winter/img_11.jpeg",
+        "IMG": "galery/winter/img_11.jpeg",
         "QUOTE": "I felt a real connection with nature.",
         "PLACE": "Torres del Paine National Park",
         "DATE": "January 2024"
@@ -68,7 +68,7 @@
     },
     "ABOUT": {
       "TITLE": "About Us",
-      "IMG": "assets/img/bg_home_about.jpeg",
+      "IMG": "/img/bg_home_about.jpeg",
       "TITLEDESC": "Leones de Ruta - Tourism Agency in Chile",
       "DESC": "Leones de Ruta is a tourism agency based in Santiago, Chile, specializing in offering unique and personalized experiences to explore the country's most iconic destinations. We focus on providing unforgettable adventures that connect our clients with the natural and cultural richness of Chile. We were born with the vision of transforming the way people explore Chile. Founded with the purpose of highlighting the authenticity and beauty of every corner of the country, the agency has become a reference for those seeking more than just a simple trip: an experience that connects them with the essence of Chilean nature and culture.",
       "PHRASE": "We don’t travel to run away from life, but to ensure life doesn’t run away from us."
