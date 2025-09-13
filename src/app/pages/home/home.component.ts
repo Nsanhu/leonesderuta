@@ -98,20 +98,25 @@ export class HomeComponent implements AfterViewInit {
   }
 
   // ----- CARRUSEL -----
-  @ViewChild('carousel') carousel!: ElementRef;
+  @ViewChild('carousel', { static: false }) carousel!: ElementRef;
   currentIndex: number = 0;
   totalCards: number = 3;
 
-  ngAfterViewInit(): void {
-    const el = this.carousel.nativeElement as HTMLElement;
-
-    el.addEventListener('scroll', () => {
-      const scrollLeft = el.scrollLeft;
-      const cardWidth = el.querySelector('div')?.clientWidth || 1;
-      const index = Math.round(scrollLeft / (cardWidth + 16)); // 16 es el gap horizontal (space-x-4)
-      this.currentIndex = Math.min(Math.max(index, 0), this.totalCards - 1);
-    });
+ngAfterViewInit(): void {
+  if (!this.carousel) {
+    console.warn('🚨 Carousel no inicializado (puede estar dentro de un *ngIf o invisible)');
+    return;
   }
+
+  const el = this.carousel.nativeElement as HTMLElement;
+
+  el.addEventListener('scroll', () => {
+    const scrollLeft = el.scrollLeft;
+    const cardWidth = el.querySelector('div')?.clientWidth || 1;
+    const index = Math.round(scrollLeft / (cardWidth + 16));
+    this.currentIndex = Math.min(Math.max(index, 0), this.totalCards - 1);
+  });
+}
 
   scrollCarousel(direction: 'left' | 'right') {
     const el = this.carousel.nativeElement as HTMLElement;
