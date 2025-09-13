@@ -4,11 +4,12 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ThemeToggleComponent } from '../../shared/theme-toggle/theme-toggle.component';
 import { WhatsappComponent } from '../../shared/whatsapp/whatsapp.component';
+import { SpinnerComponent } from '../../shared/spinner/spinner.component';
 
 @Component({
   selector: 'app-galery',
   standalone: true,
-  imports: [CommonModule, RouterModule, TranslateModule, ThemeToggleComponent, WhatsappComponent],
+  imports: [CommonModule, RouterModule, TranslateModule, ThemeToggleComponent, WhatsappComponent, SpinnerComponent],
   templateUrl: './galery.component.html',
   styleUrls: ['./galery.component.css'],
 })
@@ -19,9 +20,6 @@ export class GaleryComponent {
     { labelKey: 'GALLERY.FILTER.PUCON', value: 'pucon' },
     { labelKey: 'GALLERY.FILTER.CAJON', value: 'cajondelmaipo' },
   ];
-
-
-  selectedCategory: string = 'winter';
   galleryImages: string[] = [
     '/galery/winter/img_1.jpeg',
     '/galery/winter/img_2.jpeg',
@@ -144,37 +142,47 @@ export class GaleryComponent {
   selectedImageIndex: number | null = null;
 
   get filteredGalleryImages(): string[] {
+    const images =
+      this.selectedCategory === 'all'
+        ? this.galleryImages
+        : this.galleryImages.filter((img) =>
+            img.toLowerCase().includes(`/galery/${this.selectedCategory.toLowerCase()}/`),
+          );
+
+    return images.slice(0, this.visibleImagesCount);
+  }
+  get totalCategoryImages(): number {
     if (this.selectedCategory === 'all') {
-      return this.galleryImages;
+      return this.galleryImages.length;
     }
 
     return this.galleryImages.filter((img) =>
       img.toLowerCase().includes(`/galery/${this.selectedCategory.toLowerCase()}/`),
-    );
+    ).length;
   }
-public openModal(index: number): void {
-  console.log('Abriendo imagen', index); // 👈 esto sí es válido
-  this.showFloatingButtons = false;
-  this.selectedImageIndex = index;
-}
-
-public closeModal(): void {
-  this.showFloatingButtons = true;
-  this.selectedImageIndex = null;
-}
-
-public nextImage(): void {
-  if (this.selectedImageIndex !== null) {
-    this.selectedImageIndex = (this.selectedImageIndex + 1) % this.filteredGalleryImages.length;
+  public openModal(index: number): void {
+    console.log('Abriendo imagen', index); // 👈 esto sí es válido
+    this.showFloatingButtons = false;
+    this.selectedImageIndex = index;
   }
-}
 
-public prevImage(): void {
-  if (this.selectedImageIndex !== null) {
-    this.selectedImageIndex =
-      (this.selectedImageIndex - 1 + this.filteredGalleryImages.length) % this.filteredGalleryImages.length;
+  public closeModal(): void {
+    this.showFloatingButtons = true;
+    this.selectedImageIndex = null;
   }
-}
+
+  public nextImage(): void {
+    if (this.selectedImageIndex !== null) {
+      this.selectedImageIndex = (this.selectedImageIndex + 1) % this.filteredGalleryImages.length;
+    }
+  }
+
+  public prevImage(): void {
+    if (this.selectedImageIndex !== null) {
+      this.selectedImageIndex =
+        (this.selectedImageIndex - 1 + this.filteredGalleryImages.length) % this.filteredGalleryImages.length;
+    }
+  }
 
   // contador de imagenes
   getVisibleImageCount(): number {
@@ -192,4 +200,37 @@ public prevImage(): void {
   }
   // ocultar borones flotantes
   showFloatingButtons = true;
+  // NUEVO: índice de cantidad de imágenes visibles
+  visibleImagesCount: number = 12;
+
+  // BOTÓN "VER MÁS"
+  isLoadingMore: boolean = false;
+  loadMoreImages(): void {
+    this.isLoadingMore = true;
+
+    setTimeout(() => {
+      this.visibleImagesCount += 12;
+      this.isLoadingMore = false;
+    }, 2000); // 2 segundos
+  }
+  set selectedCategory(value: string) {
+    this._selectedCategory = value;
+    this.visibleImagesCount = 12; // Reinicia el conteo al cambiar filtro
+  }
+  get selectedCategory(): string {
+    return this._selectedCategory;
+  }
+  private _selectedCategory: string = 'winter';
+  // SPINNER
+  changingCategory: boolean = false;
+  changeCategory(category: string) {
+    if (this._selectedCategory === category) return;
+
+    this.changingCategory = true;
+
+    setTimeout(() => {
+      this.selectedCategory = category;
+      this.changingCategory = false;
+    }, 2000); // tiempo simulado de carga
+  }
 }

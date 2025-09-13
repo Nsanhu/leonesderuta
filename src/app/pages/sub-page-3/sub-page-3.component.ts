@@ -2,11 +2,13 @@ import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { WhatsappComponent } from '../../shared/whatsapp/whatsapp.component';
+import { ThemeToggleComponent } from '../../shared/theme-toggle/theme-toggle.component';
 
 @Component({
   selector: 'sub-page-3',
   standalone: true,
-  imports: [CommonModule, RouterModule, TranslateModule],
+  imports: [CommonModule, RouterModule, TranslateModule, WhatsappComponent, ThemeToggleComponent],
   templateUrl: './sub-page-3.component.html',
   styleUrls: ['./sub-page-3.component.css'],
 })

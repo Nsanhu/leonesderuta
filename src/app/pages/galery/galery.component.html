@@ -1,8 +1,9 @@
 <!-- HERO de la Galería -->
 <section
   class="relative flex items-center justify-center bg-cover bg-center pt-20"
-  style="background-image: url('//img/bg_contact.jpeg')">
-  <div class="w-full rounded bg-black bg-opacity-60 py-28 text-center">
+  style="background-image: url('/img/bg_contact.jpeg')"
+>
+  <div class="w-full bg-black bg-opacity-60 py-28 text-center">
     <h1 class="text-4xl font-bold text-white md:text-6xl">
       {{ 'GALLERY.TITLE' | translate }}
     </h1>
@@ -28,44 +29,63 @@
     <div class="flex flex-wrap justify-center gap-3">
       <button
         *ngFor="let cat of categories"
-        (click)="selectedCategory = cat.value"
-        class="rounded-full border px-4 py-2 text-sm font-medium shadow transition duration-300"
+        (click)="changeCategory(cat.value)"
+        class="flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium shadow transition duration-300"
         [ngClass]="{
           'border-gray-200 bg-gradient-to-r from-blue-500 to-blue-800 text-white shadow-md hover:scale-105 hover:brightness-110 dark:border-gray-400':
             selectedCategory === cat.value,
           'border-gray-300 bg-gray-200 text-gray-800 hover:bg-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600':
             selectedCategory !== cat.value,
-        }">
+        }"
+      >
         {{ cat.labelKey | translate }}
       </button>
     </div>
 
-    <!-- Galería con animación al hacer hover -->
-    <div class="grid grid-cols-3 gap-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
-<div
-  *ngFor="let image of filteredGalleryImages; let i = index"
-  (click)="openModal(i)"
-  class="group relative cursor-pointer overflow-hidden rounded-xl shadow-md transition-shadow duration-300 hover:shadow-xl">
-  
-  <img
-    [src]="image"
-    alt="Foto {{ i + 1 }}"
-    class="aspect-square h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
-  
-  <div
-    class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 transition duration-300 group-hover:bg-opacity-30">
-    <span class="text-sm font-medium text-white opacity-0 group-hover:opacity-100"> Ver imagen </span>
-  </div>
-</div>
+    <!-- Spinner justo debajo de los filtros -->
+    <div class="mt-4 flex justify-center" *ngIf="changingCategory">
+      <app-spinner></app-spinner>
     </div>
 
-    <!-- Botón de contacto -->
-    <div class="flex justify-center">
-      <button
-        routerLink="/contact"
-        class="rounded-xl border border-gray-200 bg-gradient-to-r from-blue-500 to-blue-800 px-8 py-4 text-lg font-semibold text-white shadow-md transition hover:scale-105 hover:brightness-110 dark:border-gray-400">
-        {{ 'GALLERY.CONTACT_US' | translate }}
-      </button>
+    <!-- Galería con animación al hacer hover -->
+    <div
+      *ngIf="!changingCategory"
+      class="grid grid-cols-3 gap-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"
+    >
+      <div
+        *ngFor="let image of filteredGalleryImages; let i = index"
+        (click)="openModal(i)"
+        class="group relative cursor-pointer overflow-hidden rounded-xl shadow-md transition-shadow duration-300 hover:shadow-xl"
+      >
+        <img
+          [src]="image"
+          alt="Foto {{ i + 1 }}"
+          class="aspect-square h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+        />
+
+        <div
+          class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 transition duration-300 group-hover:bg-opacity-30"
+        >
+          <span class="text-sm font-medium text-white opacity-0 group-hover:opacity-100">Ver imagen</span>
+        </div>
+      </div>
+    </div>
+    <!-- Botón "Ver más" o Spinner -->
+    <div class="mt-8 flex justify-center" *ngIf="filteredGalleryImages.length < totalCategoryImages">
+      <ng-container *ngIf="!isLoadingMore; else loadingSpinner">
+        <button
+          (click)="loadMoreImages()"
+          class="rounded-xl border border-gray-200 bg-gradient-to-r from-blue-500 to-blue-800 px-8 py-3 text-white shadow-md transition hover:scale-105 hover:brightness-110 dark:border-gray-400"
+        >
+          {{ 'GALLERY.LOAD_MORE' | translate }}
+        </button>
+      </ng-container>
+
+      <ng-template #loadingSpinner>
+        <div class="flex flex-col items-center justify-center space-y-2">
+          <app-spinner [size]="'lg'"></app-spinner>
+        </div>
+      </ng-template>
     </div>
   </div>
 </section>
@@ -73,12 +93,11 @@
 <!-- MODAL -->
 <div
   *ngIf="selectedImageIndex !== null"
-  class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 backdrop-blur-sm">
+  class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 backdrop-blur-sm"
+>
   <div class="relative w-full max-w-5xl px-4">
     <!-- Botón cerrar -->
-    <button
-      (click)="closeModal()"
-      class="absolute right-4 top-4 text-4xl text-white transition hover:text-red-500">
+    <button (click)="closeModal()" class="absolute right-4 top-4 text-4xl text-white transition hover:text-red-500">
       &times;
     </button>
 
@@ -86,7 +105,8 @@
     <img
       [src]="filteredGalleryImages[selectedImageIndex]"
       alt="Imagen seleccionada"
-      class="mx-auto max-h-[80vh] w-auto rounded-xl border border-white/20 shadow-xl transition" />
+      class="mx-auto max-h-[80vh] w-auto rounded-xl border border-white/20 shadow-xl transition"
+    />
 
     <!-- Navegación -->
     <div class="mt-6 flex justify-between text-lg font-semibold text-white md:text-2xl">

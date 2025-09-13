@@ -130,75 +130,82 @@
     }
   },
   "SUB-PAGE-1": {
-    "TITLE": "Invierno - Nieve",
-    "SUBTITLE": "Experiencias inolvidables en la nieve chilena",
-    "DESC": "Disfruta de la magia del invierno en Chile con nuestros tours especializados en nieve. Desde esquí y snowboard hasta excursiones por paisajes nevados, ofrecemos experiencias inolvidables para todos los amantes de la nieve. Nuestros guías expertos te llevarán a los mejores destinos invernales, asegurando que vivas momentos llenos de aventura y diversión en un entorno seguro y acogedor.",
-    "PARAGRAPH1": "Explora las majestuosas montañas cubiertas de nieve, disfruta de actividades emocionantes y relájate en acogedores refugios después de un día lleno de aventuras. Ya sea que busques adrenalina en las pistas de esquí o tranquilidad en un paisaje invernal, nuestros tours de invierno en Chile tienen algo para todos.",
-    "PARAGRAPH2": "Únete a nosotros para una experiencia invernal única en Chile, donde la belleza natural y la emoción se combinan para crear recuerdos que durarán toda la vida. ¡Prepárate para descubrir la magia del invierno con Leones de Ruta!",
+    "TITLE": "Winter - Snow",
+    "SUBTITLE": "Unforgettable experiences in the Chilean snow",
+    "DESC": "Enjoy the magic of winter in Chile with our snow-focused tours. From skiing and snowboarding to excursions through snowy landscapes, we offer unforgettable experiences for all snow lovers. Our expert guides will take you to the best winter destinations, ensuring you enjoy moments full of adventure and fun in a safe and welcoming environment.",
+    "PARAGRAPH1": "Explore majestic snow-covered mountains, enjoy exciting activities, and relax in cozy lodges after a day full of adventures. Whether you're seeking adrenaline on the ski slopes or tranquility in a winter landscape, our winter tours in Chile have something for everyone.",
+    "PARAGRAPH2": "Join us for a unique winter experience in Chile, where natural beauty and excitement combine to create lifelong memories. Get ready to discover the magic of winter with Leones de Ruta!",
     "FEATURES": {
-      "TITLE": "Características del Tour de Invierno - Nieve",
-      "ITEM1": "Guías expertos en actividades de nieve",
-      "ITEM1DESC": "Nuestros guías están altamente capacitados y tienen amplia experiencia en actividades de nieve, asegurando tu seguridad y diversión durante todo el tour.",
-      "ITEM2": "Equipamiento de alta calidad incluido",
-      "ITEM2DESC": "Proveemos todo el equipamiento necesario para las actividades de nieve, desde esquís y tablas de snowboard hasta ropa adecuada para el clima frío.",
-      "ITEM3": "Itinerarios personalizados según tus intereses",
-      "ITEM3DESC": "Adaptamos cada tour a tus preferencias, ya sea que busques aventura extrema o una experiencia más relajada en la nieve."
+      "TITLE": "Winter - Snow Tour Features",
+      "ITEM1": "Expert snow activity guides",
+      "ITEM1DESC": "Our guides are highly trained and have extensive experience in snow activities, ensuring your safety and enjoyment throughout the tour.",
+      "ITEM2": "High-quality equipment included",
+      "ITEM2DESC": "We provide all the necessary equipment for snow activities, from skis and snowboards to proper clothing for the cold weather.",
+      "ITEM3": "Custom itineraries based on your interests",
+      "ITEM3DESC": "We tailor each tour to your preferences, whether you're looking for extreme adventure or a more relaxed snow experience."
     }
   },
   "SUB-PAGE-2": {
-    "TITLE": "Findes Tour",
-    "SUBTITLE": "Escapadas de fin de semana inolvidables en Chile",
-    "DESC": "Descubre la belleza de Chile en nuestras escapadas de fin de semana diseñadas para ofrecerte experiencias únicas y memorables. Ya sea que busques aventura, relajación o una combinación de ambas, nuestros Findes Tours están pensados para maximizar tu tiempo y disfrutar al máximo de los destinos más emblemáticos del país.",
-    "PARAGRAPH1": "Desde excursiones a parques nacionales hasta visitas culturales y gastronómicas, cada tour está cuidadosamente planificado para brindarte una experiencia enriquecedora en solo unos días. Nuestros guías expertos te acompañarán en cada paso del camino, asegurando que aproveches al máximo tu escapada.",
-    "PARAGRAPH2": "Únete a nosotros en un Findes Tour y vive la magia de Chile en un formato compacto pero lleno de aventuras. ¡Prepárate para crear recuerdos inolvidables en solo un fin de semana con Leones de Ruta!",
+    "TITLE": "Weekend Getaways",
+    "SUBTITLE": "Unforgettable weekend escapes across Chile",
+    "DESC": "Discover the beauty of Chile through our weekend getaways, designed to offer you unique and memorable experiences. Whether you're seeking adventure, relaxation, or a mix of both, our Weekend Tours are crafted to make the most of your time and enjoy the country’s most iconic destinations.",
+    "PARAGRAPH1": "From excursions to national parks to cultural and culinary visits, each tour is carefully planned to provide a rich experience in just a few days. Our expert guides will accompany you every step of the way, ensuring you make the most of your getaway.",
+    "PARAGRAPH2": "Join us on a Weekend Tour and experience the magic of Chile in a compact format full of adventure. Get ready to create unforgettable memories in just a weekend with Leones de Ruta!",
     "FEATURES": {
-      "TITLE": "Características del Findes Tour",
-      "ITEM1": "Itinerarios optimizados para fines de semana",
-      "ITEM1DESC": "Nuestros tours están diseñados para aprovechar al máximo tu tiempo, permitiéndote explorar y disfrutar sin sentirte apresurado.",
-      "ITEM2": "Variedad de destinos y actividades",
-      "ITEM2DESC": "Ofrecemos una amplia gama de opciones, desde aventuras al aire libre hasta experiencias culturales y gastronómicas.",
-      "ITEM3": "Alojamiento cómodo y transporte incluido",
-      "ITEM3DESC": "Nos encargamos de todos los detalles logísticos, incluyendo alojamiento y transporte, para que puedas relajarte y disfrutar del viaje."
+      "TITLE": "Weekend Tour Highlights",
+      "ITEM1": "Optimized itineraries for short getaways",
+      "ITEM1DESC": "Our tours are designed to maximize your time, allowing you to explore and enjoy without feeling rushed.",
+      "ITEM2": "Wide variety of destinations and activities",
+      "ITEM2DESC": "We offer a wide range of options, from outdoor adventures to cultural and culinary experiences.",
+      "ITEM3": "Comfortable accommodation and transportation included",
+      "ITEM3DESC": "We handle all logistics, including lodging and transport, so you can relax and enjoy the journey."
     }
   },
   "SUB-PAGE-3": {
-    "TITLE": "Tours Privados",
-    "SUBTITLE": "Experiencias exclusivas y personalizadas en Chile",
-    "DESC": "Vive Chile a tu manera con nuestros tours privados, diseñados para ofrecerte una experiencia exclusiva y personalizada. Ya sea que viajes solo, en pareja o con un grupo pequeño, nuestros tours privados te permiten explorar los destinos más emblemáticos del país con total comodidad y flexibilidad.",
-    "PARAGRAPH1": "Nuestros guías expertos trabajarán contigo para crear un itinerario que se adapte a tus intereses y necesidades, asegurando que cada momento de tu viaje sea memorable. Desde aventuras al aire libre hasta experiencias culturales y gastronómicas, nuestros tours privados están diseñados para ofrecerte lo mejor de Chile en un formato íntimo y exclusivo.",
-    "PARAGRAPH2": "Únete a nosotros para una experiencia de viaje única y personalizada en Chile. ¡Descubre el país a tu ritmo con Leones de Ruta!",
+    "TITLE": "Private Tours",
+    "SUBTITLE": "Exclusive and personalized experiences across Chile",
+    "DESC": "Experience Chile your way with our private tours, tailored to offer an exclusive and personalized journey. Whether you're traveling solo, as a couple, or with a small group, our private tours let you explore the country's top destinations with comfort and flexibility.",
+    "PARAGRAPH1": "Our expert guides will work with you to create an itinerary that fits your interests and needs, ensuring every moment of your trip is memorable. From outdoor adventures to cultural and culinary experiences, our private tours are designed to deliver the best of Chile in an intimate and exclusive format.",
+    "PARAGRAPH2": "Join us for a unique and personalized travel experience in Chile. Discover the country at your own pace with Leones de Ruta!",
     "FEATURES": {
-      "TITLE": "Características de los Tours Privados",
-      "ITEM1": "Itinerarios personalizados según tus intereses",
-      "ITEM1DESC": "Trabajamos contigo para diseñar un itinerario que refleje tus preferencias y deseos, asegurando una experiencia única.",
-      "ITEM2": "Guías expertos y atención personalizada",
-      "ITEM2DESC": "Nuestros guías dedicados te brindarán atención personalizada y compartirán su conocimiento para enriquecer tu experiencia.",
-      "ITEM3": "Flexibilidad en horarios y actividades",
-      "ITEM3DESC": "Disfruta de la libertad de ajustar horarios y actividades según tus necesidades y deseos."
+      "TITLE": "Private Tour Highlights",
+      "ITEM1": "Tailored itineraries based on your interests",
+      "ITEM1DESC": "We collaborate with you to design an itinerary that reflects your preferences and desires, ensuring a unique experience.",
+      "ITEM2": "Expert guides and personalized attention",
+      "ITEM2DESC": "Our dedicated guides will provide personalized service and share their knowledge to enhance your journey.",
+      "ITEM3": "Flexible schedules and customizable activities",
+      "ITEM3DESC": "Enjoy the freedom to adjust times and activities to suit your needs and preferences."
     }
   },
   "SUB-PAGE-4": {
-    "TITLE": "Tour a Púcon",
-    "SUBTITLE": "Aventura y naturaleza en el corazón de Chile",
-    "DESC": "Descubre la magia de Púcon, uno de los destinos más emblemáticos de Chile, con nuestro tour especializado. Rodeado de lagos cristalinos, volcanes imponentes y una exuberante naturaleza, Púcon ofrece una combinación perfecta de aventura y relajación para todos los tipos de viajeros.",
-    "PARAGRAPH1": "Nuestro tour a Púcon te llevará a explorar sus principales atractivos, desde emocionantes actividades al aire libre como senderismo, rafting y termas, hasta la oportunidad de sumergirte en la cultura local y disfrutar de su deliciosa gastronomía. Con la guía de expertos locales, vivirás una experiencia auténtica y enriquecedora en este paraíso natural.",
-    "PARAGRAPH2": "Únete a nosotros para una aventura inolvidable en Púcon. ¡Prepárate para descubrir la belleza y emoción que este destino tiene para ofrecer con Leones de Ruta!",
+    "TITLE": "Tour to Pucón",
+    "SUBTITLE": "Adventure and nature in the heart of Chile",
+    "DESC": "Discover the magic of Pucón, one of Chile’s most iconic destinations, with our specialized tour. Surrounded by crystal-clear lakes, majestic volcanoes, and lush landscapes, Pucón offers the perfect blend of adventure and relaxation for all types of travelers.",
+    "PARAGRAPH1": "Our tour will guide you through Pucón’s top attractions, from exciting outdoor activities like hiking, rafting, and hot springs, to immersing yourself in the local culture and enjoying delicious cuisine. With the help of local expert guides, you'll enjoy an authentic and enriching experience in this natural paradise.",
+    "PARAGRAPH2": "Join us for an unforgettable adventure in Pucón. Get ready to experience the beauty and excitement this destination has to offer with Leones de Ruta!",
     "FEATURES": {
-      "TITLE": "Características del Tour a Púcon",
-      "ITEM1": "Actividades al aire libre para todos los niveles",
-      "ITEM1DESC": "Ofrecemos una variedad de actividades, desde emocionantes aventuras hasta opciones más relajadas, para que todos puedan disfrutar.",
-      "ITEM2": "Guías locales con conocimiento profundo",
-      "ITEM2DESC": "Nuestros guías son expertos en la región y compartirán su conocimiento para enriquecer tu experiencia.",
-      "ITEM3": "Alojamiento cómodo y transporte incluido",
-      "ITEM3DESC": "Nos encargamos de todos los detalles logísticos, incluyendo alojamiento y transporte, para que puedas relajarte y disfrutar del viaje."
+      "TITLE": "Tour to Pucón Highlights",
+      "ITEM1": "Outdoor activities for all skill levels",
+      "ITEM1DESC": "We offer a range of activities—from thrilling adventures to more relaxed options—so everyone can enjoy.",
+      "ITEM2": "Local guides with deep regional knowledge",
+      "ITEM2DESC": "Our guides are experts in the area and will share their knowledge to enrich your experience.",
+      "ITEM3": "Comfortable lodging and transportation included",
+      "ITEM3DESC": "We take care of all logistical details, including accommodation and transport, so you can relax and enjoy the trip."
     }
   },
   "GALLERY": {
-    "TITLE": "Galería de Aventuras",
-    "SUBTITLE": "Momentos inolvidables con Leones de Ruta",
-    "SEE_COLLECTION": "Descubre nuestros viajes",
-    "DESCRIPTION": "Una selección de imágenes de nuestros tours y aventuras por Chile. Cada fotografía cuenta una historia única.",
-    "CONTACT_US": "Contáctanos"
+    "TITLE": "Adventure Gallery",
+    "SUBTITLE": "Unforgettable moments with Leones de Ruta",
+    "SEE_COLLECTION": "Explore our trips",
+    "DESCRIPTION": "A curated selection of images from our tours and adventures across Chile. Every photo tells a unique story.",
+    "CONTACT_US": "Contact us",
+    "LOAD_MORE": "Load more",
+    "FILTER": {
+      "ALL": "All",
+      "WINTER": "Winter - Snow",
+      "PUCON": "Pucón",
+      "CAJON": "Cajón del Maipo"
+    }
   },
   "FOOTER": {
     "DESCRIPTION": "Unique experiences across Chile. Explore, relax, and discover new routes with us.",
