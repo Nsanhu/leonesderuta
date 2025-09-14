@@ -1,1 +1,49 @@
-<p>modal-warning works!</p>
+<div
+  *ngIf="visible"
+  class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm"
+>
+  <div
+    class="w-full max-w-md rounded-lg border border-yellow-400 bg-gradient-to-r from-yellow-300 to-yellow-500 p-0.5 shadow-2xl"
+  >
+    <!-- Contenido del modal -->
+    <div class="rounded-md bg-white p-6 text-center dark:bg-gray-800">
+      <div class="mb-4 flex justify-center">
+        <svg
+          class="h-12 w-12 text-yellow-500"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 9v2m0 4h.01M12 3C7.03 3 3 7.03 3 12s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9z"
+          />
+        </svg>
+      </div>
+
+      <h2 class="mb-2 text-xl font-semibold text-yellow-600 dark:text-yellow-400">
+        {{ title }}
+      </h2>
+
+      <!-- Mensaje plano -->
+      <p *ngIf="!isObject(message)" class="mb-4 text-gray-700 dark:text-gray-300">
+        {{ message }}
+      </p>
+
+      <!-- Mensaje en forma de objeto -->
+      <ul *ngIf="isObject(message)" class="mb-4 space-y-1 text-left text-sm text-gray-700 dark:text-gray-300">
+        <li *ngFor="let entry of messageEntries">
+          <strong>{{ entry[0] }}:</strong>
+          {{ entry[1] }}
+        </li>
+      </ul>
+
+      <button class="rounded bg-yellow-500 px-4 py-2 text-white transition hover:bg-yellow-600" (click)="close()">
+        Cerrar
+      </button>
+    </div>
+  </div>
+</div>

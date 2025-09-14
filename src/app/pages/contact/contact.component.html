@@ -1,10 +1,11 @@
+<!-- HEADER -->
 <app-page-header
   [backgroundImage]="'/img/bg_contact.jpeg'"
   [titleKey]="'CONTACT.TITLE'"
   [subtitleKey]="'CONTACT.SUBTITLE'"
 ></app-page-header>
 
-<!-- Contact -->
+<!-- CONTACT -->
 <section class="bg-gray-100 dark:bg-gray-900 py-16 transition-colors duration-1000">
   <div class="mx-auto max-w-6xl px-1">
     <h2 class="mb-10 text-center text-4xl font-bold text-blue-800 dark:text-white">
@@ -64,10 +65,6 @@
           >
             {{ 'CONTACT.FORM.SUBMIT' | translate }}
           </button>
-
-          <p *ngIf="success" class="mt-4 text-center text-green-600 dark:text-green-400">
-            {{ 'CONTACT.SUCCESS_MESSAGE' | translate }}
-          </p>
         </form>
       </div>
 
@@ -117,32 +114,27 @@
     </div>
   </div>
 </section>
-<!-- ✅ MODAL DE ÉXITO -->
-<div *ngIf="showSuccessModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-  <div class="w-[90%] max-w-md rounded-lg bg-white p-6 text-center shadow-lg dark:bg-gray-800">
-    <h2 class="mb-4 text-2xl font-bold text-green-600 dark:text-green-400">¡Gracias por tu mensaje!</h2>
-    <p class="mb-6 text-gray-700 dark:text-gray-300">Nos pondremos en contacto contigo pronto.</p>
-    <button
-      (click)="closeModal()"
-      class="rounded-xl border border-gray-300 bg-gradient-to-r from-green-500 to-green-700 px-6 py-2 text-white transition hover:scale-105 hover:brightness-110"
-    >
-      Cerrar
-    </button>
-  </div>
-</div>
 
-<!-- ❌ MODAL DE ERROR -->
-<div *ngIf="showErrorModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-  <div class="w-[90%] max-w-md rounded-lg bg-white p-6 text-center shadow-lg dark:bg-gray-800">
-    <h2 class="mb-4 text-2xl font-bold text-red-600 dark:text-red-400">¡Algo salió mal!</h2>
-    <p class="mb-6 text-gray-700 dark:text-gray-300">No pudimos enviar tu mensaje. Intenta más tarde.</p>
-    <button
-      (click)="closeModal()"
-      class="rounded-xl border border-gray-300 bg-gradient-to-r from-red-500 to-red-700 px-6 py-2 text-white transition hover:scale-105 hover:brightness-110"
-    >
-      Cerrar
-    </button>
-  </div>
-</div>
+<app-modal-success
+  [visible]="showSuccessModal"
+  [title]="'¡Enviado correctamente!'"
+  [message]="'¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.'"
+  (close)="showSuccessModal = false"
+></app-modal-success>
+
+<app-modal-danger
+  [visible]="showErrorModal"
+  [title]="'Error al enviar'"
+  [message]="'Ocurrió un problema al enviar tu mensaje. Intenta nuevamente más tarde.'"
+  (closed)="showErrorModal = false"
+></app-modal-danger>
+<app-modal-warning
+  [visible]="showWarningModal"
+  [title]="'Faltan datos!'"
+  [message]="'Por favor, completa todos los campos del formulario antes de enviarlo.'"
+  (closed)="showWarningModal = false"
+></app-modal-warning>
+
+<!-- LATERAL BUTTONS -->
 <app-theme-toggle></app-theme-toggle>
 <app-whatsapp></app-whatsapp>

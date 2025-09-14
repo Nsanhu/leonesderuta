@@ -1,7 +1,11 @@
 <div
   *ngIf="visible"
-  class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm">
-  <div class="w-full max-w-md rounded-lg bg-white p-6 text-center shadow-lg dark:bg-gray-800">
+  class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm"
+>
+  <div
+    class="w-full max-w-md rounded-lg border border-green-500 bg-white p-6 text-center shadow-xl transition-colors dark:bg-gray-800 dark:border-green-400"
+  >
+    <!-- Ícono de éxito -->
     <div class="mb-4 flex justify-center">
       <svg
         class="h-12 w-12 text-green-600"
@@ -9,27 +13,35 @@
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
-        stroke-width="2">
+        stroke-width="2"
+      >
         <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
       </svg>
     </div>
+
+    <!-- Título -->
     <h2 class="mb-2 text-xl font-semibold text-green-600 dark:text-green-400">
       {{ title }}
     </h2>
-    <!-- Mensaje tipo texto plano -->
+
+    <!-- Mensaje de texto plano -->
     <p *ngIf="!isObject(message)" class="mb-4 text-gray-700 dark:text-gray-300">
       {{ message }}
     </p>
-    <!-- Mostrar datos tipo objeto -->
+
+    <!-- Mensaje como objeto -->
     <ul *ngIf="isObject(message)" class="mb-4 space-y-1 text-left text-sm text-gray-700 dark:text-gray-300">
       <li *ngFor="let entry of messageEntries">
-        <strong>{{ entry[0] }}:</strong> {{ entry[1] }}
+        <strong>{{ entry[0] }}:</strong>
+        {{ entry[1] }}
       </li>
     </ul>
 
+    <!-- Botón cerrar -->
     <button
-      class="rounded bg-green-600 px-4 py-2 text-white transition hover:bg-green-700"
-      (click)="closeModalSuccess()">
+      class="rounded-xl border border-green-600 bg-gradient-to-r from-green-500 to-green-700 px-4 py-2 text-white shadow-md transition hover:scale-105 hover:brightness-110 dark:border-green-400"
+      (click)="closeModalSuccess()"
+    >
       Cerrar
     </button>
   </div>
