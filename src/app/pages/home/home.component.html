@@ -1,26 +1,12 @@
-<!-- TITLE -->
-<section class="relative flex h-screen items-center justify-center overflow-hidden pt-20">
-  <!-- Imagen de fondo -->
-  <div
-    class="absolute inset-0 bg-cover"
-    style="background-image: url('/img/bg_home.jpeg'); background-position: center 64%"
-  ></div>
-  <div class="absolute inset-0 bg-black/40"></div>
-
-  <!-- Contenido -->
-  <div class="relative z-10 px-4 text-center text-white">
-    <h1 class="xl text-4xl font-bold md:text-6xl">{{ 'HOME.SLOGAN' | translate }}</h1>
-    <div class="mt-8">
-      <button
-        routerLink="/contact"
-        class="animate-bounce rounded-xl border border-gray-200 bg-gradient-to-r from-blue-500 to-blue-800 px-8 py-4 text-lg font-semibold text-white shadow-md transition hover:scale-105 hover:brightness-110 dark:border-gray-400"
-      >
-        {{ 'HOME.CONTACT_US' | translate }}
-      </button>
-    </div>
-  </div>
-</section>
-
+<app-page-header
+  [backgroundImage]="'/img/bg_home.jpeg'"
+  [titleKey]="'HOME.SLOGAN'"
+  [subtitleKey]="'HOME.ABOUT.TITLEDESC'"
+  [showButton]="true"
+  [buttonTextKey]="'HOME.CONTACT_US'"
+  [buttonLink]="'/contact'"
+  [large]="true"
+></app-page-header>
 <!-- SERVICES-->
 <section class="bg-gray-200 py-20 transition-colors duration-1000 dark:bg-gray-900">
   <div class="container mx-auto px-4">
@@ -540,10 +526,10 @@
 <!--CONTACT US -->
 <section class="relative flex h-[24rem] items-center justify-center overflow-hidden text-center md:h-[32rem]">
   <!-- Imagen de fondo -->
-  <div
-    class="absolute inset-0 bg-cover bg-center md:bg-fixed"
-    style="background-image: url('/img/bg_home.jpeg'); filter: brightness(0.6)"
-  ></div>
+  <div class="absolute inset-0 bg-cover bg-center md:bg-fixed" style="background-image: url('/img/bg_home.jpeg')"></div>
+
+  <!-- Capa oscura con opacidad variable según tema -->
+  <div class="absolute inset-0 bg-black bg-opacity-20 dark:bg-opacity-60"></div>
 
   <!-- Contenido -->
   <div class="relative z-10 px-4">
