@@ -1,73 +1,148 @@
-<!-- Hero -->
-<section
-  class="relative flex items-center justify-center bg-cover bg-center pt-20"
-  style="background-image: url('/img/bg_contact.jpeg')"
->
-  <div class="w-full bg-black bg-opacity-10 dark:bg-opacity-60 py-28 text-center transition-colors duration-1000">
-    <h1 class="text-4xl font-bold text-white md:text-6xl">
-      {{ 'CONTACT.TITLE' | translate }}
-    </h1>
-    <p class="mt-4 text-lg text-white md:text-xl">
-      {{ 'GALLERY.SUBTITLE' | translate }}
-    </p>
-  </div>
-</section>
+<app-page-header
+  [backgroundImage]="'/img/bg_contact.jpeg'"
+  [titleKey]="'CONTACT.TITLE'"
+  [subtitleKey]="'CONTACT.SUBTITLE'"
+></app-page-header>
 
 <!-- Contact -->
-<section class="bg-gray-50 px-4 py-16 dark:bg-gray-900">
-  <div class="mx-auto max-w-2xl rounded-xl bg-white p-10 shadow-lg dark:bg-gray-800">
-    <h2 class="mb-8 text-center text-3xl font-bold text-blue-900 dark:text-white">
+<section class="bg-gray-100 dark:bg-gray-900 py-16 transition-colors duration-1000">
+  <div class="mx-auto max-w-6xl px-1">
+    <h2 class="mb-10 text-center text-4xl font-bold text-blue-800 dark:text-white">
       {{ 'CONTACT.TITLE' | translate }}
     </h2>
 
-    <form class="space-y-6">
-      <!-- Nombre -->
-      <div>
-        <label class="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300">
-          {{ 'CONTACT.FORM.NAME' | translate }}
-        </label>
-        <input
-          type="text"
-          [attr.placeholder]="'CONTACT.FORM.PLACEHOLDER_NAME' | translate"
-          class="w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900 transition focus:outline-none focus:ring-2 focus:ring-blue-400 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
-        />
+    <!-- Dos tarjetas: formulario + datos -->
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-12 items-stretch p-4">
+      <!-- 📩 Tarjeta del Formulario de contacto -->
+      <div class="md:col-span-8 h-full rounded-xl bg-white p-6 shadow-md dark:bg-gray-800">
+        <form (ngSubmit)="submitForm()" #contactForm="ngForm">
+          <div class="mb-4">
+            <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300">
+              {{ 'CONTACT.FORM.NAME' | translate }}
+            </label>
+            <input
+              type="text"
+              name="name"
+              [(ngModel)]="contact.name"
+              required
+              class="mt-1 w-full rounded-md border px-4 py-2 text-black shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
+              [placeholder]="'CONTACT.FORM.PLACEHOLDER_NAME' | translate"
+            />
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300">
+              {{ 'CONTACT.FORM.EMAIL' | translate }}
+            </label>
+            <input
+              type="email"
+              name="email"
+              [(ngModel)]="contact.email"
+              required
+              class="mt-1 w-full rounded-md border px-4 py-2 text-black shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
+              [placeholder]="'CONTACT.FORM.PLACEHOLDER_EMAIL' | translate"
+            />
+          </div>
+
+          <div class="mb-6">
+            <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300">
+              {{ 'CONTACT.FORM.MESSAGE' | translate }}
+            </label>
+            <textarea
+              name="message"
+              [(ngModel)]="contact.message"
+              rows="4"
+              required
+              class="mt-1 w-full rounded-md border px-4 py-2 text-black shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
+              [placeholder]="'CONTACT.FORM.PLACEHOLDER_MESSAGE' | translate"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full rounded-xl border border-gray-200 bg-gradient-to-r from-blue-500 to-blue-800 px-6 py-3 text-base font-semibold text-white shadow-md transition hover:scale-105 hover:brightness-110 dark:border-gray-400"
+          >
+            {{ 'CONTACT.FORM.SUBMIT' | translate }}
+          </button>
+
+          <p *ngIf="success" class="mt-4 text-center text-green-600 dark:text-green-400">
+            {{ 'CONTACT.SUCCESS_MESSAGE' | translate }}
+          </p>
+        </form>
       </div>
 
-      <!-- Email -->
-      <div>
-        <label class="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300">
-          {{ 'CONTACT.FORM.EMAIL' | translate }}
-        </label>
-        <input
-          type="email"
-          [attr.placeholder]="'CONTACT.FORM.PLACEHOLDER_EMAIL' | translate"
-          class="w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900 transition focus:outline-none focus:ring-2 focus:ring-blue-400 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
-        />
-      </div>
+      <!-- 📍 Tarjeta de Información de contacto -->
+      <div
+        class="flex flex-col justify-between text-center md:col-span-4 h-full rounded-xl bg-white p-6 shadow-md dark:bg-gray-800"
+      >
+        <div>
+          <h3 class="mb-4 text-xl font-bold text-blue-800 dark:text-white">¿Cómo encontrarnos?</h3>
+          <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+            <li>
+              <i class="fas fa-phone-alt text-blue-600"></i>
+              <span class="ml-2 font-semibold">WhatsApp:</span>
+              +56 9 6757 7233
+            </li>
+            <li>
+              <i class="fas fa-envelope text-blue-600"></i>
+              <span class="ml-2 font-semibold">Correo:</span>
+              contacto&#64;leonesderuta.cl
+            </li>
+            <li>
+              <i class="fas fa-map-marker-alt text-blue-600"></i>
+              <span class="ml-2 font-semibold">Ubicación:</span>
+              Santiago, Chile
+            </li>
+            <li>
+              <i class="fas fa-clock text-blue-600"></i>
+              <span class="ml-2 font-semibold">Horario:</span>
+              Lunes a Viernes, 9:00 – 18:00
+            </li>
+          </ul>
+        </div>
 
-      <!-- Mensaje -->
-      <div>
-        <label class="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300">
-          {{ 'CONTACT.FORM.MESSAGE' | translate }}
-        </label>
-        <textarea
-          rows="5"
-          [attr.placeholder]="'CONTACT.FORM.PLACEHOLDER_MESSAGE' | translate"
-          class="w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900 transition focus:outline-none focus:ring-2 focus:ring-blue-400 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
-        ></textarea>
+        <!-- Redes sociales alineadas abajo -->
+        <div class="mt-8 flex justify-center gap-6">
+          <a href="https://www.facebook.com/share/1Awkjeh7Lt/?mibextid=wwXIfr" target="_blank">
+            <img src="/icons/facebook.svg" class="h-10 md:h-12" />
+          </a>
+          <a href="https://www.instagram.com/leones_de_ruta?igsh=anYwZW0zYThvMmJr" target="_blank">
+            <img src="/icons/instagram.svg" class="h-10 md:h-12" />
+          </a>
+          <a href="https://wa.me/56967577233" target="_blank">
+            <img src="/icons/whatsapp.svg" class="h-10 md:h-12" />
+          </a>
+        </div>
       </div>
-
-      <!-- Botón -->
-      <div class="text-center">
-        <button
-          type="submit"
-          class="rounded-xl border border-gray-200 bg-gradient-to-r from-blue-500 to-blue-800 px-8 py-2 text-lg font-semibold text-white shadow-md transition hover:scale-105 hover:brightness-110 dark:border-gray-400"
-        >
-          {{ 'CONTACT.FORM.SUBMIT' | translate }}
-        </button>
-      </div>
-    </form>
+    </div>
   </div>
 </section>
+<!-- ✅ MODAL DE ÉXITO -->
+<div *ngIf="showSuccessModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+  <div class="w-[90%] max-w-md rounded-lg bg-white p-6 text-center shadow-lg dark:bg-gray-800">
+    <h2 class="mb-4 text-2xl font-bold text-green-600 dark:text-green-400">¡Gracias por tu mensaje!</h2>
+    <p class="mb-6 text-gray-700 dark:text-gray-300">Nos pondremos en contacto contigo pronto.</p>
+    <button
+      (click)="closeModal()"
+      class="rounded-xl border border-gray-300 bg-gradient-to-r from-green-500 to-green-700 px-6 py-2 text-white transition hover:scale-105 hover:brightness-110"
+    >
+      Cerrar
+    </button>
+  </div>
+</div>
+
+<!-- ❌ MODAL DE ERROR -->
+<div *ngIf="showErrorModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+  <div class="w-[90%] max-w-md rounded-lg bg-white p-6 text-center shadow-lg dark:bg-gray-800">
+    <h2 class="mb-4 text-2xl font-bold text-red-600 dark:text-red-400">¡Algo salió mal!</h2>
+    <p class="mb-6 text-gray-700 dark:text-gray-300">No pudimos enviar tu mensaje. Intenta más tarde.</p>
+    <button
+      (click)="closeModal()"
+      class="rounded-xl border border-gray-300 bg-gradient-to-r from-red-500 to-red-700 px-6 py-2 text-white transition hover:scale-105 hover:brightness-110"
+    >
+      Cerrar
+    </button>
+  </div>
+</div>
 <app-theme-toggle></app-theme-toggle>
 <app-whatsapp></app-whatsapp>

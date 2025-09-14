@@ -4,11 +4,12 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ThemeToggleComponent } from '../../shared/theme-toggle/theme-toggle.component';
 import { WhatsappComponent } from '../../shared/whatsapp/whatsapp.component';
+import { PageHeaderComponent } from '../../shared/page-header/page-header.component';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule, RouterModule, TranslateModule, ThemeToggleComponent, WhatsappComponent],
+  imports: [CommonModule, RouterModule, TranslateModule, ThemeToggleComponent, WhatsappComponent, PageHeaderComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css',
 })

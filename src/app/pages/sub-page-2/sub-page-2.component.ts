@@ -4,11 +4,12 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { WhatsappComponent } from '../../shared/whatsapp/whatsapp.component';
 import { ThemeToggleComponent } from '../../shared/theme-toggle/theme-toggle.component';
+import { PageHeaderComponent } from '../../shared/page-header/page-header.component';
 
 @Component({
   selector: 'sub-page-2',
   standalone: true,
-  imports: [CommonModule, RouterModule, TranslateModule, WhatsappComponent, ThemeToggleComponent],
+  imports: [CommonModule, RouterModule, TranslateModule, WhatsappComponent, ThemeToggleComponent, PageHeaderComponent],
   templateUrl: './sub-page-2.component.html',
   styleUrls: ['./sub-page-2.component.css'],
 })

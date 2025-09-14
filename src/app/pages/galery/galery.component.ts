@@ -1,15 +1,24 @@
 import { Component, HostListener, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { ThemeToggleComponent } from '../../shared/theme-toggle/theme-toggle.component';
 import { WhatsappComponent } from '../../shared/whatsapp/whatsapp.component';
 import { SpinnerComponent } from '../../shared/spinner/spinner.component';
+import { PageHeaderComponent } from '../../shared/page-header/page-header.component';
 
 @Component({
   selector: 'app-galery',
   standalone: true,
-  imports: [CommonModule, RouterModule, TranslateModule, ThemeToggleComponent, WhatsappComponent, SpinnerComponent],
+  imports: [
+    CommonModule,
+    RouterModule,
+    TranslateModule,
+    ThemeToggleComponent,
+    WhatsappComponent,
+    SpinnerComponent,
+    PageHeaderComponent,
+  ],
   templateUrl: './galery.component.html',
   styleUrls: ['./galery.component.css'],
 })

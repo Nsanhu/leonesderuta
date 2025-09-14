@@ -15,6 +15,7 @@
   },
   "HOME": {
     "SLOGAN": "No seguimos el mapa, creamos nuevas rutas contigo.",
+    "SUBTITLE": "Leones de Ruta - Agencia de Turismo en Chile",
     "CONTACT_US": "Contáctanos",
     "SERVICES": {
       "TITLE": "Nuestros Servicios incluyen",
@@ -89,6 +90,7 @@
   },
   "CONTACT": {
     "TITLE": "Contáctanos",
+    "SUBTITLE": "Estamos aquí para ayudarte",
     "FORM": {
       "NAME": "Nombre",
       "PLACEHOLDER_NAME": "Tu nombre",
@@ -102,6 +104,7 @@
   },
   "ABOUT": {
     "TITLE": "Sobre Nosotros",
+    "SUBTITLE": "Leones de Ruta - Agencia de Turismo en Chile",
     "MISSION": {
       "TITLE": "Nuestra Misión",
       "DESC": "En Leones de Ruta, nuestra misión es ofrecer experiencias turísticas únicas y personalizadas que conecten a nuestros clientes con la riqueza natural y cultural de Chile. Nos esforzamos por brindar un servicio excepcional, promoviendo el turismo sostenible y responsable, y creando recuerdos inolvidables para cada viajero que confía en nosotros."

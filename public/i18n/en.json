@@ -88,6 +88,7 @@
   },
   "CONTACT": {
     "TITLE": "Contact Us",
+    "SUBTITLE": "We're here to help",
     "FORM": {
       "NAME": "Name",
       "PLACEHOLDER_NAME": "Your name",
@@ -101,6 +102,7 @@
   },
   "ABOUT": {
     "TITLE": "About Us",
+    "SUBTITLE": "Leones de Ruta - Tourism Agency in Chile",
     "MISSION": {
       "TITLE": "Our Mission",
       "DESC": "At Leones de Ruta, our mission is to offer unique and personalized travel experiences that connect our clients with the natural and cultural richness of Chile. We strive to provide exceptional service, promote sustainable and responsible tourism, and create unforgettable memories for every traveler who trusts us."

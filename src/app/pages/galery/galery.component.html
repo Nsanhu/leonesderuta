@@ -1,16 +1,8 @@
-<section
-  class="relative flex items-center justify-center bg-cover bg-center pt-20"
-  style="background-image: url('/img/bg_contact.jpeg')"
->
-  <div class="w-full bg-black bg-opacity-10 dark:bg-opacity-60 py-28 text-center transition-colors duration-1000">
-    <h1 class="text-4xl font-bold text-white md:text-6xl">
-      {{ 'GALLERY.TITLE' | translate }}
-    </h1>
-    <p class="mt-4 text-lg text-white md:text-xl">
-      {{ 'GALLERY.SUBTITLE' | translate }}
-    </p>
-  </div>
-</section>
+<app-page-header
+  [backgroundImage]="'/img/bg_contact.jpeg'"
+  [titleKey]="'GALLERY.TITLE'"
+  [subtitleKey]="'GALLERY.SUBTITLE'"
+></app-page-header>
 
 <section class="w-full bg-gray-100 px-4 py-16 transition-colors duration-1000 dark:bg-gray-900">
   <div class="mx-auto max-w-7xl space-y-16">
