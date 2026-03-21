@@ -1,5 +1,5 @@
 import { Component, HostListener } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { WhatsappComponent } from '../../shared/whatsapp/whatsapp.component';
@@ -9,7 +9,13 @@ import { PageHeaderComponent } from '../../shared/page-header/page-header.compon
 @Component({
   selector: 'sub-page-2',
   standalone: true,
-  imports: [CommonModule, RouterModule, TranslateModule, WhatsappComponent, ThemeToggleComponent, PageHeaderComponent],
+  imports: [
+    RouterModule,
+    TranslateModule,
+    WhatsappComponent,
+    ThemeToggleComponent,
+    PageHeaderComponent,
+  ],
   templateUrl: './sub-page-2.component.html',
   styleUrls: ['./sub-page-2.component.css'],
 })
@@ -65,13 +71,16 @@ export class SubPage2Component {
 
   showNext() {
     if (this.selectedImageIndex !== null) {
-      this.selectedImageIndex = (this.selectedImageIndex + 1) % this.galleryImages.length;
+      this.selectedImageIndex =
+        (this.selectedImageIndex + 1) % this.galleryImages.length;
     }
   }
 
   showPrev() {
     if (this.selectedImageIndex !== null) {
-      this.selectedImageIndex = (this.selectedImageIndex - 1 + this.galleryImages.length) % this.galleryImages.length;
+      this.selectedImageIndex =
+        (this.selectedImageIndex - 1 + this.galleryImages.length) %
+        this.galleryImages.length;
     }
   }
 }

@@ -4,7 +4,9 @@
   [subtitleKey]="'ABOUT.SUBTITLE'"
 ></app-page-header>
 <!-- contact -->
-<section class="w-full bg-white px-4 py-20 transition-colors duration-1000 dark:bg-gray-900">
+<section
+  class="w-full bg-white px-4 py-20 transition-colors duration-1000 dark:bg-gray-900"
+>
   <div class="mx-auto max-w-7xl space-y-12">
     <div class="grid items-stretch gap-8 md:grid-cols-2">
       <!-- MISIÓN -->
@@ -28,10 +30,12 @@
           </svg>
         </div>
         <h2 class="mb-4 text-4xl font-bold text-blue-900 dark:text-white">
-          {{ 'ABOUT.MISSION.TITLE' | translate }}
+          {{ "ABOUT.MISSION.TITLE" | translate }}
         </h2>
-        <p class="mx-auto max-w-3xl text-xl leading-relaxed text-gray-700 dark:text-gray-300">
-          {{ 'ABOUT.MISSION.DESC' | translate }}
+        <p
+          class="mx-auto max-w-3xl text-xl leading-relaxed text-gray-700 dark:text-gray-300"
+        >
+          {{ "ABOUT.MISSION.DESC" | translate }}
         </p>
       </div>
       <!-- VISIÓN -->
@@ -55,10 +59,12 @@
           </svg>
         </div>
         <h2 class="mb-4 text-4xl font-bold text-blue-900 dark:text-white">
-          {{ 'ABOUT.VISION.TITLE' | translate }}
+          {{ "ABOUT.VISION.TITLE" | translate }}
         </h2>
-        <p class="mx-auto max-w-3xl text-xl leading-relaxed text-gray-700 dark:text-gray-300">
-          {{ 'ABOUT.VISION.DESC' | translate }}
+        <p
+          class="mx-auto max-w-3xl text-xl leading-relaxed text-gray-700 dark:text-gray-300"
+        >
+          {{ "ABOUT.VISION.DESC" | translate }}
         </p>
       </div>
     </div>
@@ -66,26 +72,29 @@
     <!-- VALORES -->
     <div class="text-center">
       <h2 class="mb-6 text-4xl font-bold text-blue-900 dark:text-white">
-        {{ 'ABOUT.VALUES.TITLE' | translate }}
+        {{ "ABOUT.VALUES.TITLE" | translate }}
       </h2>
 
       <div class="grid grid-cols-2 gap-3 md:grid-cols-2 lg:grid-cols-4">
-        <div
-          *ngFor="let val of [1, 2, 3, 4]; let i = index"
-          class="flex flex-col items-center rounded-xl border border-gray-200 bg-gray-100 p-3 text-center transition-transform duration-500 hover:scale-105 dark:border-gray-700 dark:bg-gray-800"
-        >
-          <img
-            [src]="'/icons/' + getIcon(i)"
-            [alt]="'ABOUT.VALUES.VALUE' + (i + 1) + '.TITLE' | translate"
-            class="mb-4 h-16 w-16 object-contain"
-          />
-          <h3 class="mb-2 text-xl font-semibold text-blue-800 dark:text-blue-400">
-            {{ 'ABOUT.VALUES.VALUE' + (i + 1) + '.TITLE' | translate }}
-          </h3>
-          <p class="text-sm text-gray-600 dark:text-gray-400">
-            {{ 'ABOUT.VALUES.VALUE' + (i + 1) + '.DESC' | translate }}
-          </p>
-        </div>
+        @for (val of [1, 2, 3, 4]; track val; let i = $index) {
+          <div
+            class="flex flex-col items-center rounded-xl border border-gray-200 bg-gray-100 p-3 text-center transition-transform duration-500 hover:scale-105 dark:border-gray-700 dark:bg-gray-800"
+          >
+            <img
+              [src]="'/icons/' + getIcon(i)"
+              [alt]="'ABOUT.VALUES.VALUE' + (i + 1) + '.TITLE' | translate"
+              class="mb-4 h-16 w-16 object-contain"
+            />
+            <h3
+              class="mb-2 text-xl font-semibold text-blue-800 dark:text-blue-400"
+            >
+              {{ "ABOUT.VALUES.VALUE" + (i + 1) + ".TITLE" | translate }}
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              {{ "ABOUT.VALUES.VALUE" + (i + 1) + ".DESC" | translate }}
+            </p>
+          </div>
+        }
       </div>
     </div>
   </div>

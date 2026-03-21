@@ -59,10 +59,10 @@
             ></textarea>
           </div>
           <div class="mt-1 mb-6 flex justify-center">
-            <re-captcha
-              siteKey="6LeuDMkrAAAAALui2pvlOgvnR622X1HMYIg7oeMa"
-              (resolved)="onCaptchaResolved($event)"
-            ></re-captcha>
+            <ngx-recaptcha2
+              [siteKey]="recaptchaSiteKey"
+              (success)="onCaptchaResolved($event)"
+            ></ngx-recaptcha2>
           </div>
           <button
             type="submit"

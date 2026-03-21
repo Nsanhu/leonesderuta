@@ -1,9 +1,13 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { provideRouter } from '@angular/router';
-import { provideHttpClient, HttpClientModule, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  HttpClientModule,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import { AppComponent } from './app/app.component';
 import { routes } from './app/app.routes';
-import { importProvidersFrom } from '@angular/core';
+import { importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -15,6 +19,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 bootstrapApplication(AppComponent, {
   providers: [
+    provideZoneChangeDetection(),
     provideRouter(routes),
     provideHttpClient(withInterceptorsFromDi()),
 

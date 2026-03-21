@@ -1,10 +1,15 @@
-import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  Output,
+} from '@angular/core';
 
 @Component({
   selector: 'app-modal-success',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './modal-success.component.html',
   styleUrl: './modal-success.component.css',
 })

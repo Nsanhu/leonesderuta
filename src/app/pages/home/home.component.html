@@ -1,181 +1,259 @@
 <!-- IMG PRINCIPAL-->
-<section class="relative flex h-screen items-center justify-center overflow-hidden pt-20">
-  <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/img/bg_home.jpeg')"></div>
+<section
+  class="relative flex h-screen items-center justify-center overflow-hidden pt-20"
+>
+  <div
+    class="absolute inset-0 bg-cover bg-center"
+    style="background-image: url(&quot;/img/bg_home.jpeg&quot;)"
+  ></div>
   <div class="absolute inset-0 bg-black bg-opacity-20 dark:bg-opacity-60"></div>
   <div class="relative z-10 px-4 text-center text-white">
-    <h1 class="text-4xl font-bold md:text-6xl">{{ 'HOME.SLOGAN' | translate }}</h1>
-    <H4 class="mt-4 text-xl md:text-2xl">{{ 'HOME.SUBTITLE' | translate }}</H4>
+    <h1 class="text-4xl font-bold md:text-6xl">
+      {{ "HOME.SLOGAN" | translate }}
+    </h1>
+    <H4 class="mt-4 text-xl md:text-2xl">{{ "HOME.SUBTITLE" | translate }}</H4>
     <div class="mt-8">
       <button
         routerLink="/contact"
         class="animate-bounce rounded-xl border border-gray-200 bg-gradient-to-r from-blue-500 to-blue-800 px-8 py-4 text-lg font-semibold text-white shadow-md transition hover:scale-105 hover:brightness-110 dark:border-gray-400"
       >
-        {{ 'HOME.CONTACT_US' | translate }}
+        {{ "HOME.CONTACT_US" | translate }}
       </button>
     </div>
   </div>
 </section>
 <!-- SERVICES-->
-<section class="bg-gray-200 py-20 transition-colors duration-1000 dark:bg-gray-900">
+<section
+  class="bg-gray-200 py-20 transition-colors duration-1000 dark:bg-gray-900"
+>
   <div class="container mx-auto px-4">
     <!-- Título -->
-    <h2 class="mb-16 text-center text-4xl font-bold text-blue-900 dark:text-white sm:text-5xl">
-      {{ 'HOME.SERVICES.TITLE' | translate }}
+    <h2
+      class="mb-16 text-center text-4xl font-bold text-blue-900 dark:text-white sm:text-5xl"
+    >
+      {{ "HOME.SERVICES.TITLE" | translate }}
     </h2>
 
     <!-- MÓVIL -->
-    <div *ngIf="isMobile" class="relative">
-      <!-- Botón Izquierda -->
-      <button
-        *ngIf="currentIndex > 0"
-        (click)="scrollCarousel('left')"
-        class="absolute left-2 top-1/2 z-20 -translate-y-1/2 transform rounded-full bg-white p-2 shadow-md transition hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700"
-      >
-        <svg
-          class="h-6 w-6 text-gray-700 dark:text-white"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-        >
-          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-        </svg>
-      </button>
-
-      <!-- Carrusel de tarjetas -->
-      <div
-        #carousel
-        class="flex snap-x snap-mandatory space-x-4 overflow-x-auto scroll-smooth px-2"
-        (touchstart)="onTouchStart($event)"
-        (touchend)="onTouchEnd($event)"
-      >
-        <!-- Tarjeta 1 -->
+    @if (isMobile) {
+      <div class="relative">
+        <!-- Botón Izquierda -->
+        @if (currentIndex > 0) {
+          <button
+            (click)="scrollCarousel('left')"
+            class="absolute left-2 top-1/2 z-20 -translate-y-1/2 transform rounded-full bg-white p-2 shadow-md transition hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700"
+          >
+            <svg
+              class="h-6 w-6 text-gray-700 dark:text-white"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+        }
+        <!-- Carrusel de tarjetas -->
         <div
-          class="relative h-96 w-72 shrink-0 snap-start overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700"
+          #carousel
+          class="flex snap-x snap-mandatory space-x-4 overflow-x-auto scroll-smooth px-2"
+          (touchstart)="onTouchStart($event)"
+          (touchend)="onTouchEnd($event)"
+        >
+          <!-- Tarjeta 1 -->
+          <div
+            class="relative h-96 w-72 shrink-0 snap-start overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700"
+          >
+            <img
+              [src]="'HOME.SERVICES.TOURS.IMAGE' | translate"
+              alt="Imagen Tours"
+              class="absolute inset-0 h-full w-full object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm"
+            ></div>
+            <div
+              class="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-white"
+            >
+              <h3 class="mb-3 text-xl font-semibold">
+                {{ "HOME.SERVICES.TOURS.TITLE" | translate }}
+              </h3>
+              <p class="text-sm">
+                {{ "HOME.SERVICES.TOURS.DESC" | translate }}
+              </p>
+            </div>
+          </div>
+          <!-- Tarjeta 2 -->
+          <div
+            class="relative h-96 w-72 shrink-0 snap-start overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700"
+          >
+            <img
+              [src]="'HOME.SERVICES.LOCAL.IMAGE' | translate"
+              alt="Imagen Local"
+              class="absolute inset-0 h-full w-full object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm"
+            ></div>
+            <div
+              class="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-white"
+            >
+              <h3 class="mb-3 text-xl font-semibold">
+                {{ "HOME.SERVICES.LOCAL.TITLE" | translate }}
+              </h3>
+              <p class="text-sm">
+                {{ "HOME.SERVICES.LOCAL.DESC" | translate }}
+              </p>
+            </div>
+          </div>
+          <!-- Tarjeta 3 -->
+          <div
+            class="relative h-96 w-72 shrink-0 snap-start overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700"
+          >
+            <img
+              [src]="'HOME.SERVICES.CULTURE.IMAGE' | translate"
+              alt="Imagen Cultura"
+              class="absolute inset-0 h-full w-full object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm"
+            ></div>
+            <div
+              class="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-white"
+            >
+              <h3 class="mb-3 text-xl font-semibold">
+                {{ "HOME.SERVICES.CULTURE.TITLE" | translate }}
+              </h3>
+              <p class="text-sm">
+                {{ "HOME.SERVICES.CULTURE.DESC" | translate }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Indicadores tipo “•••” -->
+        <div class="mt-4 flex justify-center space-x-2">
+          @for (item of totalCardsArray; track item; let idx = $index) {
+            <button
+              (click)="goToCard(idx)"
+              class="h-3 w-3 rounded-full transition-all duration-300"
+              [class.bg-blue-600]="idx === currentIndex"
+              [class.bg-gray-300]="idx !== currentIndex"
+              [class.w-6]="idx === currentIndex"
+            ></button>
+          }
+        </div>
+        <!-- Botón Derecha -->
+        @if (currentIndex < totalCards - 1) {
+          <button
+            (click)="scrollCarousel('right')"
+            class="absolute right-2 top-1/2 z-20 -translate-y-1/2 transform rounded-full bg-white p-2 shadow-md transition hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700"
+          >
+            <svg
+              class="h-6 w-6 text-gray-700 dark:text-white"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+        }
+      </div>
+    }
+
+    <!-- DESKTOP-->
+    @if (!isMobile) {
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div
+          class="relative h-96 overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700"
         >
           <img
             [src]="'HOME.SERVICES.TOURS.IMAGE' | translate"
             alt="Imagen Tours"
             class="absolute inset-0 h-full w-full object-cover"
           />
-          <div class="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm"></div>
-          <div class="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-white">
-            <h3 class="mb-3 text-xl font-semibold">{{ 'HOME.SERVICES.TOURS.TITLE' | translate }}</h3>
-            <p class="text-sm">{{ 'HOME.SERVICES.TOURS.DESC' | translate }}</p>
+          <div
+            class="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm"
+          ></div>
+          <div
+            class="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-white"
+          >
+            <h3 class="mb-3 text-2xl font-semibold">
+              {{ "HOME.SERVICES.TOURS.TITLE" | translate }}
+            </h3>
+            <p class="text-sm sm:text-base">
+              {{ "HOME.SERVICES.TOURS.DESC" | translate }}
+            </p>
           </div>
         </div>
-
-        <!-- Tarjeta 2 -->
         <div
-          class="relative h-96 w-72 shrink-0 snap-start overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700"
+          class="relative h-96 overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700"
         >
           <img
             [src]="'HOME.SERVICES.LOCAL.IMAGE' | translate"
             alt="Imagen Local"
             class="absolute inset-0 h-full w-full object-cover"
           />
-          <div class="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm"></div>
-          <div class="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-white">
-            <h3 class="mb-3 text-xl font-semibold">{{ 'HOME.SERVICES.LOCAL.TITLE' | translate }}</h3>
-            <p class="text-sm">{{ 'HOME.SERVICES.LOCAL.DESC' | translate }}</p>
+          <div
+            class="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm"
+          ></div>
+          <div
+            class="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-white"
+          >
+            <h3 class="mb-3 text-2xl font-semibold">
+              {{ "HOME.SERVICES.LOCAL.TITLE" | translate }}
+            </h3>
+            <p class="text-sm sm:text-base">
+              {{ "HOME.SERVICES.LOCAL.DESC" | translate }}
+            </p>
           </div>
         </div>
-
-        <!-- Tarjeta 3 -->
         <div
-          class="relative h-96 w-72 shrink-0 snap-start overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700"
+          class="relative h-96 overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700"
         >
           <img
             [src]="'HOME.SERVICES.CULTURE.IMAGE' | translate"
             alt="Imagen Cultura"
             class="absolute inset-0 h-full w-full object-cover"
           />
-          <div class="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm"></div>
-          <div class="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-white">
-            <h3 class="mb-3 text-xl font-semibold">{{ 'HOME.SERVICES.CULTURE.TITLE' | translate }}</h3>
-            <p class="text-sm">{{ 'HOME.SERVICES.CULTURE.DESC' | translate }}</p>
+          <div
+            class="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm"
+          ></div>
+          <div
+            class="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-white"
+          >
+            <h3 class="mb-3 text-2xl font-semibold">
+              {{ "HOME.SERVICES.CULTURE.TITLE" | translate }}
+            </h3>
+            <p class="text-sm sm:text-base">
+              {{ "HOME.SERVICES.CULTURE.DESC" | translate }}
+            </p>
           </div>
         </div>
       </div>
-
-      <!-- Indicadores tipo “•••” -->
-      <div class="mt-4 flex justify-center space-x-2">
-        <ng-container *ngFor="let item of totalCardsArray; let idx = index">
-          <button
-            (click)="goToCard(idx)"
-            class="h-3 w-3 rounded-full transition-all duration-300"
-            [class.bg-blue-600]="idx === currentIndex"
-            [class.bg-gray-300]="idx !== currentIndex"
-            [class.w-6]="idx === currentIndex"
-          ></button>
-        </ng-container>
-      </div>
-
-      <!-- Botón Derecha -->
-      <button
-        *ngIf="currentIndex < totalCards - 1"
-        (click)="scrollCarousel('right')"
-        class="absolute right-2 top-1/2 z-20 -translate-y-1/2 transform rounded-full bg-white p-2 shadow-md transition hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700"
-      >
-        <svg
-          class="h-6 w-6 text-gray-700 dark:text-white"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-        >
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
-    </div>
-
-    <!-- DESKTOP-->
-    <div *ngIf="!isMobile" class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      <div class="relative h-96 overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700">
-        <img
-          [src]="'HOME.SERVICES.TOURS.IMAGE' | translate"
-          alt="Imagen Tours"
-          class="absolute inset-0 h-full w-full object-cover"
-        />
-        <div class="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm"></div>
-        <div class="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-white">
-          <h3 class="mb-3 text-2xl font-semibold">{{ 'HOME.SERVICES.TOURS.TITLE' | translate }}</h3>
-          <p class="text-sm sm:text-base">{{ 'HOME.SERVICES.TOURS.DESC' | translate }}</p>
-        </div>
-      </div>
-      <div class="relative h-96 overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700">
-        <img
-          [src]="'HOME.SERVICES.LOCAL.IMAGE' | translate"
-          alt="Imagen Local"
-          class="absolute inset-0 h-full w-full object-cover"
-        />
-        <div class="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm"></div>
-        <div class="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-white">
-          <h3 class="mb-3 text-2xl font-semibold">{{ 'HOME.SERVICES.LOCAL.TITLE' | translate }}</h3>
-          <p class="text-sm sm:text-base">{{ 'HOME.SERVICES.LOCAL.DESC' | translate }}</p>
-        </div>
-      </div>
-      <div class="relative h-96 overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700">
-        <img
-          [src]="'HOME.SERVICES.CULTURE.IMAGE' | translate"
-          alt="Imagen Cultura"
-          class="absolute inset-0 h-full w-full object-cover"
-        />
-        <div class="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm"></div>
-        <div class="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-white">
-          <h3 class="mb-3 text-2xl font-semibold">{{ 'HOME.SERVICES.CULTURE.TITLE' | translate }}</h3>
-          <p class="text-sm sm:text-base">{{ 'HOME.SERVICES.CULTURE.DESC' | translate }}</p>
-        </div>
-      </div>
-    </div>
+    }
   </div>
 </section>
 
 <!-- ABOUT US -->
-<section class="bg-white py-20 transition-opacity duration-[3000ms] dark:bg-black">
+<section
+  class="bg-white py-20 transition-opacity duration-[3000ms] dark:bg-black"
+>
   <div class="container mx-auto px-4">
-    <h2 class="mb-16 text-center text-4xl font-bold text-blue-900 dark:text-white sm:text-5xl">
-      {{ 'HOME.ABOUT.TITLE' | translate }}
+    <h2
+      class="mb-16 text-center text-4xl font-bold text-blue-900 dark:text-white sm:text-5xl"
+    >
+      {{ "HOME.ABOUT.TITLE" | translate }}
     </h2>
 
     <div class="grid items-center gap-12 lg:grid-cols-2">
@@ -194,20 +272,28 @@
       </div>
       <!-- Texto -->
       <div class="flex h-full items-stretch">
-        <div class="w-full space-y-6 rounded-lg border p-4 dark:border-gray-700">
-          <h3 class="text-center text-xl font-semibold text-blue-900 dark:text-white">
-            {{ 'HOME.ABOUT.TITLEDESC' | translate }}
+        <div
+          class="w-full space-y-6 rounded-lg border p-4 dark:border-gray-700"
+        >
+          <h3
+            class="text-center text-xl font-semibold text-blue-900 dark:text-white"
+          >
+            {{ "HOME.ABOUT.TITLEDESC" | translate }}
           </h3>
-          <p class="text-justify text-xl text-gray-700 dark:text-gray-300">{{ 'HOME.ABOUT.DESC' | translate }}</p>
-          <div class="mt-6 space-y-2 text-center text-lg italic text-gray-500 dark:text-gray-400">
-            <p>“{{ 'HOME.ABOUT.PHRASE' | translate }}”</p>
+          <p class="text-justify text-xl text-gray-700 dark:text-gray-300">
+            {{ "HOME.ABOUT.DESC" | translate }}
+          </p>
+          <div
+            class="mt-6 space-y-2 text-center text-lg italic text-gray-500 dark:text-gray-400"
+          >
+            <p>“{{ "HOME.ABOUT.PHRASE" | translate }}”</p>
           </div>
           <div class="mt-6 text-center">
             <button
               routerLink="/about"
               class="animate-pulse rounded-xl border border-gray-200 bg-gradient-to-r from-blue-500 to-blue-800 px-8 py-4 text-lg font-semibold text-white shadow-md transition hover:scale-105 hover:brightness-110 dark:border-gray-400"
             >
-              {{ 'HOME.READ_MORE' | translate }}
+              {{ "HOME.READ_MORE" | translate }}
             </button>
           </div>
         </div>
@@ -217,19 +303,28 @@
 </section>
 
 <!-- TESTIMONIALS -->
-<section class="bg-gray-200 py-20 transition-colors duration-1000 dark:bg-gray-900">
+<section
+  class="bg-gray-200 py-20 transition-colors duration-1000 dark:bg-gray-900"
+>
   <div class="container mx-auto px-4">
     <!-- Título -->
     <div class="mb-16 text-center">
-      <h2 class="mb-4 text-4xl font-bold text-blue-900 dark:text-white md:text-5xl">
-        {{ 'HOME.TESTIMONIALS.TITLE' | translate }}
+      <h2
+        class="mb-4 text-4xl font-bold text-blue-900 dark:text-white md:text-5xl"
+      >
+        {{ "HOME.TESTIMONIALS.TITLE" | translate }}
       </h2>
-      <H4 class="text-xl text-blue-900 dark:text-white">{{ 'HOME.TESTIMONIALS.DESC' | translate }}</H4>
+      <H4 class="text-xl text-blue-900 dark:text-white">{{
+        "HOME.TESTIMONIALS.DESC" | translate
+      }}</H4>
     </div>
 
     <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
       <!-- Testimonial 1 -->
-      <div class="perspective h-96 w-full" [class.is-flipped]="isMobile && flippedIndex === 1">
+      <div
+        class="perspective h-96 w-full"
+        [class.is-flipped]="isMobile && flippedIndex === 1"
+      >
         <div
           class="transform-style-preserve-3d relative h-full w-full rounded-xl border border-gray-200 transition-transform duration-700 dark:border-gray-700"
           [ngClass]="{ 'rotate-y-180': isMobile && flippedIndex === 1 }"
@@ -244,27 +339,30 @@
               class="mb-4 h-32 w-32 rounded-full border-4 border-blue-600 object-cover shadow-md"
             />
             <p class="mb-4 italic text-gray-700 dark:text-gray-300">
-              "{{ 'HOME.TESTIMONIALS.TESTIMONIALS1.COMMENT' | translate }}"
+              "{{ "HOME.TESTIMONIALS.TESTIMONIALS1.COMMENT" | translate }}"
             </p>
             <h4 class="font-bold text-blue-900 dark:text-white">
-              {{ 'HOME.TESTIMONIALS.TESTIMONIALS1.NAME' | translate }}
+              {{ "HOME.TESTIMONIALS.TESTIMONIALS1.NAME" | translate }}
             </h4>
             <div class="mt-1 text-xl text-yellow-400">
-              {{ 'HOME.TESTIMONIALS.TESTIMONIALS1.STARS' | translate }}
+              {{ "HOME.TESTIMONIALS.TESTIMONIALS1.STARS" | translate }}
             </div>
 
             <!-- Botón "Leer más" SOLO si no está volteado -->
-            <button
-              *ngIf="isMobile && flippedIndex !== 1"
-              (click)="toggleFlip(1)"
-              class="absolute bottom-4 left-1/2 -translate-x-1/2 animate-pulse rounded-xl border border-gray-200 bg-gradient-to-r from-blue-500 to-blue-800 px-3 py-1.5 text-sm font-semibold text-white shadow-md transition hover:scale-105 hover:brightness-110 dark:border-gray-400"
-            >
-              {{ 'HOME.READ_MORE' | translate }}
-            </button>
+            @if (isMobile && flippedIndex !== 1) {
+              <button
+                (click)="toggleFlip(1)"
+                class="absolute bottom-4 left-1/2 -translate-x-1/2 animate-pulse rounded-xl border border-gray-200 bg-gradient-to-r from-blue-500 to-blue-800 px-3 py-1.5 text-sm font-semibold text-white shadow-md transition hover:scale-105 hover:brightness-110 dark:border-gray-400"
+              >
+                {{ "HOME.READ_MORE" | translate }}
+              </button>
+            }
           </div>
 
           <!-- Cara trasera -->
-          <div class="backface-hidden rotate-y-180 absolute inset-0 rounded-xl overflow-hidden">
+          <div
+            class="backface-hidden rotate-y-180 absolute inset-0 rounded-xl overflow-hidden"
+          >
             <!-- Imagen de fondo -->
             <img
               [src]="'HOME.TESTIMONIALS.TESTIMONIALS1.IMG' | translate"
@@ -276,30 +374,36 @@
             <div class="absolute inset-0 bg-black bg-opacity-40"></div>
 
             <!-- Contenido de texto -->
-            <div class="relative z-10 flex h-full items-center justify-center p-6 text-center text-white">
+            <div
+              class="relative z-10 flex h-full items-center justify-center p-6 text-center text-white"
+            >
               <p class="text-lg font-semibold leading-relaxed">
-                {{ 'HOME.TESTIMONIALS.TESTIMONIALS1.QUOTE' | translate }}
+                {{ "HOME.TESTIMONIALS.TESTIMONIALS1.QUOTE" | translate }}
                 <br />
                 <span class="mt-2 block text-sm italic text-blue-200">
-                  {{ 'HOME.TESTIMONIALS.TESTIMONIALS1.PLACE' | translate }}
+                  {{ "HOME.TESTIMONIALS.TESTIMONIALS1.PLACE" | translate }}
                 </span>
               </p>
 
               <!-- Botón "Volver" SOLO si está volteado -->
-              <button
-                *ngIf="isMobile && flippedIndex === 1"
-                (click)="toggleFlip(null)"
-                class="absolute bottom-4 left-1/2 -translate-x-1/2 animate-pulse rounded-xl border border-gray-200 bg-gradient-to-r from-blue-500 to-blue-800 px-3 py-1.5 text-sm font-semibold text-white shadow-md transition hover:scale-105 hover:brightness-110 dark:border-gray-400"
-              >
-                {{ 'HOME.BACK' | translate }}
-              </button>
+              @if (isMobile && flippedIndex === 1) {
+                <button
+                  (click)="toggleFlip(null)"
+                  class="absolute bottom-4 left-1/2 -translate-x-1/2 animate-pulse rounded-xl border border-gray-200 bg-gradient-to-r from-blue-500 to-blue-800 px-3 py-1.5 text-sm font-semibold text-white shadow-md transition hover:scale-105 hover:brightness-110 dark:border-gray-400"
+                >
+                  {{ "HOME.BACK" | translate }}
+                </button>
+              }
             </div>
           </div>
         </div>
       </div>
 
       <!-- Testimonial 2 -->
-      <div class="perspective h-96 w-full" [class.is-flipped]="isMobile && flippedIndex === 2">
+      <div
+        class="perspective h-96 w-full"
+        [class.is-flipped]="isMobile && flippedIndex === 2"
+      >
         <div
           class="transform-style-preserve-3d relative h-full w-full rounded-xl border border-gray-200 transition-transform duration-700 dark:border-gray-700"
           [ngClass]="{ 'rotate-y-180': isMobile && flippedIndex === 2 }"
@@ -314,27 +418,30 @@
               class="mb-4 h-32 w-32 rounded-full border-4 border-blue-600 object-cover shadow-md"
             />
             <p class="mb-4 italic text-gray-700 dark:text-gray-300">
-              "{{ 'HOME.TESTIMONIALS.TESTIMONIALS2.COMMENT' | translate }}"
+              "{{ "HOME.TESTIMONIALS.TESTIMONIALS2.COMMENT" | translate }}"
             </p>
             <h4 class="font-bold text-blue-900 dark:text-white">
-              {{ 'HOME.TESTIMONIALS.TESTIMONIALS2.NAME' | translate }}
+              {{ "HOME.TESTIMONIALS.TESTIMONIALS2.NAME" | translate }}
             </h4>
             <div class="mt-1 text-xl text-yellow-400">
-              {{ 'HOME.TESTIMONIALS.TESTIMONIALS2.STARS' | translate }}
+              {{ "HOME.TESTIMONIALS.TESTIMONIALS2.STARS" | translate }}
             </div>
 
             <!-- Botón "Leer más" SOLO si no está volteado -->
-            <button
-              *ngIf="isMobile && flippedIndex !== 2"
-              (click)="toggleFlip(2)"
-              class="absolute bottom-4 left-1/2 -translate-x-1/2 animate-pulse rounded-xl border border-gray-200 bg-gradient-to-r from-blue-500 to-blue-800 px-3 py-1.5 text-sm font-semibold text-white shadow-md transition hover:scale-105 hover:brightness-110 dark:border-gray-400"
-            >
-              {{ 'HOME.READ_MORE' | translate }}
-            </button>
+            @if (isMobile && flippedIndex !== 2) {
+              <button
+                (click)="toggleFlip(2)"
+                class="absolute bottom-4 left-1/2 -translate-x-1/2 animate-pulse rounded-xl border border-gray-200 bg-gradient-to-r from-blue-500 to-blue-800 px-3 py-1.5 text-sm font-semibold text-white shadow-md transition hover:scale-105 hover:brightness-110 dark:border-gray-400"
+              >
+                {{ "HOME.READ_MORE" | translate }}
+              </button>
+            }
           </div>
 
           <!-- Cara trasera -->
-          <div class="backface-hidden rotate-y-180 absolute inset-0 rounded-xl overflow-hidden">
+          <div
+            class="backface-hidden rotate-y-180 absolute inset-0 rounded-xl overflow-hidden"
+          >
             <!-- Imagen de fondo -->
             <img
               [src]="'HOME.TESTIMONIALS.TESTIMONIALS2.IMG' | translate"
@@ -346,30 +453,36 @@
             <div class="absolute inset-0 bg-black bg-opacity-40"></div>
 
             <!-- Contenido de texto -->
-            <div class="relative z-10 flex h-full items-center justify-center p-6 text-center text-white">
+            <div
+              class="relative z-10 flex h-full items-center justify-center p-6 text-center text-white"
+            >
               <p class="text-lg font-semibold leading-relaxed">
-                {{ 'HOME.TESTIMONIALS.TESTIMONIALS2.QUOTE' | translate }}
+                {{ "HOME.TESTIMONIALS.TESTIMONIALS2.QUOTE" | translate }}
                 <br />
                 <span class="mt-2 block text-sm italic text-blue-200">
-                  {{ 'HOME.TESTIMONIALS.TESTIMONIALS2.PLACE' | translate }}
+                  {{ "HOME.TESTIMONIALS.TESTIMONIALS2.PLACE" | translate }}
                 </span>
               </p>
 
               <!-- Botón "Volver" SOLO si está volteado -->
-              <button
-                *ngIf="isMobile && flippedIndex === 2"
-                (click)="toggleFlip(null)"
-                class="absolute bottom-4 left-1/2 -translate-x-1/2 animate-pulse rounded-xl border border-gray-200 bg-gradient-to-r from-blue-500 to-blue-800 px-3 py-1.5 text-sm font-semibold text-white shadow-md transition hover:scale-105 hover:brightness-110 dark:border-gray-400"
-              >
-                {{ 'HOME.BACK' | translate }}
-              </button>
+              @if (isMobile && flippedIndex === 2) {
+                <button
+                  (click)="toggleFlip(null)"
+                  class="absolute bottom-4 left-1/2 -translate-x-1/2 animate-pulse rounded-xl border border-gray-200 bg-gradient-to-r from-blue-500 to-blue-800 px-3 py-1.5 text-sm font-semibold text-white shadow-md transition hover:scale-105 hover:brightness-110 dark:border-gray-400"
+                >
+                  {{ "HOME.BACK" | translate }}
+                </button>
+              }
             </div>
           </div>
         </div>
       </div>
 
       <!-- Testimonial 3 -->
-      <div class="perspective h-96 w-full" [class.is-flipped]="isMobile && flippedIndex === 3">
+      <div
+        class="perspective h-96 w-full"
+        [class.is-flipped]="isMobile && flippedIndex === 3"
+      >
         <div
           class="transform-style-preserve-3d relative h-full w-full rounded-xl border border-gray-200 transition-transform duration-700 dark:border-gray-700"
           [ngClass]="{ 'rotate-y-180': isMobile && flippedIndex === 3 }"
@@ -384,26 +497,29 @@
               class="mb-4 h-32 w-32 rounded-full border-4 border-blue-600 object-cover shadow-md"
             />
             <p class="mb-4 italic text-gray-700 dark:text-gray-300">
-              "{{ 'HOME.TESTIMONIALS.TESTIMONIALS3.COMMENT' | translate }}"
+              "{{ "HOME.TESTIMONIALS.TESTIMONIALS3.COMMENT" | translate }}"
             </p>
             <h4 class="font-bold text-blue-900 dark:text-white">
-              {{ 'HOME.TESTIMONIALS.TESTIMONIALS3.NAME' | translate }}
+              {{ "HOME.TESTIMONIALS.TESTIMONIALS3.NAME" | translate }}
             </h4>
             <div class="mt-1 text-xl text-yellow-400">
-              {{ 'HOME.TESTIMONIALS.TESTIMONIALS3.STARS' | translate }}
+              {{ "HOME.TESTIMONIALS.TESTIMONIALS3.STARS" | translate }}
             </div>
 
             <!-- Botón "Leer más" SOLO si no está volteado -->
-            <button
-              *ngIf="isMobile && flippedIndex !== 3"
-              (click)="toggleFlip(3)"
-              class="absolute bottom-4 left-1/2 -translate-x-1/2 animate-pulse rounded-xl border border-gray-200 bg-gradient-to-r from-blue-500 to-blue-800 px-3 py-1.5 text-sm font-semibold text-white shadow-md transition hover:scale-105 hover:brightness-110 dark:border-gray-400"
-            >
-              {{ 'HOME.READ_MORE' | translate }}
-            </button>
+            @if (isMobile && flippedIndex !== 3) {
+              <button
+                (click)="toggleFlip(3)"
+                class="absolute bottom-4 left-1/2 -translate-x-1/2 animate-pulse rounded-xl border border-gray-200 bg-gradient-to-r from-blue-500 to-blue-800 px-3 py-1.5 text-sm font-semibold text-white shadow-md transition hover:scale-105 hover:brightness-110 dark:border-gray-400"
+              >
+                {{ "HOME.READ_MORE" | translate }}
+              </button>
+            }
           </div>
           <!-- Cara trasera -->
-          <div class="backface-hidden rotate-y-180 absolute inset-0 rounded-xl overflow-hidden">
+          <div
+            class="backface-hidden rotate-y-180 absolute inset-0 rounded-xl overflow-hidden"
+          >
             <!-- Imagen de fondo -->
             <img
               [src]="'HOME.TESTIMONIALS.TESTIMONIALS3.IMG' | translate"
@@ -415,23 +531,26 @@
             <div class="absolute inset-0 bg-black bg-opacity-40"></div>
 
             <!-- Contenido de texto -->
-            <div class="relative z-10 flex h-full items-center justify-center p-6 text-center text-white">
+            <div
+              class="relative z-10 flex h-full items-center justify-center p-6 text-center text-white"
+            >
               <p class="text-lg font-semibold leading-relaxed">
-                {{ 'HOME.TESTIMONIALS.TESTIMONIALS3.QUOTE' | translate }}
+                {{ "HOME.TESTIMONIALS.TESTIMONIALS3.QUOTE" | translate }}
                 <br />
                 <span class="mt-2 block text-sm italic text-blue-200">
-                  {{ 'HOME.TESTIMONIALS.TESTIMONIALS3.PLACE' | translate }}
+                  {{ "HOME.TESTIMONIALS.TESTIMONIALS3.PLACE" | translate }}
                 </span>
               </p>
 
               <!-- Botón "Volver" SOLO si está volteado -->
-              <button
-                *ngIf="isMobile && flippedIndex === 3"
-                (click)="toggleFlip(null)"
-                class="absolute bottom-4 left-1/2 -translate-x-1/2 animate-pulse rounded-xl border border-gray-200 bg-gradient-to-r from-blue-500 to-blue-800 px-3 py-1.5 text-sm font-semibold text-white shadow-md transition hover:scale-105 hover:brightness-110 dark:border-gray-400"
-              >
-                {{ 'HOME.BACK' | translate }}
-              </button>
+              @if (isMobile && flippedIndex === 3) {
+                <button
+                  (click)="toggleFlip(null)"
+                  class="absolute bottom-4 left-1/2 -translate-x-1/2 animate-pulse rounded-xl border border-gray-200 bg-gradient-to-r from-blue-500 to-blue-800 px-3 py-1.5 text-sm font-semibold text-white shadow-md transition hover:scale-105 hover:brightness-110 dark:border-gray-400"
+                >
+                  {{ "HOME.BACK" | translate }}
+                </button>
+              }
             </div>
           </div>
         </div>
@@ -445,48 +564,57 @@
   <div class="mx-auto px-4">
     <!-- Título y subtítulo -->
     <div class="mb-12 text-center">
-      <h2 class="mb-4 text-4xl font-bold text-blue-900 dark:text-white md:text-5xl">
-        {{ 'GALLERY.TITLE' | translate }}
+      <h2
+        class="mb-4 text-4xl font-bold text-blue-900 dark:text-white md:text-5xl"
+      >
+        {{ "GALLERY.TITLE" | translate }}
       </h2>
       <p class="text-lg text-gray-700 dark:text-gray-300">
-        {{ 'GALLERY.SUBTITLE' | translate }}
+        {{ "GALLERY.SUBTITLE" | translate }}
       </p>
       <p class="mt-2 text-base text-gray-600 dark:text-gray-400 italic">
-        {{ 'GALLERY.DESCRIPTION' | translate }}
+        {{ "GALLERY.DESCRIPTION" | translate }}
       </p>
     </div>
 
     <!-- Galería de imágenes -->
-    <div class="grid grid-cols-3 gap-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-      <div
-        *ngFor="let image of galleryImages | slice: 0 : getGalleryLimit(); let i = index"
-        class="group relative cursor-pointer overflow-hidden rounded-lg shadow-md"
-        (click)="openLightbox(i)"
-      >
-        <img
-          [src]="image"
-          alt="Foto {{ i + 1 }}"
-          class="h-36 w-full transform object-cover transition-transform duration-500 group-hover:scale-110 group-hover:brightness-75 sm:h-44 md:h-52"
-        />
+    <div
+      class="grid grid-cols-3 gap-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
+    >
+      @for (
+        image of galleryImages | slice: 0 : getGalleryLimit();
+        track image;
+        let i = $index
+      ) {
         <div
-          class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 opacity-0 transition-opacity duration-1000 group-hover:opacity-100"
+          class="group relative cursor-pointer overflow-hidden rounded-lg shadow-md"
+          (click)="openLightbox(i)"
         >
-          <svg
-            class="h-8 w-8 text-white"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+          <img
+            [src]="image"
+            alt="Foto {{ i + 1 }}"
+            class="h-36 w-full transform object-cover transition-transform duration-500 group-hover:scale-110 group-hover:brightness-75 sm:h-44 md:h-52"
+          />
+          <div
+            class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 opacity-0 transition-opacity duration-1000 group-hover:opacity-100"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M15 10l4.553 4.553a1 1 0 01-1.414 1.414L13 11.414m0 0l-4.553 4.553a1 1 0 01-1.414-1.414L11 10m0 0l-4.553-4.553a1 1 0 011.414-1.414L13 8.586m0 0l4.553-4.553a1 1 0 011.414 1.414L15 10z"
-            />
-          </svg>
+            <svg
+              class="h-8 w-8 text-white"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 10l4.553 4.553a1 1 0 01-1.414 1.414L13 11.414m0 0l-4.553 4.553a1 1 0 01-1.414-1.414L11 10m0 0l-4.553-4.553a1 1 0 011.414-1.414L13 8.586m0 0l4.553-4.553a1 1 0 011.414 1.414L15 10z"
+              />
+            </svg>
+          </div>
         </div>
-      </div>
+      }
     </div>
 
     <!-- Botón "Ver más" -->
@@ -495,46 +623,61 @@
         routerLink="/galery"
         class="animate-pulse rounded-xl border border-gray-200 bg-gradient-to-r from-blue-500 to-blue-800 px-4 py-2 text-lg font-semibold text-white shadow-md transition hover:scale-105 hover:brightness-110 dark:border-gray-400"
       >
-        {{ 'HOME.VIEW_MORE' | translate }}
+        {{ "HOME.VIEW_MORE" | translate }}
       </button>
     </div>
   </div>
 </section>
 
 <!-- LIGHTBOX -->
-<div
-  *ngIf="selectedImageIndex !== null"
-  class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 backdrop-blur-sm"
->
-  <div class="relative w-full max-w-4xl px-4">
-    <!-- Botón cerrar -->
-    <button class="absolute right-4 top-4 text-4xl text-white transition hover:text-red-500" (click)="closeLightbox()">
-      &times;
-    </button>
-
-    <!-- Imagen -->
-    <img
-      [src]="galleryImages[selectedImageIndex]"
-      alt="Imagen seleccionada"
-      class="mx-auto max-h-[80vh] w-auto rounded-xl border border-white/20 shadow-xl"
-    />
-
-    <!-- Navegación -->
-    <div class="mt-6 flex justify-between text-lg font-semibold text-white md:text-2xl">
-      <button (click)="showPrev()" class="rounded bg-white/10 px-4 py-2 transition hover:bg-white/20">
-        ← {{ 'HOME.PREV' | translate }}
+@if (selectedImageIndex !== null) {
+  <div
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 backdrop-blur-sm"
+  >
+    <div class="relative w-full max-w-4xl px-4">
+      <!-- Botón cerrar -->
+      <button
+        class="absolute right-4 top-4 text-4xl text-white transition hover:text-red-500"
+        (click)="closeLightbox()"
+      >
+        &times;
       </button>
-      <button (click)="showNext()" class="rounded bg-white/10 px-4 py-2 transition hover:bg-white/20">
-        {{ 'HOME.NEXT' | translate }} →
-      </button>
+      <!-- Imagen -->
+      <img
+        [src]="galleryImages[selectedImageIndex]"
+        alt="Imagen seleccionada"
+        class="mx-auto max-h-[80vh] w-auto rounded-xl border border-white/20 shadow-xl"
+      />
+      <!-- Navegación -->
+      <div
+        class="mt-6 flex justify-between text-lg font-semibold text-white md:text-2xl"
+      >
+        <button
+          (click)="showPrev()"
+          class="rounded bg-white/10 px-4 py-2 transition hover:bg-white/20"
+        >
+          ← {{ "HOME.PREV" | translate }}
+        </button>
+        <button
+          (click)="showNext()"
+          class="rounded bg-white/10 px-4 py-2 transition hover:bg-white/20"
+        >
+          {{ "HOME.NEXT" | translate }} →
+        </button>
+      </div>
     </div>
   </div>
-</div>
+}
 
 <!--CONTACT US -->
-<section class="relative flex h-[24rem] items-center justify-center overflow-hidden text-center md:h-[32rem]">
+<section
+  class="relative flex h-[24rem] items-center justify-center overflow-hidden text-center md:h-[32rem]"
+>
   <!-- Imagen de fondo -->
-  <div class="absolute inset-0 bg-cover bg-center md:bg-fixed" style="background-image: url('/img/bg_home.jpeg')"></div>
+  <div
+    class="absolute inset-0 bg-cover bg-center md:bg-fixed"
+    style="background-image: url(&quot;/img/bg_home.jpeg&quot;)"
+  ></div>
 
   <!-- Capa oscura con opacidad variable según tema -->
   <div class="absolute inset-0 bg-black bg-opacity-20 dark:bg-opacity-60"></div>
@@ -542,15 +685,19 @@
   <!-- Contenido -->
   <div class="relative z-10 px-4">
     <p class="mb-6 text-2xl text-white drop-shadow-md md:text-3xl">
-      {{ 'HOME.CONTACT.DESC' | translate }}
+      {{ "HOME.CONTACT.DESC" | translate }}
     </p>
     <button
       routerLink="/contact"
       class="animate-bounce rounded-xl border border-gray-200 bg-gradient-to-r from-blue-500 to-blue-800 px-8 py-4 text-lg font-semibold text-white shadow-md transition hover:scale-105 hover:brightness-110 dark:border-gray-400"
     >
-      {{ 'HOME.CONTACT_US' | translate }}
+      {{ "HOME.CONTACT_US" | translate }}
     </button>
   </div>
 </section>
-<app-theme-toggle *ngIf="showFloatingButtons"></app-theme-toggle>
-<app-whatsapp *ngIf="showFloatingButtons"></app-whatsapp>
+@if (showFloatingButtons) {
+  <app-theme-toggle></app-theme-toggle>
+}
+@if (showFloatingButtons) {
+  <app-whatsapp></app-whatsapp>
+}

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { ThemeToggleComponent } from '../../shared/theme-toggle/theme-toggle.component';
@@ -7,7 +7,7 @@ import { WhatsappComponent } from '../../shared/whatsapp/whatsapp.component';
 import { PageHeaderComponent } from '../../shared/page-header/page-header.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { RecaptchaModule } from 'ng-recaptcha';
+import { NgxCaptchaModule } from 'ngx-captcha';
 
 // Modales personalizados
 import { ModalSuccessComponent } from '../../shared/modals/modal-success/modal-success.component';
@@ -18,7 +18,6 @@ import { ModalWarningComponent } from '../../shared/modals/modal-warning/modal-w
   selector: 'app-contact',
   standalone: true,
   imports: [
-    CommonModule,
     RouterModule,
     TranslateModule,
     ThemeToggleComponent,
@@ -28,12 +27,14 @@ import { ModalWarningComponent } from '../../shared/modals/modal-warning/modal-w
     ModalSuccessComponent,
     ModalDangerComponent,
     ModalWarningComponent,
-    RecaptchaModule,
+    NgxCaptchaModule,
   ],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css',
 })
 export class ContactComponent {
+  recaptchaSiteKey = '6LeuDMkrAAAAALui2pvlOgvnR622X1HMYIg7oeMa';
+
   // Datos del formulario
   contact = {
     name: '',
@@ -51,11 +52,13 @@ export class ContactComponent {
 
   showErrorModal = false;
   errorTitle = 'Error al enviar';
-  errorMessage = 'Ocurrió un problema al enviar tu mensaje. Intenta nuevamente.';
+  errorMessage =
+    'Ocurrió un problema al enviar tu mensaje. Intenta nuevamente.';
 
   showWarningModal = false;
   warningTitle = 'Campos incompletos';
-  warningMessage = 'Por favor, completa todos los campos y verifica que no eres un robot.';
+  warningMessage =
+    'Por favor, completa todos los campos y verifica que no eres un robot.';
 
   constructor(private http: HttpClient) {}
 

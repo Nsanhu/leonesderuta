@@ -1,16 +1,16 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-modal-warning',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './modal-warning.component.html',
   styleUrls: ['./modal-warning.component.css'],
 })
 export class ModalWarningComponent {
   @Input() title: string = 'Advertencia';
-  @Input() message: string | { [key: string]: string } = 'Algo importante que debes saber.';
+  @Input() message: string | { [key: string]: string } =
+    'Algo importante que debes saber.';
   @Input() visible: boolean = false;
 
   @Output() closed = new EventEmitter<void>();
@@ -24,6 +24,8 @@ export class ModalWarningComponent {
   }
 
   get messageEntries(): [string, string][] {
-    return this.isObject(this.message) ? Object.entries(this.message as { [key: string]: string }) : [];
+    return this.isObject(this.message)
+      ? Object.entries(this.message as { [key: string]: string })
+      : [];
   }
 }

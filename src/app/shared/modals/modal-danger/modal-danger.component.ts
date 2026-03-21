@@ -1,16 +1,16 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-modal-danger',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './modal-danger.component.html',
   styleUrls: ['./modal-danger.component.css'],
 })
 export class ModalDangerComponent {
   @Input() title: string = '¡Error!';
-  @Input() message: string | { [key: string]: string } = 'Ha ocurrido un error.';
+  @Input() message: string | { [key: string]: string } =
+    'Ha ocurrido un error.';
   @Input() visible: boolean = false;
 
   @Output() closed = new EventEmitter<void>();
@@ -24,6 +24,8 @@ export class ModalDangerComponent {
   }
 
   get messageEntries(): [string, string][] {
-    return this.isObject(this.message) ? Object.entries(this.message as { [key: string]: string }) : [];
+    return this.isObject(this.message)
+      ? Object.entries(this.message as { [key: string]: string })
+      : [];
   }
 }
